@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/HomePage.js';
 import LoginForm from './components/LoginForm.jsx';
 import UserProfile from './component/UserProfile.js';
+import ManageNewsAdmin from './components/News2.js';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
      <Route path='/' element={<Home/>}/>
      <Route path='/login' element={<LoginForm/>}/>
      <Route path='/user' element={<UserProfile/>}/>
+     <Route path='/123' element={<ManageNewsAdmin/>}/>
+     
      
 
      </Routes>   
