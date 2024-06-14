@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Lading from "../components/LadingIntro";
 
-export default function LayoutHome({ title = "", children }) {
+export default function LayoutHome({ title = "layout home", children }) {
     return (
         <>
             <div className="container-fluid">

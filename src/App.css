@@ -67,7 +67,7 @@ nav li {
 
 .lading-intro {
   position: relative;
-  background-image: url(content.jpg);
+  background-image: url(./assert/images/lading-pic.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;
