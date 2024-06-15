@@ -1,46 +1,42 @@
 import React from 'react';
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBIcon,
-  MDBCheckbox
-} from 'mdb-react-ui-kit';
 
-function LoginForm() {
+const LoginForm = () => {
   return (
-    <MDBContainer fluid>
-      <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-        <MDBCol col='12'>
-          <MDBCard className='bg-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '500px' }}>
-            <MDBCardBody className='p-5 w-100 d-flex flex-column'>
-              <h2 className="fw-bold mb-2 text-center">Sign in</h2>
-              <p className="text-white-50 mb-3">Please enter your login and password!</p>
-              <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg" />
-              <MDBInput wrapperClass='mb-4 w-100' label='Password' id='formControlLg' type='password' size="lg" />
-              <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
-              <MDBBtn size='lg'>
-                Login
-              </MDBBtn>
-              <hr className="my-4" />
-              <MDBBtn className="mb-2 w-100" size="lg" style={{ backgroundColor: '#dd4b39' }}>
-                <MDBIcon fab icon="google" className="mx-2" />
-                Sign in with google
-              </MDBBtn>
-              <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#3b5998' }}>
-                <MDBIcon fab icon="facebook-f" className="mx-2" />
-                Sign in with facebook
-              </MDBBtn>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
+
+        <div className="row d-flex justify-content-center align-items-center h-100">
+
+            <div className="card bg-dark text-white" style={{ borderRadius: '1rem' }}>
+              <div className="card-body p-5 text-center">
+                <div className="mb-md-5 mt-md-4 pb-5">
+                  <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
+                  <p className="text-white-50 mb-5">Please enter your login and password!</p>
+                  <div className="form-outline form-white mb-4">
+                  <label className="form-label" htmlFor="typeEmailX">Email</label>
+                    <input type="email" id="typeEmailX" cl  assName="form-control form-control-lg" />
+
+                  </div>
+                  <div className="form-outline form-white mb-4">
+                  <label className="form-label" htmlFor="typePasswordX">Password</label>
+                    <input type="password" id="typePasswordX" className="form-control form-control-lg" />
+
+                  </div>
+                  <p className="small mb-5 pb-lg-2"><a href="#!" className="text-white-50">Forgot password?</a></p>
+                  <button className="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                  <div className="d-flex justify-content-center text-center mt-4 pt-1">
+                    <a href="#!" className="text-white"><i className="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#!" className="text-white"><i className="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                    <a href="#!" className="text-white"><i className="fab fa-google fa-lg"></i></a>
+                  </div>
+                </div>
+                <div>
+                  <p className="mb-0">Don't have an account? <a href="#!" className="text-white-50 fw-bold">Sign Up</a></p>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
   );
-}
+};
 
 export default LoginForm;
