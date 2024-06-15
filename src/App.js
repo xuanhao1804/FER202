@@ -7,14 +7,14 @@ import Home from './pages/HomePage.js';
 function App() {
   return (
     <div className='App'>
-    <ToastContainer/>
-    <BrowserRouter>   
-     <Routes>
-     <Route path='/' element={<Home/>}/>
-     
+      <ToastContainer />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/booking' element={<Home />} />
 
-     </Routes>   
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
