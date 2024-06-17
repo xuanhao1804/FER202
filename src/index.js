@@ -9,11 +9,13 @@ import '../node_modules/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/al
 import '../node_modules/startbootstrap-sb-admin-2/css/sb-admin-2.min.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "react-toastify/dist/ReactToastify.css";
+import UserProfile from './components/UserProfile.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <UserProfile/>
   </React.StrictMode>
 );
 

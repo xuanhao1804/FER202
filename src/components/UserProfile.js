@@ -15,13 +15,13 @@ export default function UserProfile() {
     };
 
     return (
-        <Container>
+        <Container style={{marginTop:"15px"}}>
             <Row style={{ backgroundColor: "#034ea2", marginRight: "70%", borderRadius: "12px" }}>
                 <h2 style={{ color: "#fff", padding: "8px 25px;" }}> Personal information</h2>
             </Row>
             <Row style={{ marginTop: "15px" }}>
                 <Col style={{ textAlign: "center" }}>
-                    <Image src="./logo192.png" width="60%" />
+                    <Image src="./test.png" width="60%" />
                 </Col>
                 <Col>
                     <div style={{ textAlign: "right", marginBottom: "10px" }}>
