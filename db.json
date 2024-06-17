@@ -1,0 +1,121 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "admin",
+        "password": "admin123",
+        "role": "admin",
+        "fullName": "John Doe",
+        "gender": "male",
+        "address": "123 Main St, Anytown USA",
+        "phone": "1234567890",
+        "avatar": "https://example.com/admin-avatar.jpg"
+      },
+      {
+        "id": 2,
+        "username": "student1",
+        "password": "student123",
+        "role": "student",
+        "fullName": "Jane Smith",
+        "gender": "female",
+        "address": "456 Elm St, Anytown USA",
+        "phone": "9876543210",
+        "avatar": "https://example.com/student1-avatar.jpg"
+      }
+    ],
+    "news": [
+      {
+        "id": 1,
+        "title": "Welcome to the new semester!",
+        "description": "We're excited to kick off the new semester and welcome all our new and returning students.",
+        "date": "2023-08-15"
+      },
+      {
+        "id": 2,
+        "title": "Upcoming dorm renovations",
+        "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
+        "date": "2023-11-01"
+      }
+    ],
+    "dormitories": [
+      {
+        "id": 1,
+        "name": "Oak Hall",
+        "totalBeds": 200,
+        "usedBeds": 180,
+        "freeBeds": 20,
+        "floors": [
+          {
+            "id": 1,
+            "floorNumber": 1,
+            "rooms": [
+              {
+                "id": 1,
+                "roomNumber": 101,
+                "roomType": "4 bed",
+                "beds": [
+                  {
+                    "id": 1,
+                    "name": "A",
+                    "status": "occupied",
+                    "student": 2
+                  },
+                  {
+                    "id": 2,
+                    "name": "B",
+                    "status": "occupied",
+                    "student": null
+                  },
+                  {
+                    "id": 3,
+                    "name": "C",
+                    "status": "occupied",
+                    "student": null
+                  },
+                  {
+                    "id": 4,
+                    "name": "D",
+                    "status": "available",
+                    "student": null
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "bookingRequests": [
+      {
+        "id": 1,
+        "student": 2,
+        "dormitory": 1,
+        "floor": 1,
+        "room": 1,
+        "bed": 4,
+        "semester": "Fall 2023",
+        "status": "pending"
+      }
+    ],
+    "payments": [
+      {
+        "id": 1,
+        "student": 2,
+        "amount": 1000,
+        "date": "2023-08-15",
+        "semester": "Fall 2023"
+      }
+    ],
+    "rules": [
+      {
+        "id": 1,
+        "title": "Quiet Hours",
+        "description": "Quiet hours are from 10 PM to 7 AM. Please keep noise to a minimum during these times."
+      },
+      {
+        "id": 2,
+        "title": "No Smoking",
+        "description": "Smoking is strictly prohibited in all dorm rooms and common areas."
+      }
+    ]
+  }
