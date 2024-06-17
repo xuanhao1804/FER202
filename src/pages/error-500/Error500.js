@@ -3,7 +3,7 @@
 export default function Error500Page(){
     return(
         <>
-        <div>500</div>
+        <div>500Error</div>
         </>
     )
 }
