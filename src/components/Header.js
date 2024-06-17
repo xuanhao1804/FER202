@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,24 @@ import { Link } from 'react-router-dom';
 function Header() {
   const [showModal, setShowModal] = useState(false);
 
+=======
+import { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import LoginForm from "./LoginForm"; // Import the LoginForm component
+function Header() {
+  const [showModal, setShowModal] = useState(false);
+
+  const [showLoginForm, setShowLoginForm] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const toggleLoginModal = () => {
+    setShowLoginModal(!showLoginModal);
+  };
+  const toggleLoginForm = () => {
+    setShowLoginForm(!showLoginForm);
+  };
+>>>>>>> 28d9f6a73c5b7f7db017b1dcd715068a7769ec6d
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -20,6 +39,7 @@ function Header() {
       <nav>
         <ul>
           <Link to="/aaa" className="user-greeting">
+<<<<<<< HEAD
             <p className="font" >Xin chào, User!</p> {/* Static user greeting for demonstration */}
           </Link>
           <Link to="/" className="font">Home</Link>
@@ -28,6 +48,35 @@ function Header() {
           <Link onClick={toggleModal} className="font logout">Logout</Link>
         </ul>
       </nav>
+=======
+            <p className="font">Xin chào, User!</p>
+          </Link>
+          <Link to="/" className="font">
+            Home
+          </Link>
+          <Link to="/about" className="font">
+            About
+          </Link>
+          <Link to="/profile" className="font">
+            Profile
+          </Link>
+          <Link onClick={toggleLoginModal} className="font logout">
+            Login
+          </Link>
+        </ul>
+      </nav>
+      <Modal
+        show={showLoginModal}
+        onHide={toggleLoginModal}
+        centered
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Body>
+          <LoginForm />
+        </Modal.Body>
+      </Modal>
+>>>>>>> 28d9f6a73c5b7f7db017b1dcd715068a7769ec6d
       {/* <Modal show={showModal} onHide={toggleModal}>
         <Modal.Header closeButton>
           <Modal.Title>Logout</Modal.Title>
@@ -40,7 +89,12 @@ function Header() {
           <Button variant="primary" onClick={handleLogout}>Logout</Button>
         </Modal.Footer>
       </Modal> */}
+<<<<<<< HEAD
       <style>{`
+=======
+      <style>
+        {`
+>>>>>>> 28d9f6a73c5b7f7db017b1dcd715068a7769ec6d
         .header {
           padding: 10px;
         }

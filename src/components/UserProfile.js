@@ -13,15 +13,25 @@ export default function UserProfile() {
         // Xử lý lưu thông tin cá nhân ở đây
         setIsEditing(false);
     };
+<<<<<<< HEAD
 //new update
     return (
         <Container style={{marginTop:"15px"}}>
+=======
+
+    return (
+        <Container>
+>>>>>>> 28d9f6a73c5b7f7db017b1dcd715068a7769ec6d
             <Row style={{ backgroundColor: "#034ea2", marginRight: "70%", borderRadius: "12px" }}>
                 <h2 style={{ color: "#fff", padding: "8px 25px;" }}> Personal information</h2>
             </Row>
             <Row style={{ marginTop: "15px" }}>
                 <Col style={{ textAlign: "center" }}>
+<<<<<<< HEAD
                     <Image src="./test.png" width="60%" />
+=======
+                    <Image src="./logo192.png" width="60%" />
+>>>>>>> 28d9f6a73c5b7f7db017b1dcd715068a7769ec6d
                 </Col>
                 <Col>
                     <div style={{ textAlign: "right", marginBottom: "10px" }}>
