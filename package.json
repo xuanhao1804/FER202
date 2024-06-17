@@ -8,10 +8,6 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6d6f68b (add axios)
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.3",
@@ -25,13 +21,6 @@
     "react-bootstrap-icons": "^1.10.3",
     "react-dom": "^18.3.1",
     "react-modal": "^3.16.1",
-=======
-    "bootstrap": "^5.3.3",
-    "json-server": "^1.0.0-beta.1",
-    "react": "^18.3.1",
-    "react-bootstrap": "^2.10.2",
-    "react-dom": "^18.3.1",
->>>>>>> dd83f25 (update package.json)
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "react-slideshow-image": "^4.3.1",
