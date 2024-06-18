@@ -4,6 +4,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage.js";
 import LoginForm from "./components/LoginForm.js";
 import UserProfile from "./components/UserProfile.js";
+import BookingBed from "./pages/BookingBed.js";
+import ManagePendingBooking from "./pages/ManagePendingBooking.js";
+import TemplateUser from "./layout/LayoutUser.js";
 
 function App() {
   return (
@@ -23,7 +26,7 @@ function App() {
           <Route path="/listroom" element={<Home />} />                {/*   view list room in dom     */}
           <Route path="/manage/room/add" element={<Home />} />              {/*    add room admin    */}
           <Route path="/manage/noti" element={<Home />} />             {/*   manage notidication    */}
-          <Route path="/booking" element={<Home />} />            {/*   booking bed student     */}
+          <Route path="/booking" element={<BookingBed />} />            {/*   booking bed student     */}
           <Route path="/error404" element={<Home />} />               {/*    web error404  */}
           <Route path="/*" element={<Home />} />                 {/*    default home    */}
           <Route path="/manager/resident" element={<Home />} />         {/*     manage resistent admin   */}
@@ -32,7 +35,8 @@ function App() {
           <Route path="/edit/noti/:id" element={<Home />} />           {/*   edit news admin     */}
           <Route path="/payment" element={<Home />} />           {/*     payment student   */}
           <Route path="/paymenthistory" element={<Home />} />         {/*     history payment student   */}
-          <Route path="/manage/payment" element={<Home />} />      {/*    check list payment admin    */}
+          <Route path="/manage/payment" element={<Home />} />
+          <Route path="/manage/booking" element={<ManagePendingBooking />} />       {/*    check list payment admin    */}
         </Routes>
       </BrowserRouter>
     </div>
