@@ -3,26 +3,6 @@ import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LoginForm from "./LoginForm"; // Import the LoginForm component
 function Header() {
-  const [showModal, setShowModal] = useState(false);
-
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false);
-
-  const toggleLoginModal = () => {
-    setShowLoginModal(!showLoginModal);
-  };
-  const toggleLoginForm = () => {
-    setShowLoginForm(!showLoginForm);
-  };
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-
-  const handleLogout = () => {
-    setShowModal(false);
-    // Xử lý logout tại đây
-  };
-
   return (
     <div className="header">
       <img src="https://ocd.fpt.edu.vn/Content/images/landing/logo.png" alt="Logo" />
@@ -31,43 +11,22 @@ function Header() {
           <Link to="/aaa" className="user-greeting">
             <p className="font">Xin chào, User!</p>
           </Link>
-          <Link to="/" className="font">
+          {/* <Link to="/" className="font">
             Home
-          </Link>
+          </Link> */}
           <Link to="/about" className="font">
             About
           </Link>
-          <Link to="/profile" className="font">
+          {/* <Link to="/profile" className="font">
             Profile
-          </Link>
-          <Link onClick={toggleLoginModal} className="font logout">
+          </Link> */}
+          <Link to="/login" className="font logout">
             Login
           </Link>
         </ul>
       </nav>
-      <Modal
-        show={showLoginModal}
-        onHide={toggleLoginModal}
-        centered
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Body>
-          <LoginForm />
-        </Modal.Body>
-      </Modal>
-      {/* <Modal show={showModal} onHide={toggleModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Logout</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>Are you sure you want to logout?</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={toggleModal}>Cancel</Button>
-          <Button variant="primary" onClick={handleLogout}>Logout</Button>
-        </Modal.Footer>
-      </Modal> */}
+
+
       <style>
         {`
         .header {

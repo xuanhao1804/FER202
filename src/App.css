@@ -26,6 +26,11 @@ nav ul {
   display: flex;
 }
 
+.row {
+  display: flex;
+  justify-content: center;
+}
+
 .font {
   margin-right: 50px;
   color: rgb(0, 149, 255);
@@ -102,10 +107,6 @@ nav li {
 
 }
 
-.row {
-  display: flex;
-  justify-content: center;
-}
 .list1 {
   margin-right: 100px;
   margin-left: 100px;
@@ -117,15 +118,17 @@ nav li {
   border-radius: 12px;
   margin-bottom: 10px;
 }
+
 .info-KTX {
   padding-top: 100px;
   display: flex;
   flex-direction: column;
   gap: 72px;
 }
+
 .line {
-  
- 
+
+
   font-weight: 700;
   font-size: 36px;
   line-height: 44px;
@@ -133,30 +136,33 @@ nav li {
   text-align: center;
   padding: 12px;
   padding-bottom: 0;
-  background-color: #fff;  
+  background-color: #fff;
 }
 
 
 
 
-.footer{
-  padding: 10px 10px ;
+.footer {
+  padding: 10px 10px;
   margin: 10px 20px;
   background-color: #d7e0af;
   color: #f49120;
-  
+
 }
+
 /*****/
 .ReactModal__Overlay {
   z-index: 99999;
 }
+
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   height: 500px;
-  width: 350px; /* Chiều rộng của form */
+  width: 350px;
+  /* Chiều rộng của form */
   padding: 60px 90px;
 }
 
@@ -170,7 +176,8 @@ input {
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 100%; /* Chiều rộng của input */
+  width: 100%;
+  /* Chiều rộng của input */
 }
 
 .buttons {
@@ -192,11 +199,13 @@ button {
 button:hover {
   background-color: #0069d9;
 }
-.form h1{
+
+.form h1 {
   margin-top: 20%;
   margin-bottom: 20%;
   color: #007bff;
 }
+
 .login-input {
   padding-left: 60px;
   height: 60px;
@@ -205,9 +214,10 @@ button:hover {
   font-size: 20px;
   color: rgb(105, 105, 195)
 }
+
 /*****/
 .menu-full {
-  
+
   position: fixed;
   top: 20px;
   left: 0;
@@ -280,9 +290,11 @@ button:hover {
 .memu-bottom-detail {
   display: flex;
 }
-.pl-328{
+
+.pl-328 {
   padding-left: 328px;
 }
+
 .content-body {
   padding-top: 80px;
   position: absolute;
@@ -291,15 +303,10 @@ button:hover {
   background-color: var(--white-color);
 }
 
-.divider{
-  width:5px;
-  height:auto;
-  display:inline-block;
+.divider {
+  width: 5px;
+  height: auto;
+  display: inline-block;
 }
+
 /* CSS */
-
-
-
-
-
-
