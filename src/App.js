@@ -1,35 +1,12 @@
-<<<<<<< HEAD
 
-import { ToastContainer } from 'react-toastify';
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/HomePage.js';
-import LoginForm from './components/LoginForm.jsx';
-import UserProfile from './component/UserProfile.js';
-import ManageNewsAdmin from './components/News2.js';
-
-function App() {
-  return (
-    <div className='App'>
-    <ToastContainer/>
-    <BrowserRouter>   
-     <Routes>
-     <Route path='/' element={<Home/>}/>
-     <Route path='/login' element={<LoginForm/>}/>
-     <Route path='/user' element={<UserProfile/>}/>
-     <Route path='/123' element={<ManageNewsAdmin/>}/>
-     
-     
-
-     </Routes>   
-    </BrowserRouter>
-=======
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage.js";
 import LoginForm from "./components/LoginForm.js";
 import UserProfile from "./components/UserProfile.js";
+import ManageNewsAdmin from "./components/ManageNewsAdmin.js";
+import News from "./components/News.js";
 
 function App() {
   return (
@@ -38,6 +15,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news2" element={<ManageNewsAdmin />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/user" element={<UserProfile />} />
           <Route path="/user/:id" element={<Home />} />             {/*profile user*/}     
@@ -61,7 +40,7 @@ function App() {
           <Route path="/manage/payment" element={<Home />} />      {/*    check list payment admin    */}
         </Routes>
       </BrowserRouter>
->>>>>>> a3df23877fc8ac7eff876d08c778a3cd2d757b8f
+
     </div>
   );
 }
