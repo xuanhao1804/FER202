@@ -5,6 +5,7 @@ import Home from "./pages/HomePage.js";
 import LoginForm from "./components/LoginForm.js";
 import UserProfile from "./components/UserProfile.js";
 import ListRoom from "./pages/ListRoom.js";
+import ManagerRoom from "./pages/ManagerRoom.js";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="/user/edit/:id" element={<Home />} />           {/*   edit profile student     */}
           <Route path="/manage/account" element={<Home />} />         {/*   admin manage account     */}
           <Route path="/user/:id" element={<Home />} />            {/*    view profile    */}
-          <Route path="/manage/room" element={<Home />} />              {/*     manage rooma dmin   */}
+          <Route path="/manage/room" element={<ManagerRoom />} />              {/*     manage rooma dmin   */}
           <Route path="/manage/room/edit/r:roomid" element={<Home />} />  {/* edit info room dorm*/}
           <Route path="/listroom" element={<ListRoom />} />                {/*   view list room in dom     */}
           <Route path="/manage/room/add" element={<Home />} />              {/*    add room admin    */}
