@@ -6,6 +6,11 @@ import { Container, Row, Col, Form, Button, Table } from 'react-bootstrap';
 const ManageNewsAdmin = () => {
   // Functionality for managing news can be implemented here
 
+  const buttonStyle = {
+    backgroundColor: 'green',
+    marginRight: '10px'
+  };
+
   return (
     <Container fluid>
       <Row className="mt-4">
@@ -52,8 +57,9 @@ const ManageNewsAdmin = () => {
                 <td>News Title</td>
                 <td>News Content</td>
                 <td>
-                  <Button variant="danger" size="sm">Delete</Button>
-                </td>
+            <Button style={buttonStyle} size="sm">Edit</Button>
+            <Button variant="danger" size="sm">Delete</Button>
+          </td>
               </tr>
             </tbody>
           </Table>

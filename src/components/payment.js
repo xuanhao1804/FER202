@@ -2,8 +2,7 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import TemplateUser from "../template/TemplateUser";
-import phuc from '../qrcode.jpeg'
+
 const Payment = () => {
     const [pcost, setpCost] = useState("")
     const [user, setUser] = useState([])
@@ -62,7 +61,7 @@ const Payment = () => {
         
     };
     return (
-        <TemplateUser>
+
         <Col
             className="offset-md-2 col-md-8"
             style={{ border: "1px solid red", marginTop: "100px", padding: "30px" }}
@@ -91,9 +90,7 @@ const Payment = () => {
                                 )}
                             </Form.Group>
                         </Row>
-                        <Row>
-                            <img src={phuc}/>
-                        </Row>
+
                         <Row>
                             <Col
                                 className="col-md-12"
@@ -114,7 +111,7 @@ const Payment = () => {
                 </Col>
             </Row>
         </Col>
-        </TemplateUser>
+
     );
 }
 
