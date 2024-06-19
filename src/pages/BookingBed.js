@@ -128,6 +128,34 @@ function BookingBed() {
                 }
             ]
         },
+        {
+            "id": 4,
+            "name": "D",
+            type: 2,
+            floors: [
+                {
+                    "id": 1,
+                    "floorNumber": 1,
+                    "totalBeds": 20,
+                    "usedBeds": 7,
+                    "freeBeds": 13,
+                },
+                {
+                    "id": 2,
+                    "floorNumber": 2,
+                    "totalBeds": 20,
+                    "usedBeds": 10,
+                    "freeBeds": 10,
+                },
+                {
+                    "id": 3,
+                    "floorNumber": 3,
+                    "totalBeds": 20,
+                    "usedBeds": 9,
+                    "freeBeds": 11,
+                }
+            ]
+        },
         
     ]
 
@@ -152,21 +180,19 @@ function BookingBed() {
     }
     useEffect(() => {
         const selectedDorms = doms?.filter((dorm) => dorm.id == domid);
-        if (selectedDorms.length > 0) {
+        
             const selectedDorm = selectedDorms[0];
             setFloor(selectedDorm.floors);
-            const b = selectedDorm.floors.find((f) => f.id == floorID);
+            const b = selectedDorm.floors?.find((f) => f.id == floorID);
             if (b) {
                 setFreeBed(b);
             } else {
-                setFreeBed(selectedDorm.floors.find((f) => f.id == 1));
+                setFreeBed(selectedDorm.floors?.find((f) => f.id == 1));
             }
-        }
+        
+        console.log(floorID)
     }, [domid, floorID]);
-    console.log(floor)
-    console.log(floorID)
-    console.log(freeBed)
-    console.log(domid)
+    
     const isCostValid = cost && cost > 0;
     return (
         <TemplateUser>
