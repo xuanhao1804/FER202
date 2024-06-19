@@ -5,7 +5,7 @@ export default function Lading() {
             <div className="flex justify-between">
                 <div>
                     <p className="title">Kênh thông tin</p>
-                    <p className="title2">Ký túc xá Đại Học FPT</p>
+                    <p className="title2"> Ký túc xá Đại Học FPT</p>
                 </div>
             </div>
         </div>
