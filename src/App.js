@@ -5,6 +5,7 @@ import Home from "./pages/HomePage.js";
 import LoginForm from "./components/LoginForm.js";
 import UserProfile from "./components/UserProfile.js";
 import ListRoom from "./pages/ListRoom.js";
+import Register from "./components/Register.jsx";
 
 function App() {
   return (
@@ -14,26 +15,27 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/user" element={<UserProfile />} />
-          <Route path="/user/:id" element={<Home />} />             {/*profile user*/}     
-          <Route path="/user/edit/:id" element={<Home />} />           {/*   edit profile student     */}
-          <Route path="/manage/account" element={<Home />} />         {/*   admin manage account     */}
-          <Route path="/user/:id" element={<Home />} />            {/*    view profile    */}
-          <Route path="/manage/room" element={<Home />} />              {/*     manage rooma dmin   */}
-          <Route path="/manage/room/edit/r:roomid" element={<Home />} />  {/* edit info room dorm*/}
-          <Route path="/listroom" element={<ListRoom />} />                {/*   view list room in dom     */}
-          <Route path="/manage/room/add" element={<Home />} />              {/*    add room admin    */}
-          <Route path="/manage/noti" element={<Home />} />             {/*   manage notidication    */}
-          <Route path="/booking" element={<Home />} />            {/*   booking bed student     */}
-          <Route path="/error404" element={<Home />} />               {/*    web error404  */}
-          <Route path="/*" element={<Home />} />                 {/*    default home    */}
-          <Route path="/manager/resident" element={<Home />} />         {/*     manage resistent admin   */}
-          <Route path="/viewnoti" element={<Home />} />          {/*    view news common   */}
-          <Route path="/manage/noti/add" element={<Home />} />           {/*    add news admin   */}
-          <Route path="/edit/noti/:id" element={<Home />} />           {/*   edit news admin     */}
-          <Route path="/payment" element={<Home />} />           {/*     payment student   */}
-          <Route path="/paymenthistory" element={<Home />} />         {/*     history payment student   */}
-          <Route path="/manage/payment" element={<Home />} />      {/*    check list payment admin    */}
+          <Route path="/user/:id" element={<Home />} />                  
+          <Route path="/user/edit/:id" element={<Home />} />           
+          <Route path="/manage/account" element={<Home />} />       
+          <Route path="/user/:id" element={<Home />} />        
+          <Route path="/manage/room" element={<Home />} />             
+          <Route path="/manage/room/edit/r:roomid" element={<Home />} />  
+          <Route path="/listroom" element={<ListRoom />} />               
+          <Route path="/manage/room/add" element={<Home />} />             
+          <Route path="/manage/noti" element={<Home />} />          
+          <Route path="/booking" element={<Home />} />           
+          <Route path="/error404" element={<Home />} />           
+          <Route path="/*" element={<Home />} />             
+          <Route path="/manager/resident" element={<Home />} />      
+          <Route path="/viewnoti" element={<Home />} />         
+          <Route path="/manage/noti/add" element={<Home />} />         
+          <Route path="/edit/noti/:id" element={<Home />} />          
+          <Route path="/payment" element={<Home />} />          
+          <Route path="/paymenthistory" element={<Home />} />         
+          <Route path="/manage/payment" element={<Home />} />     
         </Routes>
       </BrowserRouter>
     </div>
