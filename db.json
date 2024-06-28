@@ -1,121 +1,273 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "admin",
-        "password": "admin123",
-        "role": "admin",
-        "fullName": "John Doe",
-        "gender": "male",
-        "address": "123 Main St, Anytown USA",
-        "phone": "1234567890",
-        "avatar": "https://example.com/admin-avatar.jpg"
-      },
-      {
-        "id": 2,
-        "username": "student1",
-        "password": "student123",
-        "role": "student",
-        "fullName": "Jane Smith",
-        "gender": "female",
-        "address": "456 Elm St, Anytown USA",
-        "phone": "9876543210",
-        "avatar": "https://example.com/student1-avatar.jpg"
-      }
-    ],
-    "news": [
-      {
-        "id": 1,
-        "title": "Welcome to the new semester!",
-        "description": "We're excited to kick off the new semester and welcome all our new and returning students.",
-        "date": "2023-08-15"
-      },
-      {
-        "id": 2,
-        "title": "Upcoming dorm renovations",
-        "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
-        "date": "2023-11-01"
-      }
-    ],
-    "dormitories": [
-      {
-        "id": 1,
-        "name": "A",
-        "totalBeds": 200,
-        "usedBeds": 180,
-        "freeBeds": 20,
-        "floors": [
-          {
-            "id": 1,
-            "floorNumber": 1,
-            "rooms": [
-              {
-                "id": 1,
-                "roomNumber": 101,
-                "roomType": "4 bed",
-                "beds": [
-                  {
-                    "id": 1,
-                    "name": "A",
-                    "status": "occupied",
-                    "student": 2
-                  },
-                  {
-                    "id": 2,
-                    "name": "B",
-                    "status": "occupied",
-                    "student": null
-                  },
-                  {
-                    "id": 3,
-                    "name": "C",
-                    "status": "occupied",
-                    "student": null
-                  },
-                  {
-                    "id": 4,
-                    "name": "D",
-                    "status": "available",
-                    "student": null
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "bookingRequests": [
-      {
-        "id": 1,
-        "studentid": 2,
-        "dormitory": 1,
-        "floor": 1,
-        "room": 1,
-        "bed": 4,
-        "semester": "Fall 2023",
-        "status": "pending"
-      }
-    ],
-    "payments": [
-      {
-        "id": 1,
-        "student": 2,
-        "amount": 1000,
-        "date": "2023-08-15",
-        "semester": "Fall 2023"
-      }
-    ],
-    "rules": [
-      {
-        "id": 1,
-        "title": "Quiet Hours",
-        "description": "Quiet hours are from 10 PM to 7 AM. Please keep noise to a minimum during these times."
-      },
-      {
-        "id": 2,
-        "title": "No Smoking",
-        "description": "Smoking is strictly prohibited in all dorm rooms and common areas."
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin",
+      "fullName": "John Doe",
+      "gender": "male",
+      "address": "123 Main St, Anytown USA",
+      "phone": "1234567890",
+      "avatar": "https://example.com/admin-avatar.jpg"
+    },
+    {
+      "id": 2,
+      "username": "student1",
+      "password": "student123",
+      "role": "student",
+      "fullName": "Jane Smith",
+      "gender": "female",
+      "address": "456 Elm St, Anytown USA",
+      "phone": "9876543210",
+      "avatar": "https://example.com/student1-avatar.jpg"
+    },
+    {
+      "id": 3,
+      "username": "student2",
+      "password": "pass456",
+      "role": "student",
+      "fullName": "Mike Johnson",
+      "gender": "male",
+      "address": "789 Oak St, Anytown USA",
+      "phone": "5551234567",
+      "avatar": "https://example.com/student2-avatar.jpg"
+    },
+    {
+      "id": 4,
+      "username": "staff1",
+      "password": "staffpass",
+      "role": "staff",
+      "fullName": "Emily Brown",
+      "gender": "female",
+      "address": "321 Pine St, Anytown USA",
+      "phone": "1112223333",
+      "avatar": "https://example.com/staff1-avatar.jpg"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Welcome to the new semester!",
+      "description": "We're excited to kick off the new semester and welcome all our new and returning students.",
+      "date": "2023-08-15"
+    },
+    {
+      "id": 2,
+      "title": "Upcoming dorm renovations",
+      "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
+      "date": "2023-11-01"
+    },
+    {
+      "id": 3,
+      "title": "Campus-wide Wi-Fi upgrade",
+      "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage.",
+      "date": "2023-09-10"
+    },
+    {
+      "id": 4,
+      "title": "New meal plans available",
+      "description": "Check out our new flexible meal plan options for the upcoming semester!",
+      "date": "2023-07-20"
+    }
+  ],
+  "dormitories": [
+    {
+      "id": 1,
+      "name": "A",
+      "totalBeds": 200,
+      "usedBeds": 180,
+      "freeBeds": 20,
+      "floors": [
+        {
+          "id": 1,
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "id": 1,
+              "roomNumber": 101,
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "id": 1,
+                  "name": "A",
+                  "status": "occupied",
+                  "student": 2
+                },
+                {
+                  "id": 2,
+                  "name": "B",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": 3,
+                  "name": "C",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": 4,
+                  "name": "D",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "roomNumber": 102,
+              "roomType": "2 bed",
+              "beds": [
+                {
+                  "id": 5,
+                  "name": "A",
+                  "status": "occupied",
+                  "student": 3
+                },
+                {
+                  "id": 6,
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "floorNumber": 2,
+          "rooms": [
+            {
+              "id": 3,
+              "roomNumber": 201,
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "id": 7,
+                  "name": "A",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": 8,
+                  "name": "B",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": 9,
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "B",
+      "totalBeds": 150,
+      "usedBeds": 120,
+      "freeBeds": 30,
+      "floors": [
+        {
+          "id": 3,
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "id": 4,
+              "roomNumber": 101,
+              "roomType": "2 bed",
+              "beds": [
+                {
+                  "id": 10,
+                  "name": "A",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": 11,
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "bookingRequests": [
+    {
+      "id": 1,
+      "studentid": 2,
+      "dormitory": 1,
+      "floor": 1,
+      "room": 1,
+      "bed": 4,
+      "semester": "Fall 2023",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "studentid": 3,
+      "dormitory": 2,
+      "floor": 1,
+      "room": 4,
+      "bed": 11,
+      "semester": "Fall 2023",
+      "status": "approved"
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "student": 2,
+      "amount": 1000,
+      "date": "2023-08-15",
+      "semester": "Fall 2023"
+    },
+    {
+      "id": 2,
+      "student": 3,
+      "amount": 950,
+      "date": "2023-08-20",
+      "semester": "Fall 2023"
+    },
+    {
+      "id": 3,
+      "student": 2,
+      "amount": 1000,
+      "date": "2024-01-10",
+      "semester": "Spring 2024"
+    }
+  ],
+  "rules": [
+    {
+      "id": 1,
+      "title": "Quiet Hours",
+      "description": "Quiet hours are from 10 PM to 7 AM. Please keep noise to a minimum during these times."
+    },
+    {
+      "id": 2,
+      "title": "No Smoking",
+      "description": "Smoking is strictly prohibited in all dorm rooms and common areas."
+    },
+    {
+      "id": 3,
+      "title": "Guests Policy",
+      "description": "Overnight guests are allowed for a maximum of 3 consecutive nights and must be registered at the front desk."
+    },
+    {
+      "id": 4,
+      "title": "Room Inspections",
+      "description": "Regular room inspections will be conducted to ensure cleanliness and compliance with dorm policies."
+    }
+  ]
+}
