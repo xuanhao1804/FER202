@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LoginForm from "./LoginForm"; // Import the LoginForm component
+
 function Header() {
   const [showModal, setShowModal] = useState(false);
 
@@ -45,17 +46,18 @@ function Header() {
           </Link>
         </ul>
       </nav>
-      <Modal
+      <Modal id="login-modal"
         show={showLoginModal}
         onHide={toggleLoginModal}
         centered
-        backdrop="static"
+        // backdrop="static"
         keyboard={false}
       >
         <Modal.Body>
           <LoginForm />
         </Modal.Body>
       </Modal>
+
       {/* <Modal show={showModal} onHide={toggleModal}>
         <Modal.Header closeButton>
           <Modal.Title>Logout</Modal.Title>
