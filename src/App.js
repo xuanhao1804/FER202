@@ -8,8 +8,10 @@ import BookingBed from "./pages/BookingBed.js";
 import ManagePendingBooking from "./pages/ManagePendingBooking.js";
 import TemplateUser from "./layout/LayoutUser.js";
 import ListRoom from "./pages/ListRoom.js";
+import ManagerRoom from "./pages/ManagerRoom.js";
 import Register from "./components/Register.jsx";
 import NotFoundPage from "./pages/error-404/Error.js";
+
 
 function App() {
   return (
@@ -22,6 +24,12 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/user" element={<UserProfile />} />
 
+          <Route path="/user/:id" element={<Home />} />             {/*profile user*/}     
+          <Route path="/user/edit/:id" element={<Home />} />           {/*   edit profile student     */}
+          <Route path="/manage/account" element={<Home />} />         {/*   admin manage account     */}
+          <Route path="/user/:id" element={<Home />} />            {/*    view profile    */}
+          <Route path="/manage/room" element={<ManagerRoom />} />              {/*     manage rooma dmin   */}
+          <Route path="/manage/room/edit/r:roomid" element={<Home />} />  {/* edit info room dorm*/}
           <Route path="/listroom" element={<ListRoom />} />                {/*   view list room in dom     */}
 
 

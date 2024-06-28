@@ -1,8 +1,19 @@
+
+import Header from "../components/Header";
 import SideBarAdmin from "../components/SidebarAdmin";
-import { Row,Col } from "react-bootstrap";
+import { Row,Col, Container } from "react-bootstrap";
 
 export default function LayoutAdmin({title="", children}){
     return(
+        <Container fluid>
+            <Header/>
+
+      
+      
+      
+      
+      
+      
         <Row style={{justifyContent:'flex-start'}}>
             <Col md={2} xs={2}>
             <SideBarAdmin/>
@@ -11,7 +22,16 @@ export default function LayoutAdmin({title="", children}){
             <div style={{marginTop:"90px"}}>{children}</div>
             </Col>
         </Row>
-            
+
+
+
+
+
+
+
+
+        </Container>
+
 
     );
 }
