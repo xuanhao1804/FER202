@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Nav, Navbar } from 'react-bootstrap';
-import logoFooter from '../assert/images/logo-footer.png'; 
+import logoFooter from '../aaalogo.png'; 
 
 export default function Footer() {
   return (

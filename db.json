@@ -40,7 +40,7 @@
     "dormitories": [
       {
         "id": 1,
-        "name": "Oak Hall",
+        "name": "A",
         "totalBeds": 200,
         "usedBeds": 180,
         "freeBeds": 20,
@@ -88,7 +88,7 @@
     "bookingRequests": [
       {
         "id": 1,
-        "student": 2,
+        "studentid": 2,
         "dormitory": 1,
         "floor": 1,
         "room": 1,
