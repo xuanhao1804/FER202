@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage.js";
 import Login from "./components/LoginForm.js";
-import UserProfile from "./components/UserProfile.js";
+import UserProfile from "./pages/UserProfile.js";
 import BookingBed from "./pages/BookingBed.js";
 import ManagePendingBooking from "./pages/ManagePendingBooking.js";
 import TemplateUser from "./layout/LayoutUser.js";
@@ -24,7 +24,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/user" element={<UserProfile />} />
 
-          <Route path="/user/:id" element={<Home />} />             {/*profile user*/}     
+          <Route path="/user/:id" element={<UserProfile />} />             {/*profile user*/}     
           <Route path="/user/edit/:id" element={<Home />} />           {/*   edit profile student     */}
           <Route path="/manage/account" element={<Home />} />         {/*   admin manage account     */}
           <Route path="/user/:id" element={<Home />} />            {/*    view profile    */}
