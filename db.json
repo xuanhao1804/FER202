@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "email": "admin@example.com",
       "password": "hashed_admin123",
@@ -17,7 +17,7 @@
       "lastLogin": "2023-06-28T15:30:45Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "student1",
       "email": "student1@example.com",
       "password": "hashed_student123",
@@ -33,7 +33,7 @@
       "lastLogin": "2023-06-28T16:00:00Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "student2",
       "email": "student2@example.com",
       "password": "hashed_pass456",
@@ -49,7 +49,7 @@
       "lastLogin": "2023-06-28T16:30:00Z"
     },
     {
-      "id": 4,
+      "id": "4",
       "username": "staff1",
       "email": "staff1@example.com",
       "password": "hashed_staffpass",
@@ -63,13 +63,46 @@
       "isEmailVerified": true,
       "createdAt": "2023-06-28T17:00:00Z",
       "lastLogin": "2023-06-28T17:00:00Z"
+    },
+    {
+      "id": "02d7",
+      "username": "haoboy2k2",
+      "email": "haolxhe172802@fpt.edu.vn",
+      "password": "abc@123",
+      "fullName": "Lê philip",
+      "gender": "male",
+      "address": "haolxhe172802",
+      "phone": "0363066815",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-03T14:34:41.123Z",
+      "lastLogin": "2024-07-03T14:34:41.123Z"
+    },
+    {
+      "id": "5012",
+      "username": "xuanhao1804",
+      "email": "xuanhao1804@gmail.com",
+      "password": "123123",
+      "fullName": "Lê Hào",
+      "gender": "male",
+      "address": "adress",
+      "phone": "0123456789",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-03T15:11:52.711Z",
+      "lastLogin": "2024-07-03T15:11:52.711Z"
     }
   ],
   "auth_tokens": [
     {
       "userId": 1,
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-      "expiresAt": "2023-06-29T15:30:45Z"
+      "expiresAt": "2023-06-29T15:30:45Z",
+      "id": "34f3"
     }
   ],
   "auth_providers": [
@@ -79,30 +112,31 @@
       "providerId": "118234567890123456789",
       "accessToken": "ya29.a0AfH6SMCUV...",
       "refreshToken": "1//0abcdefghijklm...",
-      "expiresAt": "2023-06-29T16:00:00Z"
+      "expiresAt": "2023-06-29T16:00:00Z",
+      "id": "d362"
     }
   ],
   "news": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Welcome to the new semester!",
       "description": "We're excited to kick off the new semester and welcome all our new and returning students.",
       "date": "2023-08-15"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Upcoming dorm renovations",
       "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
       "date": "2023-11-01"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Campus-wide Wi-Fi upgrade",
       "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage.",
       "date": "2023-09-10"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "New meal plans available",
       "description": "Check out our new flexible meal plan options for the upcoming semester!",
       "date": "2023-07-20"
@@ -110,7 +144,7 @@
   ],
   "dormitories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "A",
       "totalBeds": 200,
       "usedBeds": 180,
@@ -206,7 +240,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "B",
       "totalBeds": 150,
       "usedBeds": 120,
@@ -242,7 +276,7 @@
   ],
   "bookingRequests": [
     {
-      "id": 1,
+      "id": "1",
       "studentid": 2,
       "dormitory": 1,
       "floor": 1,
@@ -252,7 +286,7 @@
       "status": "pending"
     },
     {
-      "id": 2,
+      "id": "2",
       "studentid": 3,
       "dormitory": 2,
       "floor": 1,
@@ -264,21 +298,21 @@
   ],
   "payments": [
     {
-      "id": 1,
+      "id": "1",
       "student": 2,
       "amount": 1000,
       "date": "2023-08-15",
       "semester": "Fall 2023"
     },
     {
-      "id": 2,
+      "id": "2",
       "student": 3,
       "amount": 950,
       "date": "2023-08-20",
       "semester": "Fall 2023"
     },
     {
-      "id": 3,
+      "id": "3",
       "student": 2,
       "amount": 1000,
       "date": "2024-01-10",
@@ -287,22 +321,22 @@
   ],
   "rules": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Quiet Hours",
       "description": "Quiet hours are from 10 PM to 7 AM. Please keep noise to a minimum during these times."
     },
-    { 
-      "id": 2,
+    {
+      "id": "2",
       "title": "No Smoking",
       "description": "Smoking is strictly prohibited in all dorm rooms and common areas."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Guests Policy",
       "description": "Overnight guests are allowed for a maximum of 3 consecutive nights and must be registered at the front desk."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Room Inspections",
       "description": "Regular room inspections will be conducted to ensure cleanliness and compliance with dorm policies."
     }

@@ -1,30 +1,47 @@
-import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import LoginForm from "./LoginForm"; // Import the LoginForm component
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 function Header() {
-  
+  const [userName, setUserName] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Retrieve user data from local storage
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      setUserName(user.name || user.email); // Use user name if available, otherwise use email
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUserName('');
+    toast.success('Logged out successfully');
+    navigate('/login');
+  };
 
   return (
     <div className="header">
       <img src="https://ocd.fpt.edu.vn/Content/images/landing/logo.png" alt="Logo" />
       <nav>
         <ul>
-          <Link to="/aaa" className="user-greeting">
-            <p className="font">Xin chào, User!</p>
-          </Link>
-          {/* <Link to="/" className="font">
-            Home
-          </Link> */}
+          {userName ? (
+            <>
+              <Link to="/aaa" className="user-greeting">
+                <p className="font">Xin chào, {userName}!</p>
+              </Link>
+              <Link to="#" className="font logout" onClick={handleLogout}>
+                Logout
+              </Link>
+            </>
+          ) : (
+            <Link to="/login" className="font logout">
+              Login
+            </Link>
+          )}
           <Link to="/about" className="font">
             About
-          </Link>
-          {/* <Link to="/profile" className="font">
-            Profile
-          </Link> */}
-          <Link to="/login" className="font logout">
-            Login
           </Link>
         </ul>
       </nav>
