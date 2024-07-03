@@ -3,46 +3,83 @@
     {
       "id": 1,
       "username": "admin",
-      "password": "admin123",
+      "email": "admin@example.com",
+      "password": "hashed_admin123",
       "role": "admin",
       "fullName": "John Doe",
       "gender": "male",
       "address": "123 Main St, Anytown USA",
       "phone": "1234567890",
-      "avatar": "https://example.com/admin-avatar.jpg"
+      "avatar": "https://example.com/admin-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": true,
+      "createdAt": "2023-06-28T15:30:45Z",
+      "lastLogin": "2023-06-28T15:30:45Z"
     },
     {
       "id": 2,
       "username": "student1",
-      "password": "student123",
+      "email": "student1@example.com",
+      "password": "hashed_student123",
       "role": "student",
       "fullName": "Jane Smith",
       "gender": "female",
       "address": "456 Elm St, Anytown USA",
       "phone": "9876543210",
-      "avatar": "https://example.com/student1-avatar.jpg"
+      "avatar": "https://example.com/student1-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": true,
+      "createdAt": "2023-06-28T16:00:00Z",
+      "lastLogin": "2023-06-28T16:00:00Z"
     },
     {
       "id": 3,
       "username": "student2",
-      "password": "pass456",
+      "email": "student2@example.com",
+      "password": "hashed_pass456",
       "role": "student",
       "fullName": "Mike Johnson",
       "gender": "male",
       "address": "789 Oak St, Anytown USA",
       "phone": "5551234567",
-      "avatar": "https://example.com/student2-avatar.jpg"
+      "avatar": "https://example.com/student2-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": true,
+      "createdAt": "2023-06-28T16:30:00Z",
+      "lastLogin": "2023-06-28T16:30:00Z"
     },
     {
       "id": 4,
       "username": "staff1",
-      "password": "staffpass",
+      "email": "staff1@example.com",
+      "password": "hashed_staffpass",
       "role": "staff",
       "fullName": "Emily Brown",
       "gender": "female",
       "address": "321 Pine St, Anytown USA",
       "phone": "1112223333",
-      "avatar": "https://example.com/staff1-avatar.jpg"
+      "avatar": "https://example.com/staff1-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": true,
+      "createdAt": "2023-06-28T17:00:00Z",
+      "lastLogin": "2023-06-28T17:00:00Z"
+    }
+  ],
+  "auth_tokens": [
+    {
+      "userId": 1,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "expiresAt": "2023-06-29T15:30:45Z"
+    }
+  ],
+  "auth_providers": [
+    {
+      "userId": 2,
+      "provider": "google",
+      "providerId": "118234567890123456789",
+      "accessToken": "ya29.a0AfH6SMCUV...",
+      "refreshToken": "1//0abcdefghijklm...",
+      "expiresAt": "2023-06-29T16:00:00Z"
     }
   ],
   "news": [
@@ -254,7 +291,7 @@
       "title": "Quiet Hours",
       "description": "Quiet hours are from 10 PM to 7 AM. Please keep noise to a minimum during these times."
     },
-    {
+    { 
       "id": 2,
       "title": "No Smoking",
       "description": "Smoking is strictly prohibited in all dorm rooms and common areas."

@@ -25,7 +25,7 @@ const Login = () => {
         <form onSubmit={handleLogin}>
           <div data-mdb-input-init className="form-outline mb-4">
           <label className="form-label" htmlFor="typeEmailX-2">
-              Email
+              Email 
             </label>
             <input
               type="email"
