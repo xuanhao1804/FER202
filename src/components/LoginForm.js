@@ -1,42 +1,104 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const LoginForm = () => {
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.get('http://localhost:9999/users');
+      const user = response.data.find(u => u.email === email && u.password === password);
+      
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        toast.success('Logged in successfully');
+        navigate('/');
+      } else {
+        toast.error('Invalid email or password');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      toast.error('Failed to login: ' + error.message);
+    }
+  };
+
   return (
-
-        <div className="row d-flex justify-content-center align-items-center h-100">
-
-            <div className="card bg-dark text-white" style={{ borderRadius: '1rem' }}>
-              <div className="card-body p-5 text-center">
-                <div className="mb-md-5 mt-md-4 pb-5">
-                  <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-                  <p className="text-white-50 mb-5">Please enter your login and password!</p>
-                  <div className="form-outline form-white mb-4">
-                  <label className="form-label" htmlFor="typeEmailX">Email</label>
-                    <input type="email" id="typeEmailX" cl  assName="form-control form-control-lg" />
-
-                  </div>
-                  <div className="form-outline form-white mb-4">
-                  <label className="form-label" htmlFor="typePasswordX">Password</label>
-                    <input type="password" id="typePasswordX" className="form-control form-control-lg" />
-
-                  </div>
-                  <p className="small mb-5 pb-lg-2"><a href="#!" className="text-white-50">Forgot password?</a></p>
-                  <button className="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-                  <div className="d-flex justify-content-center text-center mt-4 pt-1">
-                    <a href="#!" className="text-white"><i className="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#!" className="text-white"><i className="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                    <a href="#!" className="text-white"><i className="fab fa-google fa-lg"></i></a>
-                  </div>
-                </div>
-                <div>
-                  <p className="mb-0">Don't have an account? <a href="#!" className="text-white-50 fw-bold">Sign Up</a></p>
-                </div>
-              </div>
+    <div className="container py-5 h-100">
+      <div className="row d-flex justify-content-center align-items-center h-100">
+        <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+    <div className="card shadow-2-strong" style={{ borderRadius: '1rem' }}>
+      <div className="card-body p-5 text-center">
+      <Link to="/">
+        <img src="https://ocd.fpt.edu.vn/Content/images/landing/logo.png" alt="Logo" />
+      </Link>
+      <h1></h1>
+        <h3 className="mb-5">Sign in</h3>
+        <form onSubmit={handleLogin}>
+          <div data-mdb-input-init className="form-outline mb-4">
+          <label className="form-label" htmlFor="typeEmailX-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="typeEmailX-2"
+              className="form-control form-control-lg"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
           </div>
-        </div>
 
+          <div data-mdb-input-init className="form-outline mb-4">
+          <label className="form-label" htmlFor="typePasswordX-2">
+              Password
+            </label>
+            <input
+              type="password"
+              id="typePasswordX-2"
+              className="form-control form-control-lg"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+          </div>
+
+          <div className="form-check d-flex justify-content-start mb-4">
+            <input className="form-check-input" type="checkbox" value="" id="form1Example3" />
+            <label className="form-check-label" htmlFor="form1Example3">
+              Remember password
+            </label>
+          </div>
+
+          <button data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-lg btn-block" type="submit">
+            Login
+          </button>
+        </form>
+
+        <hr className="my-1" />
+
+        <button data-mdb-button-init data-mdb-ripple-init className="btn btn-lg btn-block btn-primary" style={{ backgroundColor: '#dd4b39' }} type="submit">
+          <i className="fab fa-google me-2"></i> Sign in with google
+        </button>
+
+        {/* <button data-mdb-button-init data-mdb-ripple-init className="btn btn-lg btn-block btn-primary mb-2" style={{ backgroundColor: '#3b5998' }} type="submit">
+          <i className="fab fa-facebook-f me-2"></i>Sign in with facebook
+        </button> */}
+        <p></p>
+        <div className="form-link">
+          <span>Don't have an account? </span>
+          <Link to="/register">Sign Up</Link>
+        </div>
+      </div>  
+    </div>
+    </div>
+    </div>
+    </div>
   );
 };
 
-export default LoginForm;
+export default Login;
