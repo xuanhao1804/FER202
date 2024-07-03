@@ -28,7 +28,7 @@ const Login = () => {
               Email
             </label>
             <input
-              type="email"
+              type="text"
               id="typeEmailX-2"
               className="form-control form-control-lg"
               value={email}
