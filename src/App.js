@@ -9,7 +9,7 @@ import ManagePendingBooking from "./pages/ManagePendingBooking.js";
 import TemplateUser from "./layout/LayoutUser.js";
 import ListRoom from "./pages/ListRoom.js";
 import ManagerRoom from "./pages/ManagerRoom.js";
-import Register from "./components/Register.jsx";
+import Register from "./components/Register.js";
 import NotFoundPage from "./pages/error-404/Error.js";
 
 

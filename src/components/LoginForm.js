@@ -1,14 +1,30 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Perform login logic here
-    console.log('Login:', email, password);
+    try {
+      const response = await axios.get('http://localhost:9999/users');
+      const user = response.data.find(u => u.email === email && u.password === password);
+      
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        toast.success('Logged in successfully');
+        navigate('/');
+      } else {
+        toast.error('Invalid email or password');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      toast.error('Failed to login: ' + error.message);
+    }
   };
 
   return (
