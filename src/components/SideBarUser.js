@@ -138,6 +138,30 @@ function SideBarUser() {
                                 <span> History Payment </span>
                                 </Link>
                         </li>
+
+                        <hr className="sidebar-divider d-none d-md-block" />
+                        <li className="nav-item active">
+                            <Link className="nav-link" to={'/guide'} >
+                            
+                                <span> User guide </span>
+                                </Link>
+                        </li>
+
+                        <hr className="sidebar-divider d-none d-md-block" />
+                        <li className="nav-item active">
+                            <Link className="nav-link" to={'/regulation'} >
+                            
+                                <span> FU Dormitory Regulations </span>
+                                </Link>
+                        </li>
+
+                        <hr className="sidebar-divider d-none d-md-block" />
+                        <li className="nav-item active">
+                            <Link className="nav-link" to={'/faq'} >
+                            
+                                <span> FAQ </span>
+                                </Link>
+                        </li>
                     </ul>
                     
                     
