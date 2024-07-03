@@ -40,8 +40,8 @@ export default function Footer() {
           </div>
         </section>
 
-        <section className="">
-          <Container className="text-center text-md-start mt-5">
+        <section className="text-center text-md-start ">
+          {/* <Container className="text-center text-md-start "> */}
             <Row className="mt-3">
             <Col md={3} lg={4} xl={3} className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold">FPT University</h6>
@@ -117,7 +117,7 @@ Hà Nội
                 </p>
               </Col>
             </Row>
-          </Container>
+          {/* </Container> */}
         </section>
 
         <div
