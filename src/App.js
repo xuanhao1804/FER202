@@ -11,6 +11,9 @@ import ListRoom from "./pages/ListRoom.js";
 import ManagerRoom from "./pages/ManagerRoom.js";
 import Register from "./components/Register.jsx";
 import NotFoundPage from "./pages/error-404/Error.js";
+import StudentGuide from "./pages/StudentGuide.js";
+import FAQ from "./pages/FAQ.js";
+import FUDormitoryRegulations from "./pages/FUDormitoryRegulations.js";
 
 
 function App() {
@@ -35,7 +38,9 @@ function App() {
 
           <Route path="/booking" element={<BookingBed />} />            {/*   booking bed student     */}
 
-
+          <Route path="/guide" element={<StudentGuide />} />           {/*   guide student     */} 
+          <Route path="/faq" element={<FAQ />} />           {/*   FAQ     */}         
+          <Route path="/regulation" element={<FUDormitoryRegulations />} />          {/*   regulation     */}
 
           <Route path="/manage/booking" element={<ManagePendingBooking />} />       {/*    check list payment admin    */}
           <Route path="/*" element={<NotFoundPage />} />       {/*    check list payment admin    */}

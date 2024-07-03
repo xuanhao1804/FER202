@@ -139,6 +139,14 @@ function SideBarAdmin() {
                                 <span>Manager Payment</span>
                                 </Link>
                         </li>
+
+                        <hr className="sidebar-divider d-none d-md-block" />
+                        <li className="nav-item active">
+                            <Link className="nav-link" to={'/manager-fu-dorm-regulations'} >
+                            
+                                <span>Manager FU Dormitory Regulations</span>
+                                </Link>
+                        </li>
                     </ul>
                     
                     

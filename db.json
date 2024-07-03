@@ -269,5 +269,311 @@
       "title": "Room Inspections",
       "description": "Regular room inspections will be conducted to ensure cleanliness and compliance with dorm policies."
     }
+  ],
+  "guide": [
+    {
+      "id": 1,
+      "name": "Instructions for viewing news",
+      "step": [
+        {
+          "id": 1,
+          "description": "On the homepage, you will find 10 latest news in the dormitory",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide1.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "To see more news, click the \"News\" button on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide1.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "On this page, you can search for news by entering the title of the news",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide1.step3.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Instructions for booking a bed",
+      "step": [
+        {
+          "id": 1,
+          "description": "On the homepage, you will find the dormitory information",
+          "link": {
+            "name": "Booking bed",
+            "url": "https://www.youtube.com/watch?v=D-LFCpyIRAk"
+          },
+          "note": "The \"Booking a bed\" button in the video tutorial is replaced by the \"Booking bed\" button on the menu bar.",
+          "recommendation": [],
+          "image": "guide2.step1.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Instructions for contacting the security department",
+      "step": [
+        {
+          "id": 1,
+          "description": "If you want to contact the security department, you can find their contact in the landing page (without login) or in the homepage (after logging in).",
+          "link": {},
+          "note": "",
+          "recommendation": [
+            {
+              "id": 1,
+              "text": "It is more convenient to use your phone. On your phone, you",
+              "bold": false
+            },
+            {
+              "id": 2,
+              "text": "just need to click",
+              "bold": true
+            },
+            {
+              "id": 3,
+              "text": "on the phone number of the relevant department,",
+              "bold": false
+            },
+            {
+              "id": 4,
+              "text": "you can make a call to them.",
+              "bold": true
+            }
+          ],
+          "image": "guide3.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "On the landing page, their contact is shown in \"question 5\" of the \"FAQ\" section",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide3.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "On the homepage, their contact is displayed in the \"Contact\" section",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide3.step3.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Instructions for contacting the medical department",
+      "step": [
+        {
+          "id": 1,
+          "description": "If you want to contact the medical department, you can find their contact information on the landing page (no login required) or on the homepage (after logging in).",
+          "link": {},
+          "note": "",
+          "recommendation": [
+            {
+              "id": 1,
+              "text": "It is more convenient to use your phone. On your phone, you",
+              "bold": false
+            },
+            {
+              "id": 2,
+              "text": "just need to click",
+              "bold": true
+            },
+            {
+              "id": 3,
+              "text": "on the phone number of the relevant department,",
+              "bold": false
+            },
+            {
+              "id": 4,
+              "text": "you can make a call to them.",
+              "bold": true
+            }
+          ],
+          "image": "guide4.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "On the landing page, their contact is shown in \"question 5\" of the \"FAQ\" section",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide4.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "On the homepage, their contact is displayed in the \"Contact\" section",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide4.step3.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Instructions for contacting the dormitory management",
+      "step": [
+        {
+          "id": 1,
+          "description": "If you want to contact the dormitory management, you can find their contact information on the landing page (no login required) or on the homepage (after logging in).",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": ""
+        },
+        {
+          "id": 2,
+          "description": "You can make a call",
+          "link": {},
+          "note": "",
+          "recommendation": [
+            {
+              "id": 1,
+              "text": "It is more convenient to use your phone. On your phone, you",
+              "bold": false
+            },
+            {
+              "id": 2,
+              "text": "just need to click",
+              "bold": true
+            },
+            {
+              "id": 3,
+              "text": "on the phone number of the relevant department,",
+              "bold": false
+            },
+            {
+              "id": 4,
+              "text": "you can make a call to them.",
+              "bold": true
+            }
+          ],
+          "image": "guide5.step2.png"
+        },
+        {
+          "id": 2,
+          "description": "Or you can send an email",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide5.step3.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Instructions for creating a request",
+      "step": [
+        {
+          "id": 1,
+          "description": "When you have a problem in the dormitory, you can send a request to the dormitory management.\nStep 1: Click the \"My Request\" button in the menu bar, then the \"Create new request\" button",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide6.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "Step 2: Select the type of request you want to send",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide6.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "Step 3: Enter the request text, then click the \"Create Request\" button",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide6.step3.png"
+        },
+        {
+          "id": 4,
+          "description": "Step 4: You can view your request in the \"My Request\" page",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide6.step4.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Instructions for viewing electricity/water usage",
+      "step": [
+        {
+          "id": 1,
+          "description": "Click on the button \"Electricity water usage\" on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide7.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "Select the corresponding semester",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide7.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "You can see your usage or your block usage by selecting the respective tab",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide7.step3.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Instructions for viewing payment history",
+      "step": [
+        {
+          "id": 1,
+          "description": "Click on the button \"Payment history\" on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide8.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "Click the \"Details\" button for more information about each payment",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide8.step2.png"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Instructions for viewing resident history",
+      "step": [
+        {
+          "id": 1,
+          "description": "Click the \"Resident History\" button on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide9.step1.png"
+        }
+      ]
+    }
   ]
 }
