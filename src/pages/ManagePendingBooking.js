@@ -5,6 +5,7 @@ import axios from 'axios';
 export default function ManagePendingBooking() {
     const [bookingRequests, setBookingRequests] = useState([]);
     const [users, setUser] = useState([]);
+    const [dormitories, setDormitories] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:9999/bookingRequests`)
@@ -19,25 +20,47 @@ export default function ManagePendingBooking() {
                 setUser(result)
             })
             .catch();
-    }, [])
-
-    const handleOnAprove = (orderId) => {
-        const currentReq = bookingRequests.find(t => t.id == orderId);
-
-        fetch(`http://localhost:9999/bookingRequests/${orderId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ ...currentReq, status: "approved" })
-        })
-            .then(res => {
-                setBookingRequests(bookingRequests.map(t =>
-                    t.id == orderId ? { ...t, status: "approved" } : t
-                ));
-                alert("Change success")
+        fetch(`http://localhost:9999/dormitories`)
+            .then(res => res.json())
+            .then(result => {
+                setDormitories(result)
             })
             .catch();
+    }, [])
+
+    const handleOnAprove = (id, studentid, dormitory, floors, rooms, beds) => {
+        const currentReq = bookingRequests.find(t => t.id == id);
+        try {
+
+            fetch(`http://localhost:9999/bookingRequests/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ ...currentReq, status: "approved" })
+            })
+
+                .then(res => {
+                    setBookingRequests(bookingRequests.map(t =>
+                        t.id == id ? { ...t, status: "approved" } : t
+                    ));
+                    alert("Change success")
+                })
+                .catch();
+            const dorm = dormitories?.find(dorm => dorm.id == dormitory)
+            const floor = dorm.floors.find(fl => fl.id.toString() === floors.toString());
+            const room = floor.rooms.find(rm => rm.id.toString() === rooms.toString());
+            const bed = room.beds.find(bd => bd.id.toString() === beds.toString());
+            bed.student = studentid;
+            const updateResponse = axios.put(`http://localhost:9999/dormitories/${dormitory}`, dorm, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            console.log('StudentId updated successfully for room:', updateResponse.data);
+        } catch (error) {
+            console.error('Error updating studentId for room:', error);
+        }
     };
 
     const handleOnReject = (orderId) => {
@@ -57,6 +80,8 @@ export default function ManagePendingBooking() {
                 alert("Change success")
             })
             .catch();
+
+
     };
 
     return (
@@ -82,24 +107,26 @@ export default function ManagePendingBooking() {
                                 <tbody className="table-body">
                                     {bookingRequests?.map((request) => {
 
-                                        const student = users?.find(user => user.id == request.studentid);
-
+                                        const student = users?.find(user => user.studentID == request.studentid);
+                                        const dorm = dormitories?.find(dorm => dorm.id == request.dormitory)
+                                        const floor = dorm.floors.find(fl => fl.id.toString() === request.floor.toString());
+                                        const room = floor.rooms.find(rm => rm.id.toString() === request.room.toString());
+                                        const bed = room.beds.find(bd => bd.id.toString() === request.bed.toString());
                                         const statusClass = request.status === 'approved' ? 'success' : request.status === 'pending' ? 'info' : 'danger';
                                         return (
                                             <tr key={request.id} className="cell-1">
                                                 <td>{request.id}</td>
-                                                <td>{student.fullName}</td>
-                                                {/* <td>{student.fullName}</td> */}
-                                                <td>{request.dormitory}</td>
-                                                <td>{request.floor}</td>
-                                                <td>{request.room}</td>
-                                                <td>{request.bed}</td>
+                                                <td>{student?.fullName}</td>
+                                                <td>{dormitories?.find(dorm => dorm.id == request.dormitory).name}</td>
+                                                <td>{floor.floorNumber}</td>
+                                                <td>{room.roomNumber}</td>
+                                                <td>{bed.name}</td>
                                                 <td>{request.semester}</td>
                                                 <td><span className={`badge badge-${statusClass}`}>{request.status}</span></td>
                                                 <td>
                                                     {request.status === 'pending' ? (
                                                         <>
-                                                            <Link onClick={() => handleOnAprove(request.id)}>
+                                                            <Link onClick={() => handleOnAprove(request.id, request.studentid, request.dormitory, request.floor, request.room, request.bed)}>
                                                                 <i className="confirmed">&#10004;</i>
                                                             </Link>
                                                             <Link onClick={() => handleOnReject(request.id)}>
