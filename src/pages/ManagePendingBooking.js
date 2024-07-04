@@ -1,130 +1,64 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
+import axios from 'axios';
 export default function ManagePendingBooking() {
-    const dormitories = [
-        {
-            "id": 1,
-            "name": "A",
-            type: 1,
-            floors: [
-                {
-                    "id": 1,
-                    "floorNumber": 1,
-                    "totalBeds": 20,
-                    "usedBeds": 7,
-                    "freeBeds": 13,
-                },
-                {
-                    "id": 2,
-                    "floorNumber": 2,
-                    "totalBeds": 20,
-                    "usedBeds": 10,
-                    "freeBeds": 10,
-                },
-                {
-                    "id": 3,
-                    "floorNumber": 3,
-                    "totalBeds": 20,
-                    "usedBeds": 2,
-                    "freeBeds": 18,
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "name": "B",
-            type: 1,
-            floors: [
-                {
-                    "id": 1,
-                    "floorNumber": 1,
-                    "totalBeds": 20,
-                    "usedBeds": 5,
-                    "freeBeds": 15,
-                },
-                {
-                    "id": 2,
-                    "floorNumber": 2,
-                    "totalBeds": 20,
-                    "usedBeds": 10,
-                    "freeBeds": 10,
-                },
-                {
-                    "id": 3,
-                    "floorNumber": 3,
-                    "totalBeds": 20,
-                    "usedBeds": 2,
-                    "freeBeds": 18,
-                },
-                {
-                    "id": 4,
-                    "floorNumber": 4,
-                    "totalBeds": 20,
-                    "usedBeds": 2,
-                    "freeBeds": 18,
-                }
-            ]
-        },
-    ]
-    const initialBookingRequests = [
-        {
-            "id": 1,
-            "student": 2,
-            "dormitory": 1,
-            "floor": 1,
-            "semester": "Summer 2024",
-            "status": "pending"
-        },
-        {
-            "id": 2,
-            "student": 1,
-            "dormitory": 2,
-            "floor": 3,
-            "semester": "Summer 2024",
-            "status": "pending"
-        }
-    ]
-    const users = [
-        {
-            "id": 1,
-            "username": "admin",
-            "password": "admin123",
-            "role": "admin",
-            "fullName": "John Doe",
-            "gender": "male",
-            "address": "123 Main St, Anytown USA",
-            "phone": "1234567890",
-            "avatar": "https://example.com/admin-avatar.jpg"
-        },
-        {
-            "id": 2,
-            "username": "student1",
-            "password": "student123",
-            "role": "student",
-            "fullName": "Jane Smith",
-            "gender": "female",
-            "address": "456 Elm St, Anytown USA",
-            "phone": "9876543210",
-            "avatar": "https://example.com/student1-avatar.jpg"
-        }
-    ]
-    const [bookingRequests, setBookingRequests] = useState(initialBookingRequests);
+    const [bookingRequests, setBookingRequests] = useState([]);
+    const [users, setUser] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:9999/bookingRequests`)
+            .then(res => res.json())
+            .then(result => {
+                setBookingRequests(result)
+            })
+            .catch();
+        fetch(`http://localhost:9999/users`)
+            .then(res => res.json())
+            .then(result => {
+                setUser(result)
+            })
+            .catch();
+    }, [])
+
     const handleOnAprove = (orderId) => {
-        setBookingRequests(prevRequests =>
-            prevRequests.map(request =>
-                request.id === orderId ? { ...request, status: 'approved' } : request
-            )
-        );
+        const currentReq = bookingRequests.find(t => t.id == orderId);
+
+        fetch(`http://localhost:9999/bookingRequests/${orderId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ ...currentReq, status: "approved" })
+        })
+            .then(res => {
+                setBookingRequests(bookingRequests.map(t =>
+                    t.id == orderId ? { ...t, status: "approved" } : t
+                ));
+                alert("Change success")
+            })
+            .catch();
     };
+
     const handleOnReject = (orderId) => {
-        setBookingRequests(prevRequests =>
-            prevRequests.map(request =>
-                request.id === orderId ? { ...request, status: 'Reject' } : request
-            )
-        );
+        const currentReq = bookingRequests.find(t => t.id == orderId);
+
+        fetch(`http://localhost:9999/bookingRequests/${orderId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ ...currentReq, status: "reject" })
+        })
+            .then(res => {
+                setBookingRequests(bookingRequests.map(t =>
+                    t.id == orderId ? { ...t, status: "reject" } : t
+                ));
+                alert("Change success")
+            })
+            .catch();
     };
+
     return (
         <div className="container mt-5">
             <div className="d-flex justify-content-center row">
@@ -138,31 +72,37 @@ export default function ManagePendingBooking() {
                                         <th>Name Student</th>
                                         <th>Dom</th>
                                         <th>Floor</th>
+                                        <th>Room</th>
+                                        <th>Bed</th>
                                         <th>Semester</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody className="table-body">
-                                    {bookingRequests.map((request) => {
-                                        const student = users.find(user => user.id === request.student);
-                                        const dom = dormitories.find(d => d.id == request.dormitory)
+                                    {bookingRequests?.map((request) => {
+
+                                        const student = users?.find(user => user.id == request.studentid);
+
                                         const statusClass = request.status === 'approved' ? 'success' : request.status === 'pending' ? 'info' : 'danger';
                                         return (
                                             <tr key={request.id} className="cell-1">
                                                 <td>{request.id}</td>
                                                 <td>{student.fullName}</td>
-                                                <td>{dom.name}</td>
+                                                {/* <td>{student.fullName}</td> */}
+                                                <td>{request.dormitory}</td>
                                                 <td>{request.floor}</td>
+                                                <td>{request.room}</td>
+                                                <td>{request.bed}</td>
                                                 <td>{request.semester}</td>
                                                 <td><span className={`badge badge-${statusClass}`}>{request.status}</span></td>
                                                 <td>
                                                     {request.status === 'pending' ? (
                                                         <>
-                                                            <Link onClick={() => handleOnAprove(request.id, 'approved')}>
+                                                            <Link onClick={() => handleOnAprove(request.id)}>
                                                                 <i className="confirmed">&#10004;</i>
                                                             </Link>
-                                                            <Link onClick={() => handleOnReject(request.id, 'reject')}>
+                                                            <Link onClick={() => handleOnReject(request.id)}>
                                                                 <i className="cancelled">&#10008;</i>
                                                             </Link>
                                                         </>
