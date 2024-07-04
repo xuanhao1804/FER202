@@ -52,6 +52,7 @@ export default function ManagePendingBooking() {
             const room = floor.rooms.find(rm => rm.id.toString() === rooms.toString());
             const bed = room.beds.find(bd => bd.id.toString() === beds.toString());
             bed.student = studentid;
+            bed.status = "occupied";
             const updateResponse = axios.put(`http://localhost:9999/dormitories/${dormitory}`, dorm, {
                 headers: {
                     'Content-Type': 'application/json',

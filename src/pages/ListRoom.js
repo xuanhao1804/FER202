@@ -9,7 +9,9 @@ const ListRoom = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [usersPerPage] = useState(5);
     const navigate = useNavigate();
+    useEffect(() => {
 
+    })
     // Fetch data from API or JSON server
     useEffect(() => {
         fetch('http://localhost:9999/dormitories')

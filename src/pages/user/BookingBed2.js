@@ -55,7 +55,7 @@ const DormitorySelector = () => {
       dorm.floors.forEach(floor => {
         if (!selectedFloor || floor.id === parseInt(selectedFloor)) {
           floor.rooms.forEach(room => {
-            if (!selectedRoom || room.id === parseInt(selectedRoom)) {
+            if ((!selectedRoom || room.id === parseInt(selectedRoom))&&room.roomType=={}) {
               room.beds.forEach(bed => {
                 if (bed.status === 'available') {
                   beds.push({

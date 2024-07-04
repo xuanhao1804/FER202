@@ -7,13 +7,6 @@ export default function LayoutAdmin({title="", children}){
     return(
         <Container fluid>
             <Header/>
-
-      
-      
-      
-      
-      
-      
         <Row style={{justifyContent:'flex-start'}}>
             <Col md={2} xs={2}>
             <SideBarAdmin/>
