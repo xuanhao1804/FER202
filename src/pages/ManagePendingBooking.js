@@ -63,7 +63,7 @@ export default function ManagePendingBooking() {
 
             if (room.roomType == '4 bed') {
                 const updatedLog = { ...log, balance: log.balance - 850000 };
-                axios.put(`http://localhost:9999/dormitories/${log.id}`, updatedLog, {
+                axios.put(`http://localhost:9999/users/${log.id}`, updatedLog, {
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -71,7 +71,7 @@ export default function ManagePendingBooking() {
                 localStorage.setItem("user", JSON.stringify(updatedLog));
             } else {
                 const updatedLog = { ...log, balance: log.balance - 1050000 };
-                axios.put(`http://localhost:9999/dormitories/${log.id}`, updatedLog, {
+                axios.put(`http://localhost:9999/users/${log.id}`, updatedLog, {
                     headers: {
                         'Content-Type': 'application/json',
                     },
