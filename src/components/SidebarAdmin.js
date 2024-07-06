@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 13d5014a0cfdabaa2d74b0817388d5141fc9c041
 import React, { useState } from 'react';
 import '../style/SidebarUser.css';
 import { Link } from 'react-router-dom';
@@ -148,5 +152,4 @@ function SideBarAdmin() {
 }
 
 export default SideBarAdmin;
-
 
