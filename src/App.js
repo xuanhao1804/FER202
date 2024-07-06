@@ -8,6 +8,7 @@ import BookingBed from "./pages/BookingBed.js";
 import ManagePendingBooking from "./pages/ManagePendingBooking.js";
 import TemplateUser from "./layout/LayoutUser.js";
 import ListRoom from "./pages/ListRoom.js";
+import DormitoryDetail from './pages/DormitoryDetail.js';
 import ManagerRoom from "./pages/ManagerRoom.js";
 import Register from "./components/Register.js";
 import NotFoundPage from "./pages/error-404/Error.js";
@@ -30,7 +31,8 @@ function App() {
           <Route path="/user/:id" element={<UserProfile />} />            
           <Route path="/user/:id" element={<Home />} />          
           <Route path="/manage/room" element={<ManagerRoom />} />            
-          <Route path="/listroom" element={<ListRoom />} />                
+          <Route path="/listroom" element={<ListRoom />} />
+          <Route path="/dormitory/:dormitoryId" element={<DormitoryDetail />} />                
           <Route path="/booking" element={<BookingBed />} />            
           <Route path="/guide" element={<StudentGuide />} />       
           <Route path="/faq" element={<FAQ />} />         
