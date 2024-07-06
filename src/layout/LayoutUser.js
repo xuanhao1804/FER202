@@ -7,11 +7,9 @@ export default function LayoutUser({ title = "", children }) {
     return (
 
         <Container fluid>
-
             <Header />
-
             <Row style={{ justifyContent: 'flex-start' }}>
-                <Col md={2} xs={2}>
+                <Col md={3} xs={2}>
                     <SideBarUser />
                 </Col>
                 <Col md={9} xs={10}>
