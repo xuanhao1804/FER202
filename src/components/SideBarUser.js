@@ -52,12 +52,7 @@ function SideBarUser() {
 
                         {/*  <!-- Nav Item - Dashboard --> */}
                         
-                        <li className="nav-item active">
-                            <Link className="nav-link" to={'/'} >
-                            
-                                <span> Home</span>
-                                </Link>
-                        </li>
+
 
                        
                       
