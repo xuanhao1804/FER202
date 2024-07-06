@@ -1,7 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Error = () => {
+const NotFoundPage = () => {
     const navigate = useNavigate();
     const handleHome = () => {
         navigate('/');
@@ -62,12 +62,15 @@ const Error = () => {
             <img src="https://cpxrml.csb.app/src/404-image.svg" style={imgStyle} alt="404 error" />
             <h2>We can't find the page you're looking for!</h2>
             <div style={mediaQueryStyle.container}>
+                <Link to={"/"}>
                 <button style={buttonStyle} onClick={handleHome}>
                     Go Back Home
                 </button>
+                </Link>
+    
             </div>
         </div>
     );
 };
 
-export default Error;
+export default NotFoundPage;

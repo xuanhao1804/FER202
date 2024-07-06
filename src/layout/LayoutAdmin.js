@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 13d5014a0cfdabaa2d74b0817388d5141fc9c041
 import Header from "../components/Header";
 import SideBarAdmin from "../components/SidebarAdmin";
 import { Row, Col, Container } from "react-bootstrap";

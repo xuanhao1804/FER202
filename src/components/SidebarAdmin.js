@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 13d5014a0cfdabaa2d74b0817388d5141fc9c041
 import React, { useState } from 'react';
 import '../style/SidebarUser.css';
 import { Link } from 'react-router-dom';
@@ -140,6 +136,14 @@ function SideBarAdmin() {
                             <Link className="nav-link" to={'/managerpayment'} >
                             
                                 <span>Manager Payment</span>
+                                </Link>
+                        </li>
+
+                        <hr className="sidebar-divider d-none d-md-block" />
+                        <li className="nav-item active">
+                            <Link className="nav-link" to={'/manager-fu-dorm-regulations'} >
+                            
+                                <span>Manager FU Dormitory Regulations</span>
                                 </Link>
                         </li>
                     </ul>
