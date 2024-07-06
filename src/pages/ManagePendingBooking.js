@@ -6,6 +6,8 @@ export default function ManagePendingBooking() {
     const [bookingRequests, setBookingRequests] = useState([]);
     const [users, setUser] = useState([]);
     const [dormitories, setDormitories] = useState([]);
+    const [log, setLog] = useState(JSON.parse(localStorage.getItem("user")));
+
 
     useEffect(() => {
         fetch(`http://localhost:9999/bookingRequests`)
@@ -48,17 +50,35 @@ export default function ManagePendingBooking() {
                 })
                 .catch();
             const dorm = dormitories?.find(dorm => dorm.id == dormitory)
-            const floor = dorm.floors.find(fl => fl.id.toString() === floors.toString());
+            const floor = dorm.floors?.find(fl => fl.id.toString() === floors.toString());
             const room = floor.rooms.find(rm => rm.id.toString() === rooms.toString());
             const bed = room.beds.find(bd => bd.id.toString() === beds.toString());
             bed.student = studentid;
             bed.status = "occupied";
-            const updateResponse = axios.put(`http://localhost:9999/dormitories/${dormitory}`, dorm, {
+            axios.put(`http://localhost:9999/dormitories/${dormitory}`, dorm, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
-            console.log('StudentId updated successfully for room:', updateResponse.data);
+
+            if (room.roomType == '4 bed') {
+                const updatedLog = { ...log, balance: log.balance - 850000 };
+                axios.put(`http://localhost:9999/dormitories/${log.id}`, updatedLog, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                localStorage.setItem("user", JSON.stringify(updatedLog));
+            } else {
+                const updatedLog = { ...log, balance: log.balance - 1050000 };
+                axios.put(`http://localhost:9999/dormitories/${log.id}`, updatedLog, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                localStorage.setItem("user", JSON.stringify(updatedLog));
+            }
+
         } catch (error) {
             console.error('Error updating studentId for room:', error);
         }
