@@ -145,7 +145,7 @@ import { useEffect, useState } from "react";
 import { Col, Row, Table, Button } from 'react-bootstrap';
 import { Pagination } from "antd";
 import { useNavigate } from "react-router-dom";
-import LayoutUser from "../layout/LayoutUser";
+import LayoutUser from "../../layout/LayoutUser";
 
 const ListRoom = () => {
     const [dormitories, setDormitories] = useState([]);

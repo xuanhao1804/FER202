@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row, Image, Form, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import LayoutUser from "../layout/LayoutUser";
+import LayoutUser from "../../layout/LayoutUser";
 export default function UserProfile() {
     const {id} = useParams();
     const [isEditing, setIsEditing] = useState(false);

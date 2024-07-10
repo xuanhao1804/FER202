@@ -107,6 +107,22 @@
       "lastLogin": "2024-07-03T15:11:52.711Z",
       "studentID": "HA180003",
       "balance": 55000000
+    },
+    {
+      "id": "ad07",
+      "username": "bthteam",
+      "email": "bthteam102@gmail.com",
+      "password": "$2a$10$cwWVoCnG23K0PhpBYY3nNeK.CIm1dpg.5OI7wYLg.pcmDhB6bicQK",
+      "fullName": "Lee Hao",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0363066815",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-10T04:12:32.792Z",
+      "lastLogin": "2024-07-10T04:12:32.793Z"
     }
   ],
   "auth_tokens": [
@@ -476,11 +492,10 @@
       ]
     }
   ],
-  "bookingRequests": [
-  ],
+  "bookingRequests": [],
   "guide": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Instructions for viewing news",
       "step": [
         {
@@ -510,7 +525,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Instructions for booking a bed",
       "step": [
         {
@@ -527,7 +542,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Instructions for contacting the security department",
       "step": [
         {
@@ -578,7 +593,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Instructions for contacting the medical department",
       "step": [
         {
@@ -629,7 +644,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Instructions for contacting the dormitory management",
       "step": [
         {
@@ -680,7 +695,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Instructions for creating a request",
       "step": [
         {
@@ -718,7 +733,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Instructions for viewing electricity/water usage",
       "step": [
         {
@@ -748,7 +763,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Instructions for viewing payment history",
       "step": [
         {
@@ -770,7 +785,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Instructions for viewing resident history",
       "step": [
         {
@@ -809,12 +824,12 @@
   ],
   "roomTypes": [
     {
-      "id": 1,
+      "id": "1",
       "type": "3 bed",
       "price": 850000
     },
     {
-      "id": 2,
+      "id": "2",
       "type": "4 bed",
       "price": 1050000
     }

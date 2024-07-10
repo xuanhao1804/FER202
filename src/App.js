@@ -3,18 +3,18 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage.js";
 import Login from "./components/LoginForm.js";
-import UserProfile from "./pages/UserProfile.js";
-import BookingBed from "./pages/BookingBed.js";
+import UserProfile from "./pages/user/UserProfile.js";
+import BookingBed from "./pages/user/BookingBed.js";
 import ManagePendingBooking from "./pages/ManagePendingBooking.js";
-import TemplateUser from "./layout/LayoutUser.js";
-import ListRoom from "./pages/ListRoom.js";
-import DormitoryDetail from './pages/DormitoryDetail.js';
+// import TemplateUser from "./layout/LayoutUser.js";
+import ListRoom from "./pages/user/ListRoom.js";
+import DormitoryDetail from './pages/user/DormitoryDetail.js';
 import ManagerRoom from "./pages/ManagerRoom.js";
 import Register from "./components/Register.js";
 import NotFoundPage from "./pages/error-404/Error.js";
-import StudentGuide from "./pages/StudentGuide.js";
-import FAQ from "./pages/FAQ.js";
-import FUDormitoryRegulations from "./pages/FUDormitoryRegulations.js";
+import StudentGuide from "./pages/user/StudentGuide.js";
+import FAQ from "./pages/user/FAQ.js";
+import FUDormitoryRegulations from "./pages/user/FUDormitoryRegulations.js";
 import DormitorySelector from "./pages/user/BookingBed2.js";
 
 

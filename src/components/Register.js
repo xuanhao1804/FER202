@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import bcryptjs from 'bcryptjs';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -43,10 +44,13 @@ const Register = () => {
     e.preventDefault();
     if (isValidate()) {
       try {
+        const salt = await bcryptjs.genSalt(10);
+        const hashedPassword = await bcryptjs.hash(formData.password, salt);
+
         const newUser = {
           username: formData.username,
           email: formData.email,
-          password: formData.password,
+          password: hashedPassword, // Store the hashed password
           fullName: formData.fullName,
           gender: formData.gender,
           address: formData.address,

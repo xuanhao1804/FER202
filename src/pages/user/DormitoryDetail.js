@@ -120,7 +120,7 @@
 import { useEffect, useState } from "react";
 import { Col, Row, Table, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from "react-router-dom";
-import LayoutUser from "../layout/LayoutUser";
+import LayoutUser from "../../layout/LayoutUser";
 
 const DormitoryDetail = () => {
     const { dormitoryId } = useParams();

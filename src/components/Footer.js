@@ -60,19 +60,19 @@ export default function Footer() {
                 <h6 className="text-uppercase fw-bold">Tin Tức</h6>
                 <hr
                   className="mb-4 mt-0 d-inline-block mx-auto"
-                  style={{ width: '60px', backgroundColor: '#black', height: '2px' }}
+                  style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                 />
                 <p>
-                  <a href="#!" className="text-dark">MDBootstrap</a>
+                  <a href="https://hanoi.fpt.edu.vn/tin-tuc-su-kien/tin-tuc-chung" className="text-dark">Tin tức Chung</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">MDWordPress</a>
+                  <a href="https://hanoi.fpt.edu.vn/tin-tuc-su-kien/su-kien-chung" className="text-dark">Sự Kiện Chung</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">BrandFlow</a>
+                  <a href="https://hanoi.fpt.edu.vn/tin-tuc-su-kien/hoat-dong-huong-nghiep" className="text-dark">Hoạt Động Hướng Nghiệp</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">Bootstrap Angular</a>
+                  <a href="https://hanoi.fpt.edu.vn/tin-tuc-su-kien/hop-tac-quoc-te" className="text-dark">Hợp tác quốc  tế</a>
                 </p>
               </Col>
 
@@ -86,13 +86,13 @@ export default function Footer() {
                   <a href="https://hanoi.fpt.edu.vn/" className="text-dark">Đại học FPT Hà Nội</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">Become an Affiliate</a>
+                  <a href="https://hanoi.fpt.edu.vn/nganh-hoc" className="text-dark">Ngành Học</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">Shipping Rates</a>
+                  <a href="https://hanoi.fpt.edu.vn/doi-song-sinh-vien" className="text-dark">Đời Sống Sinh Viên</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-dark">Help</a>
+                  <a href="https://hanoi.fpt.edu.vn/tuyen-sinh" className="text-dark">Tuyển Sinh</a>
                 </p>
               </Col>
 
@@ -124,9 +124,9 @@ Hà Nội
           className="text-center p-3"
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
         >
-          &copy; 2020 Copyright:{' '}
+          &copy; 2024 Copyright:{' '}
           <a className="text-dark" href="https://mdbootstrap.com/">
-            MDBootstrap.com
+          https://hanoi.fpt.edu.vn/
           </a>
         </div>
       </footer>

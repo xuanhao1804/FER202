@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import LayoutUser from "../layout/LayoutUser";
-import "../style/regulation.css";
+import LayoutUser from "../../layout/LayoutUser.js";
+import "../../style/regulation.css";
 import { Row } from 'react-bootstrap';
-import PDFViewer from '../components/pdf.js';
+import PDFViewer from '../../components/pdf.js';
 
 export default function FUDormitoryRegulations() {
 

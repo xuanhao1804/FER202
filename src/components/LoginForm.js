@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import bcryptjs from 'bcryptjs';
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -12,12 +15,18 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.get('http://localhost:9999/users');
-      const user = response.data.find(u => u.email === email && u.password === password);
+      const user = response.data.find(u => u.email === email);
       
       if (user) {
-        localStorage.setItem('user', JSON.stringify(user));
-        toast.success('Logged in successfully');
-        navigate('/');
+        const isMatch = await bcryptjs.compare(password, user.password);
+        if (isMatch) {
+          const { password, ...userWithoutPassword } = user;
+          localStorage.setItem('user', JSON.stringify(userWithoutPassword));
+          toast.success('Logged in successfully');
+          navigate('/');
+        } else {
+          toast.error('Invalid email or password');
+        }
       } else {
         toast.error('Invalid email or password');
       }
@@ -27,18 +36,66 @@ const Login = () => {
     }
   };
 
+  const handleGoogleLogin = async (credentialResponse) => {
+    try {
+      const decoded = jwtDecode(credentialResponse.credential);
+      const { email, name, sub: googleId } = decoded;
+
+      const response = await axios.get('http://localhost:9999/users');
+      let user = response.data.find(u => u.email === email);
+
+      if (user) {
+        // User exists, update Google ID if necessary
+        if (!user.googleId) {
+          user.googleId = googleId;
+          await axios.put(`http://localhost:9999/users/${user.id}`, user);
+        }
+      } else {
+        // Create new user
+        const newUser = {
+          email,
+          fullName: name,
+          googleId,
+          isEmailVerified: true,
+          role: "student",
+          avatar: decoded.picture || "https://example.com/default-avatar.jpg",
+          createdAt: new Date().toISOString(),
+          lastLogin: new Date().toISOString(),
+          // Add other required fields with default values
+          username: email.split('@')[0], // Using email as default username
+          password: await bcryptjs.hash(googleId, 10), // Using googleId as password
+          gender: "not specified",
+          address: "",
+          phone: "",
+          studentID: null,
+          balance: 0
+        };
+        const newUserResponse = await axios.post("http://localhost:9999/users", newUser);
+        user = newUserResponse.data;
+      }
+
+      const { password, ...userWithoutPassword } = user;
+      localStorage.setItem('user', JSON.stringify(userWithoutPassword));
+      toast.success('Logged in with Google successfully');
+      navigate('/');
+    } catch (error) {
+      console.error('Google login error:', error);
+      toast.error('Failed to login with Google: ' + error.message);
+    }
+  };
+
   return (
     <div className="container py-5 h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
         <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-    <div className="card shadow-2-strong" style={{ borderRadius: '1rem' }}>
-      <div className="card-body p-5 text-center">
-      <Link to="/">
-        <img src="https://ocd.fpt.edu.vn/Content/images/landing/logo.png" alt="Logo" />
-      </Link>
-      <h1></h1>
-        <h3 className="mb-5">Sign in</h3>
-        <form onSubmit={handleLogin}>
+          <div className="card shadow-2-strong" style={{ borderRadius: '1rem' }}>
+            <div className="card-body p-5 text-center">
+              <Link to="/">
+                <img src="https://ocd.fpt.edu.vn/Content/images/landing/logo.png" alt="Logo" />
+              </Link>
+              <h1></h1>
+              <h3 className="mb-5">Sign in</h3>
+              <form onSubmit={handleLogin}>
           <div data-mdb-input-init className="form-outline mb-4">
           <label className="form-label" htmlFor="typeEmailX-2">
               Email
@@ -75,28 +132,29 @@ const Login = () => {
           </div>
 
           <button data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-lg btn-block" type="submit">
-            Login
-          </button>
-        </form>
+                  Login
+                </button>
+              </form>
 
-        <hr className="my-1" />
+              <hr className="my-4" />
 
-        <button data-mdb-button-init data-mdb-ripple-init className="btn btn-lg btn-block btn-primary" style={{ backgroundColor: '#dd4b39' }} type="submit">
-          <i className="fab fa-google me-2"></i> Sign in with google
-        </button>
+              <GoogleLogin
+                onSuccess={handleGoogleLogin}
+                onError={() => {
+                  console.log('Login Failed');
+                  toast.error('Google login failed');
+                }}
+              />
 
-        {/* <button data-mdb-button-init data-mdb-ripple-init className="btn btn-lg btn-block btn-primary mb-2" style={{ backgroundColor: '#3b5998' }} type="submit">
-          <i className="fab fa-facebook-f me-2"></i>Sign in with facebook
-        </button> */}
-        <p></p>
-        <div className="form-link">
-          <span>Don't have an account? </span>
-          <Link to="/register">Sign Up</Link>
+              <p></p>
+              <div className="form-link">
+                <span>Don't have an account? </span>
+                <Link to="/register">Sign Up</Link>
+              </div>
+            </div>  
+          </div>
         </div>
-      </div>  
-    </div>
-    </div>
-    </div>
+      </div>
     </div>
   );
 };
