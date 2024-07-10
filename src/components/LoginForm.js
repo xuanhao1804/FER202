@@ -7,7 +7,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [usernameOrEmail, setUsernameOrEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.get('http://localhost:9999/users');
-      const user = response.data.find(u => u.email === email);
+      const user = response.data.find(u => u.email === usernameOrEmail || u.username === usernameOrEmail);
       
       if (user) {
         const isMatch = await bcryptjs.compare(password, user.password);
@@ -25,16 +25,17 @@ const Login = () => {
           toast.success('Logged in successfully');
           navigate('/');
         } else {
-          toast.error('Invalid email or password');
+          toast.error('Invalid username/email or password');
         }
       } else {
-        toast.error('Invalid email or password');
+        toast.error('Invalid username/email or password');
       }
     } catch (error) {
       console.error('Login error:', error);
       toast.error('Failed to login: ' + error.message);
     }
   };
+
 
   const handleGoogleLogin = async (credentialResponse) => {
     try {
@@ -96,33 +97,31 @@ const Login = () => {
               <h1></h1>
               <h3 className="mb-5">Sign in</h3>
               <form onSubmit={handleLogin}>
-          <div data-mdb-input-init className="form-outline mb-4">
-          <label className="form-label" htmlFor="typeEmailX-2">
-              Email
-            </label>
-            <input
-              type="text"
-              id="typeEmailX-2"
-              className="form-control form-control-lg"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+        <div data-mdb-input-init className="form-outline mb-4">
+          <label className="form-label" htmlFor="typeUsernameOrEmailX-2">
+            Username or Email
+          </label>
+          <input
+            type="text"
+            id="typeUsernameOrEmailX-2"
+            className="form-control form-control-lg"
+            value={usernameOrEmail}
+            onChange={(e) => setUsernameOrEmail(e.target.value)}
+          />
+        </div>
 
-          </div>
-
-          <div data-mdb-input-init className="form-outline mb-4">
+        <div data-mdb-input-init className="form-outline mb-4">
           <label className="form-label" htmlFor="typePasswordX-2">
-              Password
-            </label>
-            <input
-              type="password"
-              id="typePasswordX-2"
-              className="form-control form-control-lg"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-
-          </div>
+            Password
+          </label>
+          <input
+            type="password"
+            id="typePasswordX-2"
+            className="form-control form-control-lg"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
           <div className="form-check d-flex justify-content-start mb-4">
             <input className="form-check-input" type="checkbox" value="" id="form1Example3" />

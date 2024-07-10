@@ -91,24 +91,6 @@
       "balance": 6000000
     },
     {
-      "id": "5012",
-      "username": "xuanhao1804",
-      "email": "xuanhao1804@gmail.com",
-      "password": "123123",
-      "fullName": "Lê Hào",
-      "gender": "male",
-      "address": "adress",
-      "phone": "0123456789",
-      "role": "student",
-      "avatar": "https://example.com/default-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": false,
-      "createdAt": "2024-07-03T15:11:52.711Z",
-      "lastLogin": "2024-07-03T15:11:52.711Z",
-      "studentID": "HA180003",
-      "balance": 55000000
-    },
-    {
       "id": "ad07",
       "username": "bthteam",
       "email": "bthteam102@gmail.com",
@@ -123,6 +105,25 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-10T04:12:32.792Z",
       "lastLogin": "2024-07-10T04:12:32.793Z"
+    },
+    {
+      "id": "345b",
+      "username": "xuanhao1804",
+      "email": "xuanhao1804@gmail.com",
+      "password": "$2a$10$qdTuRx7nDrCCA5ZTqEWC5OL0rTcE0VAGRqMaNA9p.Os2g6l9Uhn.O",
+      "fullName": "Lee Hao",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0363066815",
+      "role": "admin",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-10T04:56:36.207Z",
+      "lastLogin": "2024-07-10T04:56:36.207Z",
+      "balance": 6000000,
+      "currentPassword": "123123",
+      "newPassword": "123456"
     }
   ],
   "auth_tokens": [
