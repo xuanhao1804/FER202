@@ -88,7 +88,7 @@
       "createdAt": "2024-07-03T14:34:41.123Z",
       "lastLogin": "2024-07-03T14:34:41.123Z",
       "studentID": "HE172802",
-      "balance": 600000
+      "balance": 6000000
     },
     {
       "id": "5012",
@@ -477,16 +477,6 @@
     }
   ],
   "bookingRequests": [
-    {
-      "id": "1",
-      "studentid": "HA180003",
-      "dormitory": "1",
-      "floor": "1",
-      "room": "101",
-      "bed": "A101-2",
-      "semester": "Sum 2024",
-      "status": "approved"
-    }
   ],
   "guide": [
     {
