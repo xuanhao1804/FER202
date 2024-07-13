@@ -85,7 +85,7 @@ export default function ManagePendingBooking() {
     };
 
     const handleOnReject = (orderId) => {
-        const currentReq = bookingRequests.find(t => t.id == orderId);
+        const currentReq = bookingRequests.find(t => t.id === orderId);
 
         fetch(`http://localhost:9999/bookingRequests/${orderId}`, {
             method: 'PUT',
