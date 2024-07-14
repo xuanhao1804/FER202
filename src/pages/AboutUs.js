@@ -64,36 +64,7 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        <div class="about-list-icon">
-                                            <ul>
-                                                <li>
-                                                    <Link to="https://www.facebook.com/shu.hao.184" target="_blank">
-                                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
-                                                    </Link>
-
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                     </div>
 
                                 </div>
@@ -109,36 +80,7 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        <div class="about-list-icon">
-                                            <ul>
-                                                <li>
-                                                    <Link to="https://www.facebook.com/shu.hao.184">
-                                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
-                                                    </Link>
-
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                     </div>
 
                                 </div>
@@ -215,36 +157,7 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        <div class="about-list-icon">
-                                            <ul>
-                                                <li>
-                                                    <Link to="https://www.facebook.com/shu.hao.184">
-                                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
-                                                    </Link>
-
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                     </div>
 
                                 </div>
@@ -260,36 +173,7 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        <div class="about-list-icon">
-                                            <ul>
-                                                <li>
-                                                    <Link to="https://www.facebook.com/shu.hao.184">
-                                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
-                                                    </Link>
-
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                     </div>
 
                                 </div>
@@ -366,36 +250,7 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        <div class="about-list-icon">
-                                            <ul>
-                                                <li>
-                                                    <Link to="https://www.facebook.com/shu.hao.184">
-                                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
-                                                    </Link>
-
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                     </div>
 
                                 </div>
@@ -411,36 +266,7 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        <div class="about-list-icon">
-                                            <ul>
-                                                <li>
-                                                    <Link to="https://www.facebook.com/shu.hao.184">
-                                                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
-                                                    </Link>
-
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link to="#">
-                                                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        
                                     </div>
 
                                 </div>

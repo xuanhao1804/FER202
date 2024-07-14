@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "admin123",
       "role": "admin",
@@ -12,7 +12,7 @@
       "avatar": "https://example.com/admin-avatar.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "student1",
       "password": "student123",
       "role": "student",
@@ -23,7 +23,7 @@
       "avatar": "https://example.com/student1-avatar.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "student2",
       "password": "pass456",
       "role": "student",
@@ -34,7 +34,7 @@
       "avatar": "https://example.com/student2-avatar.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "username": "staff1",
       "password": "staffpass",
       "role": "staff",
@@ -47,25 +47,25 @@
   ],
   "news": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Welcome to the new semester!",
       "description": "We're excited to kick off the new semester and welcome all our new and returning students.",
       "date": "2023-08-15"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Upcoming dorm renovations",
       "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
       "date": "2023-11-01"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Campus-wide Wi-Fi upgrade",
       "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage.",
       "date": "2023-09-10"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "New meal plans available",
       "description": "Check out our new flexible meal plan options for the upcoming semester!",
       "date": "2023-07-20"
@@ -73,7 +73,7 @@
   ],
   "dormitories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "A",
       "totalBeds": 200,
       "usedBeds": 180,
@@ -169,7 +169,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "B",
       "totalBeds": 150,
       "usedBeds": 120,
@@ -205,7 +205,7 @@
   ],
   "bookingRequests": [
     {
-      "id": 1,
+      "id": "1",
       "studentid": 2,
       "dormitory": 1,
       "floor": 1,
@@ -215,7 +215,7 @@
       "status": "pending"
     },
     {
-      "id": 2,
+      "id": "2",
       "studentid": 3,
       "dormitory": 2,
       "floor": 1,
@@ -227,21 +227,21 @@
   ],
   "payments": [
     {
-      "id": 1,
+      "id": "1",
       "student": 2,
       "amount": 1000,
       "date": "2023-08-15",
       "semester": "Fall 2023"
     },
     {
-      "id": 2,
+      "id": "2",
       "student": 3,
       "amount": 950,
       "date": "2023-08-20",
       "semester": "Fall 2023"
     },
     {
-      "id": 3,
+      "id": "3",
       "student": 2,
       "amount": 1000,
       "date": "2024-01-10",
@@ -250,29 +250,39 @@
   ],
   "rules": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Quiet Hours",
       "description": "Quiet hours are from 10 PM to 7 AM. Please keep noise to a minimum during these times."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "No Smoking",
       "description": "Smoking is strictly prohibited in all dorm rooms and common areas."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Guests Policy",
       "description": "Overnight guests are allowed for a maximum of 3 consecutive nights and must be registered at the front desk."
     },
     {
-      "id": 4,
+      "id": "5",
       "title": "Room Inspections",
       "description": "Regular room inspections will be conducted to ensure cleanliness and compliance with dorm policies."
+    },
+    {
+      "title": "new rule 1",
+      "description": "new description 1",
+      "id": "6"
+    },
+    {
+      "title": "new rule 2",
+      "description": "new description 2",
+      "id": "7eb7"
     }
   ],
   "guide": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Instructions for viewing news",
       "step": [
         {
@@ -302,7 +312,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Instructions for booking a bed",
       "step": [
         {
@@ -319,7 +329,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Instructions for contacting the security department",
       "step": [
         {
@@ -370,7 +380,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Instructions for contacting the medical department",
       "step": [
         {
@@ -421,7 +431,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Instructions for contacting the dormitory management",
       "step": [
         {
@@ -472,7 +482,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Instructions for creating a request",
       "step": [
         {
@@ -510,7 +520,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Instructions for viewing electricity/water usage",
       "step": [
         {
@@ -540,7 +550,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Instructions for viewing payment history",
       "step": [
         {
@@ -562,7 +572,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Instructions for viewing resident history",
       "step": [
         {

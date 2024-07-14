@@ -10,8 +10,7 @@ import '../node_modules/startbootstrap-sb-admin-2/css/sb-admin-2.min.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "react-toastify/dist/ReactToastify.css";
 import "jquery/dist/jquery.min.js";
-import "font-awesome/css/font-awesome.min.css";
-
+import 'font-awesome/css/font-awesome.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

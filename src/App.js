@@ -15,6 +15,7 @@ import StudentGuide from "./pages/StudentGuide.js";
 import FAQ from "./pages/FAQ.js";
 import FUDormitoryRegulations from "./pages/FUDormitoryRegulations.js";
 import AboutUs from "./pages/AboutUs.js";
+import AdminRegulations from "./pages/AdminRegulations.js";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/guide" element={<StudentGuide />} />           {/*   guide student     */} 
           <Route path="/faq" element={<FAQ />} />           {/*   FAQ     */}         
           <Route path="/regulation" element={<FUDormitoryRegulations />} />          {/*   regulation     */}
+          <Route path="/manage/regulation" element={<AdminRegulations />} />          {/*   admin regulation     */}
           <Route path="/about" element={<AboutUs />}/>         {/*   about us     */}
 
           <Route path="/manage/booking" element={<ManagePendingBooking />} />       {/*    check list payment admin    */}
