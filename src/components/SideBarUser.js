@@ -151,7 +151,7 @@ function SideBarUser() {
                         <li className="nav-item active">
                             <Link className="nav-link" to={'/regulation'} >
                             
-                                <span> FU Dormitory Regulations </span>
+                                <span> Dormitory Regulations </span>
                                 </Link>
                         </li>
 

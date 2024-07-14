@@ -58,6 +58,19 @@ const StudentGuide = () => {
             });
     }
 
+    useEffect(() => {
+        if(search === '') {
+            axios.get('http://localhost:9999/guide')
+            .then(response => {
+                setGuide(response.data);
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
+        }
+    }, [search]);
+
+
     return (
         <LayoutUser>
             <div>

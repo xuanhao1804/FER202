@@ -14,6 +14,7 @@ import NotFoundPage from "./pages/error-404/Error.js";
 import StudentGuide from "./pages/StudentGuide.js";
 import FAQ from "./pages/FAQ.js";
 import FUDormitoryRegulations from "./pages/FUDormitoryRegulations.js";
+import AboutUs from "./pages/AboutUs.js";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/guide" element={<StudentGuide />} />           {/*   guide student     */} 
           <Route path="/faq" element={<FAQ />} />           {/*   FAQ     */}         
           <Route path="/regulation" element={<FUDormitoryRegulations />} />          {/*   regulation     */}
+          <Route path="/about" element={<AboutUs />}/>         {/*   about us     */}
 
           <Route path="/manage/booking" element={<ManagePendingBooking />} />       {/*    check list payment admin    */}
           <Route path="/*" element={<NotFoundPage />} />       {/*    check list payment admin    */}
