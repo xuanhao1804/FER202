@@ -265,9 +265,8 @@ export default function AdminRegulations() {
                                 </Form.Group>
                                 <div className='d-md-flex justify-content-end'>
                                     <Button variant="primary"
-                                        style={{ width: '80px' }}
+                                        style={{ width: '80px', marginRight: '10px' }}
                                         onClick={e => addRule()}>
-
                                         Save
                                     </Button>
                                     <Button type='submit'
@@ -308,9 +307,8 @@ export default function AdminRegulations() {
                                 </Form.Group>
                                 <div className='d-md-flex justify-content-end'>
                                     <Button variant="primary"
-                                        style={{ width: '80px' }}
+                                        style={{ width: '80px', marginRight: '10px' }}
                                         onClick={e => editRule()}>
-
                                         Save
                                     </Button>
                                     <Button type='submit'
