@@ -1,11 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../style/SidebarUser.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 
 function SideBarUser() {
+    const [userRole, setUserRole] = useState('');
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.role) {
+            setUserRole(user.role);
+        }
+    }, []);
+
+    const checkAccess = (path) => {
+        if (userRole !== 'student') {
+            toast.error('Forbidden: Access denied');
+            return;
+        }
+        navigate(path);
+    };
     const id = sessionStorage.getItem('id')
+    
     
     const [style, setStyle] = useState("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
 
@@ -85,11 +104,11 @@ function SideBarUser() {
                             <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                                 aria-expanded="true" aria-controls="collapsePages">
                                 <i className="fas fa-fw fa-folder"></i>
-                                <span>Pages</span>
+                                <span>Setting</span>
                             </a>
                             <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                                 <div className="bg-white py-2 collapse-inner rounded">
-                                    <h6 className="collapse-header">Page Screens:</h6>
+                                    <h6 className="collapse-header">Page Setting:</h6>
                                     <Link className="collapse-item" to={`/user/${id}`}>Profile</Link>
                                     <Link className="collapse-item" to={'/changepass'}>Change Password</Link>
                                     {/* <div className="collapse-divider"></div>
@@ -114,6 +133,12 @@ function SideBarUser() {
                         </li>
                         <hr className="sidebar-divider d-none d-md-block" />
                         <li className="nav-item active">
+                        <hr className="sidebar-divider d-none d-md-block" />
+<li className="nav-item active">
+  <Link className="nav-link" to={'/booking-requests'} >
+    <span>My Booking Requests</span>
+  </Link>
+</li>
                             <Link className="nav-link" to={'/resident'} >
                             
                                 <span>Resident </span>

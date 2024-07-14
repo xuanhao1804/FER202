@@ -34,3 +34,37 @@
     width: 0!important;
     overflow: hidden;
 }
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  #wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #accordionSidebar {
+    width: 250px; /* hoặc bất kỳ giá trị cố định nào bạn muốn */
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .sidebar {
+    flex-shrink: 0;
+  }
+  
+  /* Đảm bảo nội dung bên trong sidebar không bị tràn */
+  #accordionSidebar > * {
+    width: 100%;
+    box-sizing: border-box;
+  }
