@@ -8,6 +8,14 @@ export default function ManagePendingBooking() {
     const [dormitories, setDormitories] = useState([]);
     const [log, setLog] = useState(JSON.parse(localStorage.getItem("user")));
 
+    const getCurrentDate = () => {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+
+        return `${year}-${month}-${day}`;
+    };
 
     useEffect(() => {
         fetch(`http://localhost:9999/bookingRequests`)
@@ -68,10 +76,32 @@ export default function ManagePendingBooking() {
                         'Content-Type': 'application/json',
                     },
                 });
+                const payments = {
+                    studentID: log.studentID,
+                    amount: 850000,
+                    date: getCurrentDate,
+                    semester: "Summer 2024"
+                }
+                axios.post(`http://localhost:9999/payments`, payments, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
                 localStorage.setItem("user", JSON.stringify(updatedLog));
             } else {
                 const updatedLog = { ...log, balance: log.balance - 1050000 };
                 axios.put(`http://localhost:9999/users/${log.id}`, updatedLog, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                const payments = {
+                    studentID: log.studentID,
+                    amount: 1050000,
+                    date: getCurrentDate(),
+                    semester: "Summer 2024"
+                }
+                axios.post(`http://localhost:9999/payments`, payments, {
                     headers: {
                         'Content-Type': 'application/json',
                     },

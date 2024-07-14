@@ -151,6 +151,9 @@ function BookingBed() {
                 alert("Create success");
             })
             .catch(error => console.error('Error fetching dormitories:', error));
+            
+
+            
     }
  
     const isBooking = !!bookingreq?.find(b => b.studentid == user.studentID && (b.status == "approved"||b.status == "pending"));
