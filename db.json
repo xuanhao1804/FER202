@@ -16,7 +16,8 @@
       "createdAt": "2023-06-28T15:30:45Z",
       "lastLogin": "2023-06-28T15:30:45Z",
       "studentID": null,
-      "balance": null
+      "balance": null,
+      "status": true
     },
     {
       "id": "2",
@@ -34,7 +35,8 @@
       "createdAt": "2023-06-28T16:00:00Z",
       "lastLogin": "2023-06-28T16:00:00Z",
       "studentID": "HE170001",
-      "balance": 500000
+      "balance": 500000,
+      "status": true
     },
     {
       "id": "3",
@@ -52,7 +54,8 @@
       "createdAt": "2023-06-28T16:30:00Z",
       "lastLogin": "2023-06-28T16:30:00Z",
       "studentID": "HS170002",
-      "balance": 750000
+      "balance": 750000,
+      "status": true
     },
     {
       "id": "4",
@@ -70,7 +73,8 @@
       "createdAt": "2023-06-28T17:00:00Z",
       "lastLogin": "2023-06-28T17:00:00Z",
       "studentID": null,
-      "balance": null
+      "balance": null,
+      "status": true
     },
     {
       "id": "02d7",
@@ -88,7 +92,8 @@
       "createdAt": "2024-07-03T14:34:41.123Z",
       "lastLogin": "2024-07-03T14:34:41.123Z",
       "studentID": "HE172802",
-      "balance": 600000
+      "balance": 600000,
+      "status": true
     },
     {
       "id": "5012",
@@ -106,7 +111,8 @@
       "createdAt": "2024-07-03T15:11:52.711Z",
       "lastLogin": "2024-07-03T15:11:52.711Z",
       "studentID": "HA180003",
-      "balance": 55000000
+      "balance": 55000000,
+      "status": true
     }
   ],
   "auth_tokens": [

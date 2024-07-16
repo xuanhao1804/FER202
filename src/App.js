@@ -16,6 +16,7 @@ import StudentGuide from "./pages/StudentGuide.js";
 import FAQ from "./pages/FAQ.js";
 import FUDormitoryRegulations from "./pages/FUDormitoryRegulations.js";
 import DormitorySelector from "./pages/user/BookingBed2.js";
+import UserManagerment from "./pages/UserManagerment.js";
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
           <Route path="/manage/booking" element={<ManagePendingBooking />} />      
           <Route path="/*" element={<NotFoundPage />} />      
           <Route path="/booking2" element={<DormitorySelector />} />      
-          
+          <Route path="/manageruser" element={<UserManagerment />} />  
         </Routes>
       </BrowserRouter>
     </div>
