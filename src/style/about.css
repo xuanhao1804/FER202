@@ -165,7 +165,7 @@ nav.navbar.bootsnav .navbar-toggle {
     padding: 10px;
     top: 0;
 }
-nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
+nav.navbar.bootsnav .navbar-toggle i{color: #c14c16;}
 /*.navbar-toggle */
 
 
@@ -178,7 +178,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
     align-items: center;
     justify-content: center;
     position:relative;
-    background:url(../assert/images/about/welcome-banner.jpg)no-repeat;
+    background:url(../assert/images/about/image.png)no-repeat;
     background-size:cover;
     background-position: center;
     height:890px;
@@ -201,7 +201,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
     text-transform: uppercase;
     line-height: 1.5;
 }
-.header-text h2 span {color: #d92cf9;}
+.header-text h2 span {color: #e16533;}
 .header-text p {
     color: #fff;
     font-size: 20px;

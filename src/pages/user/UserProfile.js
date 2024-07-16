@@ -128,12 +128,14 @@ export default function UserProfile() {
             </Row>
             <Row style={{ marginTop: "15px" }}>
                 <Col lg={4} style={{ textAlign: "center" }}>
-                    <Image 
-                        src={user?.avatar} 
+                <Image 
+                        // src={`https://loremflickr.com/320/240/person?random=${Math.random()}`}
+                        src={`https://loremflickr.com/320/240/paris,girl/all`}
                         alt={`${user?.fullName}'s avatar`} 
                         width="60%" 
                         onError={handleImageError}
-                        />
+                        style={{ border: '2px solid #ddd', borderRadius: '8px', maxWidth: '100%', width:'300px',height: '400px' }}
+                    />
                 </Col>
                 <Col lg={7}>
                     <div style={{ textAlign: "right", marginBottom: "10px" }}>

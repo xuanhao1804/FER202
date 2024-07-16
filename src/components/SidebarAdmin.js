@@ -75,12 +75,12 @@ function SideBarAdmin() {
                         <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                             aria-expanded="true" aria-controls="collapsePages">
                             <i className="fas fa-fw fa-folder"></i>
-                            <span>Pages</span>
+                            <span>Setting</span>
                         </a>
                         <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                             <div className="bg-white py-2 collapse-inner rounded">
-                                <h6 className="collapse-header">Page Screens:</h6>
-                                <Link className="collapse-item" to={`/user/${id}`}>Profile</Link>
+                                <h6 className="collapse-header">Setting options:</h6>
+                                {/* <Link className="collapse-item" to={`/user/${id}`}>Profile</Link> */}
                                 <Link className="collapse-item" to={'/changepass'}>Change Password</Link>
                             </div>
                         </div>
