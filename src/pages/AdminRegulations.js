@@ -132,7 +132,7 @@ export default function AdminRegulations() {
     const [description, setDescription] = useState('');
 
     function addRule() {
-        if(id === '' || title === '' || description === ''){
+        if( title === '' || description === ''){
             toast.error('Please fill in all fields');
             return;
         }
@@ -145,6 +145,7 @@ export default function AdminRegulations() {
                 toast.success('Add new rule successfully');
                 $('#add-rule-form').hide();
                 $('#pdf').show();
+                setRule([...rule, response.data]);
             })
             .catch(err => {
                 console.log(err.message);
@@ -152,29 +153,31 @@ export default function AdminRegulations() {
             });
     }
 
-    //function to edit rule
-    function editRule() {
-        if(id === '' || title === '' || description === ''){
-            toast.error('Please fill in all fields');
-            return;
-        }
-
-        const id = $('#edit-rule-form #id').val();
-        axios.put('http://localhost:9999/rules/' + id, {
-            title: title,
-            description: description
-        })
-            .then(response => {
-                console.log(response.data);
-                toast.success('Edit rule successfully');
-                $('#edit-rule-form').hide();
-                $('#pdf').show();
-            })
-            .catch(err => {
-                console.log(err.message);
-                toast.error('Edit rule failed');
-            });
+//function to edit rule
+function editRule() {
+    if(title === '' || description === ''){
+        toast.error('Please fill in all fields');
+        return;
     }
+
+    // Remove this line as we're already using the state variable 'id'
+    // const id = $('#edit-rule-form #id').val();
+
+    axios.put('http://localhost:9999/rules/' + id, {
+        title: title,
+        description: description
+    })
+        .then(response => {
+            console.log(response.data);
+            toast.success('Edit rule successfully');
+            $('#edit-rule-form').hide();
+            $('#pdf').show();
+        })
+        .catch(err => {
+            console.log(err.message);
+            toast.error('Edit rule failed');
+        });
+}
 
 
     return (
