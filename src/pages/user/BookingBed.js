@@ -1,244 +1,364 @@
-import React, { useState, useEffect } from 'react';
-import { format } from 'date-fns';
-import LayoutAdmin from "../../layout/LayoutAdmin";
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { Col } from 'react-bootstrap';
 
-const ManageResident = () => {
-  const [residentHistory, setResidentHistory] = useState([]);
-  const [users, setUsers] = useState({});
-  const [semesters, setSemesters] = useState({});
-  const [dormitories, setDormitories] = useState({});
-  const [showModal, setShowModal] = useState(false);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const [selectedHistory, setSelectedHistory] = useState(null);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+import TemplateUser from "../../layout/LayoutUser";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-  const fetchData = () => {
-    // Fetch approved booking requests
-    fetch(`http://localhost:9999/bookingRequests?status=approved`)
-      .then(response => response.json())
-      .then(data => setResidentHistory(data))
-      .catch(error => {
-        console.error('Error fetching resident history:', error);
-        toast.error('Error fetching resident history');
-      });
 
-    // Fetch users
-    fetch(`http://localhost:9999/users`)
-      .then(response => response.json())
-      .then(data => {
-        const userMap = {};
-        data.forEach(user => {
-          userMap[user.studentID] = user;
-        });
-        setUsers(userMap);
-      })
-      .catch(error => {
-        console.error('Error fetching users:', error);
-        toast.error('Error fetching users');
-      });
 
-    // Fetch semesters
-    fetch(`http://localhost:9999/semesters`)
-      .then(response => response.json())
-      .then(data => {
-        const semesterMap = {};
-        data.forEach(semester => {
-          semesterMap[semester.name] = semester;
-        });
-        setSemesters(semesterMap);
-      })
-      .catch(error => {
-        console.error('Error fetching semesters:', error);
-        toast.error('Error fetching semesters');
-      });
-
-    // Fetch dormitories
-    fetch(`http://localhost:9999/dormitories`)
-      .then(response => response.json())
-      .then(data => {
-        const dormitoryMap = {};
-        data.forEach(dormitory => {
-          dormitoryMap[dormitory.id] = dormitory.name;
-        });
-        setDormitories(dormitoryMap);
-      })
-      .catch(error => {
-        console.error('Error fetching dormitories:', error);
-        toast.error('Error fetching dormitories');
-      });
-  };
-
-  const handleShow = (history) => {
-    setSelectedHistory(history);
-    setShowModal(true);
-  };
-
-  const handleClose = () => setShowModal(false);
-
-  const handleConfirmShow = (history) => {
-    setSelectedHistory(history);
-    setShowConfirmModal(true);
-  };
-
-  const handleConfirmClose = () => setShowConfirmModal(false);
-
-  const handleToggleResidency = (id, currentStatus) => {
-    const newStatus = !currentStatus;
-    fetch(`http://localhost:9999/bookingRequests/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ isExpired: newStatus }),
+function BookingBed() {
+    const [page, setPage] = useState(true)
+    const [typeRoom, settypeRoom] = useState([])
+    const [user, setUser] = useState({
+        "studentId": JSON.parse(localStorage.getItem("user")).studentID,
+        cost: JSON.parse(localStorage.getItem("user")).balance
     })
-    .then(response => response.json())
-    .then(data => {
-      setResidentHistory(residentHistory.map(history => 
-        history.id === id ? { ...history, isExpired: newStatus } : history
-      ));
-      toast.success(`Residency ${newStatus ? 'ended' : 'reactivated'} successfully`);
-      handleConfirmClose();
-    })
-    .catch(error => {
-      console.error('Error toggling residency:', error);
-      toast.error('An error occurred. Please try again.');
+    console.log("User state:", user); // Thêm dòng này
+    const [bookingreq, setBookingreq] = useState([]);
+
+
+    const next = () => {
+        // if (cost) {
+        setPage(false)
+        // }
+    }
+    useEffect(() => {
+        fetch(`http://localhost:9999/roomTypes`)
+            .then(response => response.json())
+            .then(data => {
+                settypeRoom(data);
+            })
+            .catch(error => console.error('Error fetching typeroom:', error));
+        fetch(`http://localhost:9999/bookingRequests`)
+            .then(response => response.json())
+            .then(data => {
+                setBookingreq(data);
+            })
+            .catch(error => console.error('Error fetching typeroom:', error));
+    }, [])
+    const [cost, setCost] = useState({
+        "id": 0,
+        "type": "4 beds",
+        "price": 0
     });
-  };
 
-  // Sort resident history by end date (most recent first)
-  const sortedHistory = residentHistory.sort((a, b) => {
-    const dateA = semesters[a.semester]?.endDate;
-    const dateB = semesters[b.semester]?.endDate;
-    return new Date(dateB) - new Date(dateA);
-  });
 
-  return (
-    <LayoutAdmin>
-      <Col sm={11}>
-        <div className="container-fluid">
-          <h2 className="text-primary mb-4">Manage Residents</h2>
-          {sortedHistory.length === 0 ? (
-            <p className="text-muted">There are no current residents.</p>
-          ) : (
-            <div className="table-responsive">
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th>Student ID</th>
-                    <th>Student Name</th>
-                    <th>Dormitory</th>
-                    <th>Floor</th>
-                    <th>Room</th>
-                    <th>Bed</th>
-                    <th>Semester</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {sortedHistory.map((history) => {
-                    const user = users[history.studentId];
-                    return (
-                      <tr key={history.id}>
-                        <td>{history.studentId}</td>
-                        <td>{user?.fullName || 'N/A'}</td>
-                        <td>{dormitories[history.dormitory] || `Dormitory ${history.dormitory}`}</td>
-                        <td>{history.floor}</td>
-                        <td>{history.room}</td>
-                        <td>{history.bed}</td>
-                        <td>{history.semester}</td>
-                        <td>{semesters[history.semester] && format(new Date(semesters[history.semester].startDate), 'MMM dd, yyyy')}</td>
-                        <td>{semesters[history.semester] && format(new Date(semesters[history.semester].endDate), 'MMM dd, yyyy')}</td>
-                        <td>{history.isExpired ? 'Expired' : 'Active'}</td>
-                        <td>
-                          <Button variant="primary" size="sm" className="me-2" onClick={() => handleShow(history)}>
-                            View Details
-                          </Button>
-                          <Button 
-                            variant={history.isExpired ? "success" : "warning"} 
-                            size="sm" 
-                            onClick={() => handleConfirmShow(history)}
-                          >
-                            {history.isExpired ? 'Reactivate' : 'End Residency'}
-                          </Button>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
+    const [dormitories, setDormitories] = useState([]);
+    const [selectedDorm, setSelectedDorm] = useState('');
+    const [floors, setFloors] = useState([]);
+    const [selectedFloor, setSelectedFloor] = useState('');
+    const [rooms, setRooms] = useState([]);
+    const [selectedRoom, setSelectedRoom] = useState('');
+    const [freeBeds, setFreeBeds] = useState([]);
+    const [availableBeds, setAvailableBeds] = useState(0);
 
-        <Modal show={showModal} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Resident Details</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {selectedHistory && (
-              <>
-                <p><strong>Student ID:</strong> {selectedHistory.studentId}</p>
-                <p><strong>Student Name:</strong> {users[selectedHistory.studentId]?.fullName || 'N/A'}</p>
-                <p><strong>Dormitory:</strong> {dormitories[selectedHistory.dormitory] || `Dormitory ${selectedHistory.dormitory}`}</p>
-                <p><strong>Floor:</strong> {selectedHistory.floor}</p>
-                <p><strong>Room:</strong> {selectedHistory.room}</p>
-                <p><strong>Bed:</strong> {selectedHistory.bed}</p>
-                <p><strong>Semester:</strong> {selectedHistory.semester}</p>
-                {semesters[selectedHistory.semester] && (
-                  <>
-                    <p><strong>Start Date:</strong> {format(new Date(semesters[selectedHistory.semester].startDate), 'MMM dd, yyyy')}</p>
-                    <p><strong>End Date:</strong> {format(new Date(semesters[selectedHistory.semester].endDate), 'MMM dd, yyyy')}</p>
-                  </>
-                )}
-                <p><strong>Status:</strong> {selectedHistory.isExpired ? 'Expired' : 'Active'}</p>
-              </>
-            )}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
+    useEffect(() => {
+        fetch('http://localhost:9999/dormitories')
+            .then(response => response.json())
+            .then(data => {
+                setDormitories(data);
+                updateFreeBeds(data);
+            })
+            .catch(error => console.error('Error fetching dormitories:', error));
+    }, []);
 
-        <Modal show={showConfirmModal} onHide={handleConfirmClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Confirm Action</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {selectedHistory && (
-              <p>Are you sure you want to {selectedHistory.isExpired ? 'reactivate' : 'end'} this residency?</p>
-            )}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleConfirmClose}>
-              Cancel
-            </Button>
-            <Button 
-              variant={selectedHistory?.isExpired ? "success" : "warning"} 
-              onClick={() => handleToggleResidency(selectedHistory.id, selectedHistory.isExpired)}
-            >
-              Confirm
-            </Button>
-          </Modal.Footer>
-        </Modal>
+    useEffect(() => {
+        if (selectedDorm) {
+            const dorm = dormitories.find(d => d.id === selectedDorm);
+            setFloors(dorm ? dorm.floors : []);
+            setSelectedFloor('');
+            setRooms([]);
+            setSelectedRoom('');
+            updateFreeBeds();
+        }
+    }, [selectedDorm, dormitories]);
 
-        <ToastContainer />
-      </Col>
-      <Col sm={1}></Col>
-    </LayoutAdmin>
-  );
-};
+    useEffect(() => {
+        if (selectedFloor) {
+            const dorm = dormitories.find(d => d.id === selectedDorm);
+            const floor = dorm ? dorm.floors.find(f => f.id === parseInt(selectedFloor)) : null;
 
-export default ManageResident;
+            setRooms(floor ? floor.rooms.filter(p => p.roomType == cost.type) : []);
+            setSelectedRoom('');
+            updateFreeBeds();
+        }
+    }, [selectedFloor, selectedDorm, dormitories]);
+
+    useEffect(() => {
+        if (selectedRoom) {
+            updateFreeBeds();
+        }
+    }, [selectedRoom, selectedFloor, selectedDorm, dormitories]);
+
+    const updateFreeBeds = () => {
+        let beds = [];
+        let count = 0;
+        const dorm = dormitories.find(d => d.id === selectedDorm);
+        if (dorm) {
+            dorm.floors.forEach(floor => {
+                if (!selectedFloor || floor.id === parseInt(selectedFloor)) {
+                    floor.rooms.forEach(room => {
+                        if ((!selectedRoom || room.id === parseInt(selectedRoom)) && room.roomType == cost.type) {
+                            room.beds.forEach(bed => {
+                                if (bed.status === 'available') {
+                                    beds.push({
+                                        id: bed.id,
+                                        name: bed.name,
+                                        roomNumber: room.roomNumber,
+                                        floorNumber: floor.floorNumber
+                                    });
+                                    count++;
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        }
+        setFreeBeds(beds);
+        setAvailableBeds(count);
+    };
+    function updateCost(event) {
+        const id = event.target.value
+        const rs = typeRoom.find((s) => s.id == id)
+        setCost(rs);
+    }
+
+    function handleBooking() {
+        fetch(`http://localhost:9999/bookingRequests`)
+            .then(response => response.json())
+            .then(data => {
+                const bookingRequests = data;
+                const maxId = bookingRequests.reduce((max, bookingRequest) => {
+                    return bookingRequest.id > max ? bookingRequest.id : max;
+                }, 0);
+                const newRequest = {
+                    id: (maxId + 1).toString(),
+                    studentId: user.studentId,
+                    dormitory: selectedDorm,
+                    floor: selectedFloor, 
+                    room: selectedRoom,
+                    bed: freeBeds[0]?.id,
+                    semester: "Summer 2024",
+                    status: "pending",
+                    isExpired: false
+                }
+                console.log("New request:", newRequest); // Thêm dòng này
+                fetch('http://localhost:9999/bookingRequests', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newRequest),
+                })
+                .then(response => response.json()) // Thêm dòng này
+                .then(data => console.log("Response:", data)) // Thêm dòng này
+                .catch(error => console.error('Error posting booking request:', error)); // Thêm dòng này
+                alert("Create success");
+            })
+            .catch(error => console.error('Error fetching booking requests:', error));
+    }
+
+    const isBooking = !!bookingreq?.find(b => 
+        b.studentId == user.studentId && // Đổi từ studentid sang studentId
+        (b.status == "approved" || b.status == "pending") && 
+        !b.isExpired // Kiểm tra isExpired
+    );
+    const isCostValid = cost.price && cost.price > 0;
+    
+    return (
+        <TemplateUser>
+            {page ?
+                <div className="">
+                    {isBooking ? (<div><h1>Already Booking</h1></div>) :
+                        (<form className="flex flex-col gap-4">
+                            <h1 style={{ color: '#034ea1', fontWeight: 'bold' }}>Choose Type Room</h1>
+                            <h4 style={{ color: '#034ea1', }}>Room type</h4>
+                            <select id="room" style={{
+                                width: "100%", height: '40px', width: "100%",
+                                height: '40px',
+                                border: "1px solid #f36f21",
+                                borderRadius: "12px",
+                                padding: "5px 10px",
+                                fontSize: "16px",
+                                color: "#333",
+                                backgroundColor: "#fff",
+                                boxSizing: "border-box",
+                                color: "#f36f21",
+                            }} onChange={updateCost} >
+                                <option value="" disabled selected>
+                                    Please choose Type of Room
+                                </option>
+                                {typeRoom.map(r => (
+                                    <option value={r.id} key={r.id} >{r.type} - {r.price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " VND"}</option>
+                                ))}
+
+                            </select>
+                            <h4 style={{ color: '#034ea1', marginTop: "15px" }}>Price/Bed/Semester</h4>
+                            <input id="costInput" value={cost.price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " VND"} disabled />
+                            <button style={{ marginTop: "20px" }}
+                                type="submit"
+                                className={`btn btn-success rounded-lg w-24 h-10 flex justify-center items-center ${cost && user.cost > cost ? 'btn-success' : 'btn-secondary '
+                                    }`}
+                                onClick={next}
+                                disabled={!isCostValid || user.cost < cost.price}
+                            >
+                                Next
+                            </button>
+                            {user.cost < cost.price ? <span className="text-danger">Not enough Money</span> : <div></div>}
+                        </form>)}
+
+                </div>
+                :
+                <div>
+                    <row>
+                        <h1 style={{ color: '#034ea1', fontWeight: 'bold' }}>Detail Booking</h1>
+                    </row>
+                    <div className="row g-3">
+                        <div className='col-md-5 col-xs-12'>
+                            <h4>Your Account Balance</h4>
+                            <h3 style={{ color: '#034ea1', fontWeight: 'bold' }}>{user.cost?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND</h3>
+                            <h4>Minimum Balance required in VND</h4>
+                            <h3 style={{ color: '#034ea1', fontWeight: 'bold' }}>{cost.price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND</h3>
+                            <h4>Your Balance atter booking</h4>
+                            <h3 style={{ color: '#034ea1', fontWeight: 'bold' }}>{((user.cost) - cost.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND</h3>
+                            <h4>Số slot còn lại</h4>
+                            <h3 style={{ color: '#034ea1', fontWeight: 'bold' }}>{availableBeds}</h3>
+                            <ul>
+                                {freeBeds.map(bed => (
+                                    <li key={bed.id}>
+                                        Bed {bed.name} in Room {bed.roomNumber}, Floor {bed.floorNumber}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className='col-md-7 col-xs-12' style={{ marginTop: "40px" }}>
+                            <form className="row">
+                                <div className="col-md-6 ">
+                                    <Link to={"/listroom"} style={{
+                                        background: "#ffffff",
+                                        border: "1px solid #f36f21",
+                                        borderRadius: 12,
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        color: "#f36f21",
+                                        height: "100%",
+                                        textDecoration: "none",
+                                        fontWeight: "bold"
+
+                                    }} >
+                                        See list room
+                                    </Link>
+                                </div>
+                                <div className="col-md-6">
+                                    <label style={{ color: '#034ea1' }} className="form-label">Room Type</label>
+                                    <input disabled style={{
+                                        border: "1px solid",
+                                        borderRadius: 12,
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+
+                                    }} value={`${cost.type}-${cost.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND`} />
+                                </div>
+                                <div className="col-6" style={{ marginTop: "20px" }}>
+                                    <label className="form-label" style={{ color: '#034ea1' }}>Dom</label>
+
+                                    <select value={selectedDorm} style={{
+                                        width: "100%",
+                                        height: '40px',
+                                        border: "1px solid #f36f21",
+                                        borderRadius: "12px",
+                                        padding: "5px 10px",
+                                        fontSize: "16px",
+                                        color: "#333",
+                                        backgroundColor: "#fff",
+                                        boxSizing: "border-box",
+                                        color: "#f36f21",
+                                    }} onChange={e => setSelectedDorm(e.target.value)}>
+                                        <option value="">Select Dormitory</option>
+                                        {dormitories.map(dorm => (
+                                            <option key={dorm.id} value={dorm.id}>{dorm.name}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="col-6" style={{ marginTop: "20px" }}>
+                                    <label style={{ color: '#034ea1' }} className="form-label">Floor</label>
+                                    <select
+                                        value={selectedFloor}
+                                        onChange={e => setSelectedFloor(e.target.value)}
+                                        disabled={!selectedDorm}
+                                        style={{
+                                            width: "100%",
+                                            height: '40px',
+                                            border: "1px solid #f36f21",
+                                            borderRadius: "12px",
+                                            padding: "5px 10px",
+                                            fontSize: "16px",
+                                            color: "#333",
+                                            backgroundColor: "#fff",
+                                            color: "#f36f21",
+                                            boxSizing: "border-box"
+                                        }}
+                                    >
+                                        <option value="">Select Floor</option>
+                                        {floors.map(floor => (
+                                            <option key={floor.id} value={floor.id}>Floor {floor.floorNumber}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="" style={{ marginTop: "20px" }}>
+                                    <label style={{ color: '#034ea1' }} className="form-label">Room</label>
+                                    <select
+                                        value={selectedRoom}
+                                        onChange={e => setSelectedRoom(e.target.value)}
+                                        disabled={!selectedFloor}
+                                        style={{
+                                            width: "100%",
+                                            height: '40px',
+                                            border: "1px solid #f36f21",
+                                            borderRadius: "12px",
+                                            padding: "5px 10px",
+                                            fontSize: "16px",
+                                            color: "#333",
+                                            backgroundColor: "#fff",
+                                            color: "#f36f21",
+                                            boxSizing: "border-box"
+                                        }}
+                                    >
+                                        <option value="">Select Room</option>
+                                        {rooms.map(room => (
+                                            <option key={room.id} value={room.id}>Room {room.roomNumber}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="col-12" style={{ marginTop: "30px" }}>
+                                    <button className="btn btn-primary" style={{
+                                        background: "#ffffff",
+                                        border: "1px solid #f36f21",
+                                        borderRadius: 12,
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        color: "#f36f21",
+                                        height: "100%",
+                                        lineHeight: "40px",
+                                        width: "200px",
+                                        textDecoration: "none",
+                                        fontWeight: "bold"
+
+                                    }} disabled={selectedRoom == ''} onClick={handleBooking}>Booking</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div >}
+        </TemplateUser >
+    );
+}
+const style = {
+
+}
+
+export default BookingBed;
