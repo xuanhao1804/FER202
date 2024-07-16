@@ -3,10 +3,11 @@ import "../style/regulation.css";
 import { Col, Row, Card, Button, Form } from 'react-bootstrap';
 import PDFViewer from '../components/pdf.js';
 import axios from 'axios';
-import { Pagination } from "antd";
+import { message, Pagination } from "antd";
 import background_rule_card from '../assert/images/background-rule-card.jpg';
 import $ from 'jquery'; // Import the jQuery library
 import LayoutAdmin from '../layout/LayoutAdmin';
+import { toast } from 'react-toastify';
 
 
 $(document).ready(function () {
@@ -123,29 +124,41 @@ export default function AdminRegulations() {
         }
     }, [search]);
 
+    
+
     //function to add new rule to database
     const [id, setId] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
     function addRule() {
+        if(id === '' || title === '' || description === ''){
+            toast.error('Please fill in all fields');
+            return;
+        }
         axios.post('http://localhost:9999/rules', {
             title: title,
             description: description
         })
             .then(response => {
                 console.log(response.data);
-                alert('Add new rule successfully');
-                window.location.reload();
+                toast.success('Add new rule successfully');
+                $('#add-rule-form').hide();
+                $('#pdf').show();
             })
             .catch(err => {
                 console.log(err.message);
-                alert('Add new rule failed');
+                toast.error('Add new rule failed');
             });
     }
 
     //function to edit rule
     function editRule() {
+        if(id === '' || title === '' || description === ''){
+            toast.error('Please fill in all fields');
+            return;
+        }
+
         const id = $('#edit-rule-form #id').val();
         axios.put('http://localhost:9999/rules/' + id, {
             title: title,
@@ -153,12 +166,13 @@ export default function AdminRegulations() {
         })
             .then(response => {
                 console.log(response.data);
-                alert('Edit rule successfully');
-                window.location.reload();
+                toast.success('Edit rule successfully');
+                $('#edit-rule-form').hide();
+                $('#pdf').show();
             })
             .catch(err => {
                 console.log(err.message);
-                alert('Edit rule failed');
+                toast.error('Edit rule failed');
             });
     }
 
@@ -182,7 +196,7 @@ export default function AdminRegulations() {
                 </Row>
                 <Row>
 
-                    <Col md={4} >
+                    <Col md={4} className='mb-3'>
 
                         <div className='d-flex'>
                             <input class="search-input mr-2"
