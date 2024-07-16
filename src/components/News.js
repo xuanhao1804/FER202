@@ -1,46 +1,87 @@
-import React from 'react';
-
-const newsItems = [
-    { date: "10/05/2024 22:56", title: "TB. về việc cắt điện ngày 11/05/2024" },
-    { date: "11/04/2024 06:04", title: "THÔNG BÁO VỀ VIỆC ĐĂNG KÝ/HỦY PHÒNG KTX KỲ SUMMER 2024" },
-    { date: "27/02/2024 13:33", title: "THÔNG BÁO V/V PHUN THUỐC DIỆT MUỖI, CÔN TRÙNG PHÒNG CHỐNG BỆNH DỊCH LẦN 1 NĂM 2024" },
-    { date: "25/01/2024 15:24", title: "THÔNG TIN Y TẾ - PHÒNG CHỐNG DỊCH BỆNH MÙA ĐÔNG XUÂN" },
-    { date: "28/12/2023 10:44", title: "THÔNG BÁO V/V GIA HẠN ĐĂNG KÝ KTX KỲ SPRING 2024" },
-    { date: "26/12/2023 02:00", title: "THÔNG BÁO VỀ VIỆC ĐĂNG KÝ KTX KỲ SPRING 2024" },
-    { date: "26/11/2023 08:15", title: "THÔNG BÁO V/V MẤT ĐIỆN NGÀY 26/11 VÀ 30/11/2023" },
-    { date: "09/11/2023 17:11", title: "TB. V/v thực hiện đăng ký tạm trú đối với sinh viên lưu trú KTX" },
-    { date: "02/11/2023 15:56", title: "THÔNG BÁO V/V DỊCH CHUYỂN PHÒNG Y TẾ" },
-    { date: "21/10/2023 15:33", title: "T.B V/v Tập huấn phương án PCCC và cứu nạn cứu hộ tại KTX" }
-];
+// News.js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const News = () => {
+    const [newsItems, setNewsItems] = useState([]);
+    const [filteredNews, setFilteredNews] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        fetchNews();
+    }, []);
+
+    const fetchNews = async () => {
+        try {
+            const response = await axios.get('http://localhost:9999/news');
+            setNewsItems(response.data);
+            setFilteredNews(response.data);
+        } catch (error) {
+            console.error('Error fetching news:', error);
+        }
+    };
+
+    const handleSearch = () => {
+        const normalizedSearchTerm = searchTerm.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const filtered = newsItems.filter(item => 
+            item.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(normalizedSearchTerm)
+        );
+        setFilteredNews(filtered);
+        setCurrentPage(1);
+    };
+
+    const handleNewsClick = (id) => {
+        navigate(`/news/${id}`);
+    };
+
+    const formatDate = (dateString) => {
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        return new Date(dateString).toLocaleDateString('vi-VN', options);
+    };
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filteredNews.slice(indexOfFirstItem, indexOfLastItem);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <div className="news">
             <h2 className="news-heading">News</h2>
             <div className="search-bar">
-                <input type="text" placeholder="Type to search..." />
-                <button>Search</button>
+                <input
+                    type="text"
+                    placeholder="Type to search..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <button onClick={handleSearch}>Search</button>
             </div>
             <div className="news-list">
-                {newsItems.map((item, index) => (
-                    <div key={index} className="news-item">
-                        <p>{item.date}</p>
+                {currentItems.map((item) => (
+                    <div key={item.id} className="news-item" onClick={() => handleNewsClick(item.id)}>
+                        <p>{formatDate(item.createdAt)}</p>
                         <p>{item.title}</p>
                     </div>
                 ))}
             </div>
             <div className="pagination">
-                <button disabled>{'««'}</button>
-                <button disabled>{'«'}</button>
-                <button>{1}</button>
-                <button>{2}</button>
-                <button>{3}</button>
-                <button>{'»'}</button>
-                <button>{'»»'}</button>
+                <button onClick={() => paginate(1)} disabled={currentPage === 1}>{'««'}</button>
+                <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1}>{'«'}</button>
+                {Array.from({ length: Math.ceil(filteredNews.length / itemsPerPage) }, (_, i) => (
+                    <button key={i} onClick={() => paginate(i + 1)} disabled={currentPage === i + 1}>
+                        {i + 1}
+                    </button>
+                ))}
+                <button onClick={() => paginate(currentPage + 1)} disabled={currentPage === Math.ceil(filteredNews.length / itemsPerPage)}>{'»'}</button>
+                <button onClick={() => paginate(Math.ceil(filteredNews.length / itemsPerPage))} disabled={currentPage === Math.ceil(filteredNews.length / itemsPerPage)}>{'»»'}</button>
             </div>
         </div>
     );
 };
 
 export default News;
-

@@ -81,7 +81,7 @@ export default function FUDormitoryRegulations() {
                 <h1 style={{ color: '#034EA2' }}><b>Dormitory Regulations</b></h1>
                 <Row>
 
-                    <Col md={4} >
+                    <Col sm={4} >
 
                         <div className='d-flex'>
                             <input class="search-input mr-2"
@@ -120,7 +120,7 @@ export default function FUDormitoryRegulations() {
                             pageSize={guidesPerPage}
                         />
                     </Col>
-                    <Col md={8}>
+                    <Col sm={7}>
                         {/*Hien thi thong tin chi tiet cua rule tai day */}
                         {
                             rule.map((r) => (
@@ -137,7 +137,7 @@ export default function FUDormitoryRegulations() {
                                             <div className='rule-card-img'>
                                                 <img src={background_rule_card} alt='rule' style={{ width: '100%', height: 'auto' }} />
                                             </div>
-                                        </div>
+                                         </div>
                                     </div>
                                     : null
                             ))
@@ -146,6 +146,7 @@ export default function FUDormitoryRegulations() {
                             <PDFViewer pdfUrl="../document/regulations/KTX-HL.pdf" />
                         </div>
                     </Col>
+                    <Col sm={1}></Col>
                 </Row>
 
             </div>

@@ -1,43 +1,166 @@
 {
   "news": [
     {
-      "id": "1",
-      "title": "Welcome to the new semester!",
-      "description": "We're excited to kick off the new semester and welcome all our new and returning students. This semester promises to be full of exciting opportunities and events. Stay tuned for more information about orientation activities, campus events, and academic resources available to you.",
-      "date": "2023-08-15",
-      "createdAt": "2023-08-01T10:00:00Z",
-      "modifiedAt": "2023-08-01T10:00:00Z",
+      "id": "20",
+      "title": "Đăng ký phòng KTX kỳ Fall 2024",
+      "description": "Thời gian đăng ký phòng KTX cho kỳ Fall 2024 sẽ bắt đầu từ ngày 01/08/2024 đến 15/08/2024. Sinh viên vui lòng đăng ký đúng thời hạn.",
+      "createdAt": "2024-07-16T14:30:00Z",
+      "modifiedAt": "2024-07-16T14:30:00Z",
       "isDisplay": true
     },
     {
-      "id": "2",
-      "title": "Upcoming dorm renovations",
-      "description": "The Oak Hall dorms will be undergoing renovations during the winter break. These renovations will include updates to common areas, improved Wi-Fi infrastructure, and energy-efficient lighting. We appreciate your patience during this time as we work to improve your living space.",
-      "date": "2023-11-01",
-      "createdAt": "2023-10-15T14:30:00Z",
-      "modifiedAt": "2023-10-15T14:30:00Z",
+      "id": "19",
+      "title": "Thông báo về việc cắt điện ngày 15/07/2024",
+      "description": "Khu ký túc xá sẽ bị cắt điện từ 8:00 đến 17:00 ngày 15/07/2024 để bảo trì hệ thống điện. Sinh viên vui lòng lên kế hoạch phù hợp.",
+      "createdAt": "2024-07-09T10:00:00Z",
+      "modifiedAt": "2024-07-09T10:00:00Z",
       "isDisplay": true
     },
     {
-      "id": "3",
-      "title": "Campus-wide Wi-Fi upgrade",
-      "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage. This upgrade will take place over the next month and will result in improved internet connectivity across all dormitories and academic buildings.",
-      "date": "2023-09-10",
-      "createdAt": "2023-09-01T09:00:00Z",
-      "modifiedAt": "2023-09-01T09:00:00Z",
+      "id": "18",
+      "title": "Nâng cấp hệ thống Wi-Fi toàn khu KTX",
+      "description": "Chúng tôi sẽ nâng cấp hệ thống Wi-Fi trong khu KTX để cải thiện tốc độ và phạm vi phủ sóng. Quá trình này sẽ diễn ra trong tháng tới.",
+      "createdAt": "2024-07-01T09:00:00Z",
+      "modifiedAt": "2024-07-01T09:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "17",
+      "title": "Hội thảo kỹ năng sống độc lập",
+      "description": "KTX tổ chức hội thảo kỹ năng sống độc lập cho sinh viên vào ngày 20/08/2024. Đăng ký tham gia tại văn phòng KTX.",
+      "createdAt": "2024-06-25T11:00:00Z",
+      "modifiedAt": "2024-06-25T11:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "16",
+      "title": "Thông báo về việc phun thuốc diệt côn trùng",
+      "description": "KTX sẽ tiến hành phun thuốc diệt côn trùng vào ngày 25/08/2024. Sinh viên vui lòng không có mặt trong phòng từ 9:00 đến 12:00.",
+      "createdAt": "2024-06-18T16:00:00Z",
+      "modifiedAt": "2024-06-18T16:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "15",
+      "title": "Cuộc thi nấu ăn KTX",
+      "description": "Cuộc thi nấu ăn thường niên của KTX sẽ được tổ chức vào ngày 10/09/2024. Đăng ký tham gia và xem thể lệ tại văn phòng KTX.",
+      "createdAt": "2024-06-05T13:30:00Z",
+      "modifiedAt": "2024-06-05T13:30:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "14",
+      "title": "Hướng dẫn phòng cháy chữa cháy",
+      "description": "Buổi hướng dẫn phòng cháy chữa cháy bắt buộc sẽ được tổ chức vào ngày 15/09/2024. Tất cả sinh viên KTX phải tham gia.",
+      "createdAt": "2024-05-20T10:00:00Z",
+      "modifiedAt": "2024-05-20T10:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "13",
+      "title": "Thông báo bảo trì hệ thống nước nóng",
+      "description": "Hệ thống nước nóng sẽ được bảo trì từ ngày 20/09/2024 đến 22/09/2024. Trong thời gian này, KTX sẽ tạm ngưng cung cấp nước nóng.",
+      "createdAt": "2024-05-10T15:00:00Z",
+      "modifiedAt": "2024-05-10T15:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "12",
+      "title": "Chương trình trao đổi văn hóa quốc tế",
+      "description": "KTX sẽ tổ chức chương trình trao đổi văn hóa quốc tế vào ngày 01/10/2024. Đây là cơ hội tuyệt vời để giao lưu với sinh viên quốc tế.",
+      "createdAt": "2024-05-01T09:30:00Z",
+      "modifiedAt": "2024-05-01T09:30:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "11",
+      "title": "Thông báo kiểm tra phòng định kỳ",
+      "description": "Đợt kiểm tra phòng định kỳ sẽ diễn ra từ ngày 10/10/2024 đến 15/10/2024. Sinh viên vui lòng giữ phòng sạch sẽ và ngăn nắp.",
+      "createdAt": "2024-04-20T11:00:00Z",
+      "modifiedAt": "2024-04-20T11:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "10",
+      "title": "Hội thảo về công nghệ AI trong giáo dục",
+      "description": "KTX tổ chức hội thảo về ứng dụng AI trong giáo dục vào ngày 15/10/2024. Các chuyên gia hàng đầu sẽ chia sẻ kinh nghiệm và xu hướng mới nhất.",
+      "createdAt": "2024-04-05T14:00:00Z",
+      "modifiedAt": "2024-04-05T14:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "9",
+      "title": "Cuộc thi ảnh 'Khoảnh khắc KTX'",
+      "description": "Cuộc thi ảnh 'Khoảnh khắc KTX' sẽ được tổ chức từ ngày 01/11/2024 đến 30/11/2024. Hãy gửi những bức ảnh đẹp nhất về cuộc sống ở KTX!",
+      "createdAt": "2024-03-15T10:30:00Z",
+      "modifiedAt": "2024-03-15T10:30:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "8",
+      "title": "Chương trình tình nguyện mùa đông",
+      "description": "KTX kêu gọi sinh viên tham gia chương trình tình nguyện mùa đông tại vùng cao từ ngày 15/12/2024 đến 20/12/2024.",
+      "createdAt": "2024-03-01T09:00:00Z",
+      "modifiedAt": "2024-03-01T09:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "7",
+      "title": "Lớp học kỹ năng mềm miễn phí",
+      "description": "KTX tổ chức lớp học kỹ năng mềm miễn phí cho sinh viên vào mỗi tối thứ 7 từ tháng 11/2024.",
+      "createdAt": "2024-02-25T16:45:00Z",
+      "modifiedAt": "2024-02-25T16:45:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "6",
+      "title": "Hội chợ việc làm bán thời gian",
+      "description": "Hội chợ việc làm bán thời gian sẽ được tổ chức tại KTX vào ngày 05/11/2024. Nhiều cơ hội việc làm hấp dẫn cho sinh viên.",
+      "createdAt": "2024-02-20T11:20:00Z",
+      "modifiedAt": "2024-02-20T11:20:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "5",
+      "title": "Cuộc thi nấu ăn 'Đầu bếp KTX'",
+      "description": "Cuộc thi nấu ăn 'Đầu bếp KTX' sẽ diễn ra vào ngày 20/11/2024. Hãy thể hiện tài năng nấu nướng của bạn!",
+      "createdAt": "2024-02-05T13:15:00Z",
+      "modifiedAt": "2024-02-05T13:15:00Z",
       "isDisplay": true
     },
     {
       "id": "4",
-      "title": "New meal plans available",
-      "description": "Check out our new flexible meal plan options for the upcoming semester! We've introduced more variety and customization to cater to different dietary needs and preferences. Visit the dining services office to learn more about these new options.",
-      "date": "2023-07-20",
-      "createdAt": "2023-07-15T11:00:00Z",
-      "modifiedAt": "2023-07-15T11:00:00Z",
+      "title": "Chương trình trao đổi sinh viên với Đại học Seoul",
+      "description": "KTX thông báo chương trình trao đổi sinh viên với Đại học Seoul trong học kỳ Xuân 2025. Hạn đăng ký: 30/11/2024.",
+      "createdAt": "2024-01-10T09:45:00Z",
+      "modifiedAt": "2024-01-10T09:45:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "3",
+      "title": "Hội thảo về khởi nghiệp sinh viên",
+      "description": "Hội thảo về khởi nghiệp sinh viên sẽ được tổ chức vào ngày 10/12/2024 với sự tham gia của các doanh nhân trẻ thành công.",
+      "createdAt": "2023-11-30T15:30:00Z",
+      "modifiedAt": "2023-11-30T15:30:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "2",
+      "title": "Lễ hội âm nhạc mùa đông",
+      "description": "Lễ hội âm nhạc mùa đông sẽ được tổ chức tại sân KTX vào ngày 25/12/2024. Nhiều ca sĩ nổi tiếng sẽ tham gia biểu diễn.",
+      "createdAt": "2023-11-15T10:00:00Z",
+      "modifiedAt": "2023-11-15T10:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "1",
+      "title": "Chương trình đón năm mới 2025",
+      "description": "KTX tổ chức chương trình đón năm mới 2025 với nhiều hoạt động thú vị và pháo hoa rực rỡ.",
+      "createdAt": "2023-11-01T14:20:00Z",
+      "modifiedAt": "2023-11-01T14:20:00Z",
       "isDisplay": true
     }
   ],
-
   "users": [
     {
       "id": "1",
@@ -532,26 +655,7 @@
     }
   ],
   "bookingRequests": [
-    {
-      "id": "1",
-      "studentid": 2,
-      "dormitory": 1,
-      "floor": 1,
-      "room": 1,
-      "bed": 4,
-      "semester": "Fall 2023",
-      "status": "pending"
-    },
-    {
-      "id": "2",
-      "studentid": 3,
-      "dormitory": 2,
-      "floor": 1,
-      "room": 4,
-      "bed": 11,
-      "semester": "Fall 2023",
-      "status": "approved"
-    }
+
   ],
   "payments": [
     {
@@ -883,6 +987,50 @@
       "step": [
         {
           "id": 1,
+          "description": "Click on the button \"Payment history\" on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide8.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "Click the \"Details\" button for more information about each payment",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide8.step2.png"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Instructions for viewing resident history",
+      "step": [
+        {
+          "id": 1,
+          "description": "Click the \"Resident History\" button on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide9.step1.png"
+        }
+      ]
+    }
+  ],
+  "roomTypes": [
+    {
+      "id": "1",
+      "type": "3 bed",
+      "price": 850000
+    },
+    {
+      "id": "2",
+      "type": "4 bed",
+      "price": 1050000
+    }
+  ]
+}id": 1,
           "description": "Click on the button \"Payment history\" on the menu bar",
           "link": {},
           "note": "",
