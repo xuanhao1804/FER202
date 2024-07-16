@@ -128,10 +128,15 @@ const Register = () => {
   };
 
     return (
-      <div className="container py-5 h-100">
+      <div className=" py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div className="card shadow-2-strong" style={{ borderRadius: '1rem' }}>
+          <div className="container card shadow-2-strong" style={{ 
+  borderRadius: '1rem', 
+  maxWidth: '500px',  // Reduces the maximum width
+  margin: 'auto',     // Centers the card horizontally
+  padding: '20px'     // Adds some internal padding
+}}>
               <div className="card-body p-5 text-center">
                 <Link to="/">
                   <img src="https://ocd.fpt.edu.vn/Content/images/landing/logo.png" alt="Logo" />
@@ -202,7 +207,7 @@ const Register = () => {
                   <div data-mdb-input-init className="form-outline mb-4">
     <label className="form-label">Gender</label>
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{ marginLeft:'70px',marginRight: '60px' }}>
+      <div style={{ marginLeft:'70px',marginRight: '60px' , marginLeft:'80px'}}>
         <input
           type="radio"
           id="male"
