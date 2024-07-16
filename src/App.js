@@ -21,6 +21,8 @@ import BookingRequests from "./pages/user/BookingRequests.js";
 import ChangePassword from "./pages/user/ChangePassword.js";
 import AboutUs from "./pages/AboutUs.js";
 import AdminRegulations from "./pages/AdminRegulations.js";
+import News from "./components/News.js";
+import ManageNewsAdmin from "./components/ManageNewsAdmin.js";
 
 
 function App() {
@@ -47,6 +49,10 @@ function App() {
           <Route path="/booking2" element={<DormitorySelector />} />  
           <Route path="/booking-requests" element={<BookingRequests />} />    
           <Route path="/changepass" element={<ChangePassword />} />    
+          <Route path="/viewnews" element={<News/>      } />      
+          <Route path="/manage/news" element={<ManageNewsAdmin/>    } />
+
+
 
         
           <Route path="/manage/regulation" element={<AdminRegulations />} />       
