@@ -18,6 +18,8 @@ import FUDormitoryRegulations from "./pages/user/FUDormitoryRegulations.js";
 import DormitorySelector from "./pages/user/BookingBed2.js";
 import BookingRequests from "./pages/user/BookingRequests.js";
 import ChangePassword from "./pages/user/ChangePassword.js";
+import AboutUs from "./pages/AboutUs.js";
+import AdminRegulations from "./pages/AdminRegulations.js";
 
 
 function App() {
@@ -44,7 +46,11 @@ function App() {
           <Route path="/booking2" element={<DormitorySelector />} />  
           <Route path="/booking-requests" element={<BookingRequests />} />    
           <Route path="/changepass" element={<ChangePassword />} />    
-          
+
+        
+          <Route path="/manage/regulation" element={<AdminRegulations />} />       
+          <Route path="/about" element={<AboutUs />}/>      
+
         </Routes>
       </BrowserRouter>
     </div>
