@@ -198,6 +198,7 @@
     {
       "id": "1",
       "name": "Dormitory A",
+      "totalBeds": 500,
       "floors": [
         {
           "id": 1,
@@ -322,6 +323,7 @@
     {
       "id": "2",
       "name": "Dormitory B",
+      "totalBeds": 400,
       "floors": [
         {
           "id": 1,
@@ -408,6 +410,7 @@
     {
       "id": "3",
       "name": "Dormitory C",
+      "totalBeds": 300,
       "floors": [
         {
           "id": 1,
@@ -469,7 +472,8 @@
     },
     {
       "id": "2",
-      "name": "Dom D",
+      "name": "B",
+      "totalBeds": 150,
       "floors": [
         {
           "id": 2,
@@ -477,17 +481,17 @@
           "rooms": [
             {
               "id": 201,
-              "roomNumber": "D201",
+              "roomNumber": "C201",
               "roomType": "4 bed",
               "beds": [
                 {
-                  "id": "D201-1",
+                  "id": "C201-1",
                   "name": "A",
                   "status": "available",
                   "student": null
                 },
                 {
-                  "id": "D201-2",
+                  "id": "C201-2",
                   "name": "B",
                   "status": "available",
                   "student": null
@@ -496,17 +500,17 @@
             },
             {
               "id": 202,
-              "roomNumber": "D202",
+              "roomNumber": "C202",
               "roomType": "4 bed",
               "beds": [
                 {
-                  "id": "D202-1",
+                  "id": "C202-1",
                   "name": "A",
                   "status": "occupied",
                   "student": null
                 },
                 {
-                  "id": "D202-2",
+                  "id": "C202-2",
                   "name": "B",
                   "status": "available",
                   "student": null
