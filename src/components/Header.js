@@ -1,32 +1,66 @@
-import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import LoginForm from "./LoginForm"; // Import the LoginForm component
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+
 function Header() {
+  const [userName, setUserName] = useState('');
+  const [userId, setUserId] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Retrieve user data from local storage
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      setUserName(user.fullName || user.email);
+      setUserId(user.id); // Assuming the user object has an id field
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUserName('');
+    setUserId(null);
+    toast.success('Logged out successfully');
+    navigate('/login');
+  };
+
+  const handleUserGreetingClick = (e) => {
+    e.preventDefault();
+    if (userId) {
+      navigate(`/user/${userId}`);
+    } else {
+      // If there's no user id, you might want to redirect to login page
+      navigate('/login');
+    }
+  };
+
   return (
     <div className="header">
-      <img src="https://ocd.fpt.edu.vn/Content/images/landing/logo.png" alt="Logo" />
+      <Link to="/">
+        <img src="https://ocd.fpt.edu.vn/Content/images/landing/logo.png" alt="Logo" />
+      </Link>
       <nav>
         <ul>
-          <Link to="/aaa" className="user-greeting">
-            <p className="font">Xin chào, User!</p>
-          </Link>
-          {/* <Link to="/" className="font">
-            Home
-          </Link> */}
+          {userName ? (
+            <>
+              <Link to="#" className="user-greeting" onClick={handleUserGreetingClick}>
+                <p className="font">Xin chào, {userName}!</p>
+              </Link>
+              <Link to="#" className="font logout" onClick={handleLogout}>
+                Logout
+              </Link>
+            </>
+          ) : (
+            <Link to="/login" className="font logout">
+              Login
+            </Link>
+          )}
           <Link to="/about" className="font">
             About
           </Link>
-          {/* <Link to="/profile" className="font">
-            Profile
-          </Link> */}
-          <Link to="/login" className="font logout">
-            Login
-          </Link>
         </ul>
       </nav>
-
-
+      
       <style>
         {`
         .header {
