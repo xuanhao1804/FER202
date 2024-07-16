@@ -172,6 +172,7 @@ function editRule() {
             toast.success('Edit rule successfully');
             $('#edit-rule-form').hide();
             $('#pdf').show();
+            setRule(rule.map(r => r.id === id ? response.data : r));
         })
         .catch(err => {
             console.log(err.message);
