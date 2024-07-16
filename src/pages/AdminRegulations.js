@@ -20,7 +20,7 @@ export default function AdminRegulations() {
     const [rule, setRule] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
 
-    useEffect(() => {
+    function getRuleList() {
         axios.get('http://localhost:9999/rules')
             .then(response => {
                 setRule(response.data);
@@ -28,8 +28,11 @@ export default function AdminRegulations() {
             .catch(err => {
                 console.log(err.message);
             });
-    }, []);
+    }
 
+    useEffect(() => {
+        getRuleList();
+    }, []);
 
     //Thêm trạng thái để lưu `id` của button đang được kích hoạt
     const [activeId, setActiveId] = useState(null);
@@ -124,7 +127,7 @@ export default function AdminRegulations() {
         }
     }, [search]);
 
-    
+
 
     //function to add new rule to database
     const [id, setId] = useState('');
@@ -132,7 +135,7 @@ export default function AdminRegulations() {
     const [description, setDescription] = useState('');
 
     function addRule() {
-        if( title === '' || description === ''){
+        if (title === '' || description === '') {
             toast.error('Please fill in all fields');
             return;
         }
@@ -153,31 +156,31 @@ export default function AdminRegulations() {
             });
     }
 
-//function to edit rule
-function editRule() {
-    if(title === '' || description === ''){
-        toast.error('Please fill in all fields');
-        return;
-    }
+    //function to edit rule
+    function editRule() {
+        if (title === '' || description === '') {
+            toast.error('Please fill in all fields');
+            return;
+        }
 
-    // Remove this line as we're already using the state variable 'id'
-    // const id = $('#edit-rule-form #id').val();
+        // Remove this line as we're already using the state variable 'id'
+        // const id = $('#edit-rule-form #id').val();
 
-    axios.put('http://localhost:9999/rules/' + id, {
-        title: title,
-        description: description
-    })
-        .then(response => {
-            console.log(response.data);
-            toast.success('Edit rule successfully');
-            $('#edit-rule-form').hide();
-            $('#pdf').show();
+        axios.put('http://localhost:9999/rules/' + id, {
+            title: title,
+            description: description
         })
-        .catch(err => {
-            console.log(err.message);
-            toast.error('Edit rule failed');
-        });
-}
+            .then(response => {
+                toast.success('Edit rule successfully');
+                $('#edit-rule-form').hide();
+                $('#pdf').show();
+                getRuleList();
+            })
+            .catch(err => {
+                console.log(err.message);
+                toast.error('Edit rule failed');
+            });
+    }
 
 
     return (
