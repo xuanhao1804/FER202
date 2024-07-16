@@ -16,7 +16,8 @@
       "createdAt": "2023-06-28T15:30:45Z",
       "lastLogin": "2023-06-28T15:30:45Z",
       "studentID": null,
-      "balance": null
+      "balance": null,
+      "isActive": true
     },
     {
       "id": "2",
@@ -34,7 +35,8 @@
       "createdAt": "2023-06-28T16:00:00Z",
       "lastLogin": "2023-06-28T16:00:00Z",
       "studentID": "HE170001",
-      "balance": 500000
+      "balance": 500000,
+      "isActive": true
     },
     {
       "id": "3",
@@ -52,7 +54,8 @@
       "createdAt": "2023-06-28T16:30:00Z",
       "lastLogin": "2023-06-28T16:30:00Z",
       "studentID": "HS170002",
-      "balance": 750000
+      "balance": 750000,
+      "isActive": true
     },
     {
       "id": "4",
@@ -70,7 +73,8 @@
       "createdAt": "2023-06-28T17:00:00Z",
       "lastLogin": "2023-06-28T17:00:00Z",
       "studentID": null,
-      "balance": null
+      "balance": null,
+      "isActive": true
     },
     {
       "id": "02d7",
@@ -88,7 +92,8 @@
       "createdAt": "2024-07-03T14:34:41.123Z",
       "lastLogin": "2024-07-03T14:34:41.123Z",
       "studentID": "HE172802",
-      "balance": 6000000
+      "balance": 6000000,
+      "isActive": true
     },
     {
       "id": "ad07",
@@ -104,7 +109,8 @@
       "googleId": null,
       "isEmailVerified": false,
       "createdAt": "2024-07-10T04:12:32.792Z",
-      "lastLogin": "2024-07-10T04:12:32.793Z"
+      "lastLogin": "2024-07-10T04:12:32.793Z",
+      "isActive": true
     },
     {
       "id": "345b",
@@ -123,7 +129,8 @@
       "lastLogin": "2024-07-10T04:56:36.207Z",
       "balance": 6000000,
       "currentPassword": "123123",
-      "newPassword": "123456"
+      "newPassword": "123456",
+      "isActive": true
     }
   ],
   "auth_tokens": [
