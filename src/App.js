@@ -20,6 +20,7 @@ import BookingRequests from "./pages/user/BookingRequests.js";
 import ChangePassword from "./pages/user/ChangePassword.js";
 import AboutUs from "./pages/AboutUs.js";
 import AdminRegulations from "./pages/AdminRegulations.js";
+import ManagerUser from "./pages/ManagerUser.js";
 import News from "./components/News.js";
 import ManageNewsAdmin from "./components/ManageNewsAdmin.js";
 import NewsDetail from "./components/NewDetail.js";
@@ -37,7 +38,8 @@ function App() {
           <Route path="/user" element={<UserProfile />} />
           <Route path="/user/:id" element={<UserProfile />} />            
           <Route path="/user/:id" element={<Home />} />          
-          <Route path="/manage/room" element={<ManagerRoom />} />            
+          <Route path="/manage/room" element={<ManagerRoom />} />         
+          <Route path="/manage/user" element={<ManagerUser />} />               
           <Route path="/listroom" element={<ListRoom />} />
           <Route path="/dormitory/:dormitoryId" element={<DormitoryDetail />} />                
           <Route path="/booking" element={<BookingBed />} />            
