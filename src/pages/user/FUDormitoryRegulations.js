@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import LayoutUser from "../layout/LayoutUser";
-import "../style/regulation.css";
+import LayoutUser from "../../layout/LayoutUser";
+import "../../style/regulation.css";
 import { Col, Row, Card, Button } from 'react-bootstrap';
-import PDFViewer from '../components/pdf.js';
+import PDFViewer from '../../components/pdf.js';
 import axios from 'axios';
 import { Pagination } from "antd";
-import background_rule_card from '../assert/images/background-rule-card.jpg';
+import background_rule_card from '../../assert/images/background-rule-card.jpg';
 import $ from 'jquery'; // Import the jQuery library
 
 export default function FUDormitoryRegulations() {
