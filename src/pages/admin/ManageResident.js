@@ -9,7 +9,6 @@ import { Col } from 'react-bootstrap';
 
 const ManageResident = () => {
   const [residentHistory, setResidentHistory] = useState([]);
-  const [users, setUsers] = useState({});
   const [semesters, setSemesters] = useState({});
   const [dormitories, setDormitories] = useState({});
   const [showModal, setShowModal] = useState(false);
@@ -21,28 +20,13 @@ const ManageResident = () => {
   }, []);
 
   const fetchData = () => {
-    // Fetch approved booking requests
-    fetch(`http://localhost:9999/bookingRequests?status=approved`)
+    // Fetch approved booking requests with expanded student information
+    fetch(`http://localhost:9999/bookingRequests?status=approved&_expand=student`)
       .then(response => response.json())
       .then(data => setResidentHistory(data))
       .catch(error => {
         console.error('Error fetching resident history:', error);
         toast.error('Error fetching resident history');
-      });
-
-    // Fetch users
-    fetch(`http://localhost:9999/users`)
-      .then(response => response.json())
-      .then(data => {
-        const userMap = {};
-        data.forEach(user => {
-          userMap[user.studentID] = user;
-        });
-        setUsers(userMap);
-      })
-      .catch(error => {
-        console.error('Error fetching users:', error);
-        toast.error('Error fetching users');
       });
 
     // Fetch semesters
@@ -146,35 +130,32 @@ const ManageResident = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {sortedHistory.map((history) => {
-                    const user = users[history.studentId];
-                    return (
-                      <tr key={history.id}>
-                        <td>{history.studentId}</td>
-                        <td>{user?.fullName || 'N/A'}</td>
-                        <td>{dormitories[history.dormitory] || `Dormitory ${history.dormitory}`}</td>
-                        <td>{history.floor}</td>
-                        <td>{history.room}</td>
-                        <td>{history.bed}</td>
-                        <td>{history.semester}</td>
-                        <td>{semesters[history.semester] && format(new Date(semesters[history.semester].startDate), 'MMM dd, yyyy')}</td>
-                        <td>{semesters[history.semester] && format(new Date(semesters[history.semester].endDate), 'MMM dd, yyyy')}</td>
-                        <td>{history.isExpired ? 'Expired' : 'Active'}</td>
-                        <td>
-                          <Button variant="primary" size="sm" className="me-2" onClick={() => handleShow(history)}>
-                            View Details
-                          </Button>
-                          <Button 
-                            variant={history.isExpired ? "success" : "warning"} 
-                            size="sm" 
-                            onClick={() => handleConfirmShow(history)}
-                          >
-                            {history.isExpired ? 'Reactivate' : 'End Residency'}
-                          </Button>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                  {sortedHistory.map((history) => (
+                    <tr key={history.id}>
+                      <td>{history.studentId || 'N/A'}</td>
+                      <td>{history.student?.fullName || 'N/A'}</td>
+                      <td>{dormitories[history.dormitory] || `Dormitory ${history.dormitory}`}</td>
+                      <td>{history.floor}</td>
+                      <td>{history.room}</td>
+                      <td>{history.bed}</td>
+                      <td>{history.semester}</td>
+                      <td>{semesters[history.semester] && format(new Date(semesters[history.semester].startDate), 'MMM dd, yyyy')}</td>
+                      <td>{semesters[history.semester] && format(new Date(semesters[history.semester].endDate), 'MMM dd, yyyy')}</td>
+                      <td>{history.isExpired ? 'Expired' : 'Active'}</td>
+                      <td>
+                        <Button variant="primary" size="sm" className="me-2" onClick={() => handleShow(history)}>
+                          View Details
+                        </Button>
+                        <Button 
+                          variant={history.isExpired ? "success" : "warning"} 
+                          size="sm" 
+                          onClick={() => handleConfirmShow(history)}
+                        >
+                          {history.isExpired ? 'Reactivate' : 'End Residency'}
+                        </Button>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -188,8 +169,8 @@ const ManageResident = () => {
           <Modal.Body>
             {selectedHistory && (
               <>
-                <p><strong>Student ID:</strong> {selectedHistory.studentId}</p>
-                <p><strong>Student Name:</strong> {users[selectedHistory.studentId]?.fullName || 'N/A'}</p>
+                <p><strong>Student ID:</strong> {selectedHistory.studentId || 'N/A'}</p>
+                <p><strong>Student Name:</strong> {selectedHistory.student?.fullName || 'N/A'}</p>
                 <p><strong>Dormitory:</strong> {dormitories[selectedHistory.dormitory] || `Dormitory ${selectedHistory.dormitory}`}</p>
                 <p><strong>Floor:</strong> {selectedHistory.floor}</p>
                 <p><strong>Room:</strong> {selectedHistory.room}</p>

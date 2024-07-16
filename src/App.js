@@ -24,6 +24,8 @@ import ManagerUser from "./pages/ManagerUser.js";
 import News from "./components/News.js";
 import ManageNewsAdmin from "./components/ManageNewsAdmin.js";
 import NewsDetail from "./components/NewDetail.js";
+import ResidentHistory from "./pages/user/ResidentHistory.js";
+import ManageResident from "./pages/admin/ManageResident.js";
 
 
 function App() {
@@ -42,7 +44,7 @@ function App() {
           <Route path="/manage/user" element={<ManagerUser />} />               
           <Route path="/listroom" element={<ListRoom />} />
           <Route path="/dormitory/:dormitoryId" element={<DormitoryDetail />} />                
-          <Route path="/booking" element={<BookingBed />} />            
+          <Route path="/booking-bed" element={<BookingBed />} />            
           <Route path="/guide" element={<StudentGuide />} />       
           <Route path="/faq" element={<FAQ />} />         
           <Route path="/regulation" element={<FUDormitoryRegulations />} />         
@@ -53,6 +55,8 @@ function App() {
           <Route path="/viewnews" element={<News/>      } />      
           <Route path="/manage/news" element={<ManageNewsAdmin/>    } />
           <Route path="/news/:id" element={<NewsDetail/>    } />
+          <Route path="/resident-history" element={<ResidentHistory/>  } />
+          <Route path="/manage-resident" element={<ManageResident/>  } />
 
 
 

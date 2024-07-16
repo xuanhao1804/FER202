@@ -1,4 +1,24 @@
 {
+  "semesters": [
+    {
+      "id": "1",
+      "name": "Fall 2023",
+      "startDate": "2023-08-15",
+      "endDate": "2023-12-20"
+    },
+    {
+      "id": "2",
+      "name": "Spring 2024",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15"
+    },
+    {
+      "id": "3",
+      "name": "Summer 2024",
+      "startDate": "2024-06-01",
+      "endDate": "2024-07-31"
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -70,7 +90,8 @@
       "createdAt": "2023-06-28T17:00:00Z",
       "lastLogin": "2023-06-28T17:00:00Z",
       "studentID": null,
-      "balance": null
+      "balance": null,
+      "isActive": false
     },
     {
       "id": "02d7",
@@ -104,7 +125,8 @@
       "googleId": null,
       "isEmailVerified": false,
       "createdAt": "2024-07-10T04:12:32.792Z",
-      "lastLogin": "2024-07-10T04:12:32.793Z"
+      "lastLogin": "2024-07-10T04:12:32.793Z",
+      "isActive": false
     },
     {
       "id": "345b",
@@ -121,7 +143,8 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-10T04:56:36.207Z",
       "lastLogin": "2024-07-10T04:56:36.207Z",
-      "balance": 6000000,
+      "studentID": "HE172888",
+      "balance": 4950000,
       "currentPassword": "123123",
       "newPassword": "123456"
     }
@@ -175,7 +198,6 @@
     {
       "id": "1",
       "name": "Dormitory A",
-      "totalBeds": 500,
       "floors": [
         {
           "id": 1,
@@ -300,7 +322,6 @@
     {
       "id": "2",
       "name": "Dormitory B",
-      "totalBeds": 400,
       "floors": [
         {
           "id": 1,
@@ -320,8 +341,7 @@
                 {
                   "id": "B101-2",
                   "name": "B",
-                  "status": "available",
-                  "student": null
+                  "status": "occupied"
                 }
               ]
             },
@@ -388,7 +408,6 @@
     {
       "id": "3",
       "name": "Dormitory C",
-      "totalBeds": 300,
       "floors": [
         {
           "id": 1,
@@ -450,10 +469,7 @@
     },
     {
       "id": "2",
-      "name": "B",
-      "totalBeds": 150,
-      "usedBeds": 120,
-      "freeBeds": 30,
+      "name": "Dom D",
       "floors": [
         {
           "id": 2,
@@ -461,17 +477,17 @@
           "rooms": [
             {
               "id": 201,
-              "roomNumber": "C201",
+              "roomNumber": "D201",
               "roomType": "4 bed",
               "beds": [
                 {
-                  "id": "C201-1",
+                  "id": "D201-1",
                   "name": "A",
                   "status": "available",
                   "student": null
                 },
                 {
-                  "id": "C201-2",
+                  "id": "D201-2",
                   "name": "B",
                   "status": "available",
                   "student": null
@@ -480,17 +496,17 @@
             },
             {
               "id": 202,
-              "roomNumber": "C202",
+              "roomNumber": "D202",
               "roomType": "4 bed",
               "beds": [
                 {
-                  "id": "C202-1",
+                  "id": "D202-1",
                   "name": "A",
                   "status": "occupied",
                   "student": null
                 },
                 {
-                  "id": "C202-2",
+                  "id": "D202-2",
                   "name": "B",
                   "status": "available",
                   "student": null
@@ -503,8 +519,41 @@
     }
   ],
   "bookingRequests": [
-
+    {
+      "id": "1",
+      "studentId": "HE172888",
+      "dormitory": "2",
+      "floor": "1",
+      "room": "102",
+      "bed": "B102-1",
+      "semester": "Fall 2023",
+      "status": "approved",
+      "isExpired": true
+    },
+    {
+      "id": "2",
+      "studentId": "HE172888",
+      "dormitory": "2",
+      "floor": "1",
+      "room": "102",
+      "bed": "B102-1",
+      "semester": "Spring 2024",
+      "status": "approved",
+      "isExpired": true
+    },
+    {
+      "id": "21",
+      "studentId": "HE172888",
+      "dormitory": "1",
+      "floor": "1",
+      "room": "102",
+      "bed": "A102-1",
+      "semester": "Summer 2024",
+      "status": "pending",
+      "isExpired": false
+    }
   ],
+  "residentHistory": [],
   "payments": [
     {
       "id": "1",
@@ -526,6 +575,12 @@
       "amount": 1000,
       "date": "2024-01-10",
       "semester": "Spring 2024"
+    },
+    {
+      "id": "71a5",
+      "amount": 1050000,
+      "date": "2024-07-17",
+      "semester": "Summer 2024"
     }
   ],
   "rules": [
@@ -866,7 +921,6 @@
       ]
     }
   ],
-
   "roomTypes": [
     {
       "id": "1",

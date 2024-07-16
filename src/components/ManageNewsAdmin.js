@@ -1,4 +1,5 @@
 // News2.js
+import TemplateAdmin from "../layout/LayoutAdmin";
 
 import React from 'react';
 import { Container, Row, Col, Form, Button, Table } from 'react-bootstrap';
@@ -12,7 +13,9 @@ const ManageNewsAdmin = () => {
   };
 
   return (
+    <TemplateAdmin>
     <Container fluid>
+      <Col sm={11}>
       <Row className="mt-4">
         <Col>
           <h2>Manage News - Dormitory Administration</h2>
@@ -64,8 +67,10 @@ const ManageNewsAdmin = () => {
             </tbody>
           </Table>
         </Col>
-      </Row>
+      </Row></Col>
+      <Col sm={1}></Col>
     </Container>
+    </TemplateAdmin>
   );
 };
 
