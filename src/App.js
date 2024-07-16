@@ -16,6 +16,7 @@ import StudentGuide from "./pages/StudentGuide.js";
 import FAQ from "./pages/FAQ.js";
 import FUDormitoryRegulations from "./pages/FUDormitoryRegulations.js";
 import DormitorySelector from "./pages/user/BookingBed2.js";
+import EditRoom from "./pages/EditRoom.js";
 
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
           <Route path="/user" element={<UserProfile />} />
           <Route path="/user/:id" element={<UserProfile />} />            
           <Route path="/user/:id" element={<Home />} />          
-          <Route path="/manage/room" element={<ManagerRoom />} />            
+          <Route path="/manage/room" element={<ManagerRoom />} />   
+          <Route path="/edit/room/:id" element={<EditRoom />} />        
           <Route path="/listroom" element={<ListRoom />} />
           <Route path="/dormitory/:dormitoryId" element={<DormitoryDetail />} />                
           <Route path="/booking" element={<BookingBed />} />            

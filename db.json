@@ -158,7 +158,7 @@
     {
       "id": "1",
       "name": "Dormitory A",
-      "totalBeds": 500,
+      "totalBeds": "50",
       "floors": [
         {
           "id": 1,
@@ -283,7 +283,7 @@
     {
       "id": "2",
       "name": "Dormitory B",
-      "totalBeds": 400,
+      "totalBeds": 42,
       "floors": [
         {
           "id": 1,
@@ -371,7 +371,7 @@
     {
       "id": "3",
       "name": "Dormitory C",
-      "totalBeds": 300,
+      "totalBeds": 31,
       "floors": [
         {
           "id": 1,
@@ -490,7 +490,7 @@
   ],
   "guide": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Instructions for viewing news",
       "step": [
         {
@@ -520,7 +520,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Instructions for booking a bed",
       "step": [
         {
@@ -537,7 +537,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Instructions for contacting the security department",
       "step": [
         {
@@ -588,7 +588,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Instructions for contacting the medical department",
       "step": [
         {
@@ -639,7 +639,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Instructions for contacting the dormitory management",
       "step": [
         {
@@ -690,7 +690,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Instructions for creating a request",
       "step": [
         {
@@ -728,7 +728,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Instructions for viewing electricity/water usage",
       "step": [
         {
@@ -758,7 +758,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Instructions for viewing payment history",
       "step": [
         {
@@ -780,7 +780,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Instructions for viewing resident history",
       "step": [
         {
@@ -819,12 +819,12 @@
   ],
   "roomTypes": [
     {
-      "id": 1,
+      "id": "1",
       "type": "3 bed",
       "price": 850000
     },
     {
-      "id": 2,
+      "id": "2",
       "type": "4 bed",
       "price": 1050000
     }
