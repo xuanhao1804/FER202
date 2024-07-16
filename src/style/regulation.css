@@ -50,14 +50,12 @@
     display: block;
 }
 
-@keyframes slideFadeIn {
+@keyframes slide {
     from {
       transform: translateY(20px);
-      opacity: 0;
     }
     to {
       transform: translateY(0);
-      opacity: 1;
     }
   }
 
@@ -67,7 +65,8 @@
     background-size: cover;    
     border-radius: 10px;    
     position: absolute;
-    animation: slideFadeIn 0.5s ease-out;
+    animation: slide 0.5s ease-out;
+    overflow: wrap;
 }
 
 .rule-card-main{
