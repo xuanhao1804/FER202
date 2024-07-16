@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/HomePage.js";
 import Login from "./components/LoginForm.js";
-import UserProfile from "./components/UserProfile.js";
+import UserProfile from "./pages/UserProfile.js";
 import BookingBed from "./pages/BookingBed.js";
 import ManagePendingBooking from "./pages/ManagePendingBooking.js";
 import TemplateUser from "./layout/LayoutUser.js";
@@ -14,6 +14,7 @@ import NotFoundPage from "./pages/error-404/Error.js";
 import StudentGuide from "./pages/StudentGuide.js";
 import FAQ from "./pages/FAQ.js";
 import FUDormitoryRegulations from "./pages/FUDormitoryRegulations.js";
+import UserManagerment from "./pages/ManagermentUser.js";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/manage/room" element={<ManagerRoom />} />              {/*     manage rooma dmin   */}
           <Route path="/manage/room/edit/r:roomid" element={<Home />} />  {/* edit info room dorm*/}
           <Route path="/listroom" element={<ListRoom />} />                {/*   view list room in dom     */}
+          <Route path="/manager/user" element={<UserManagerment />} />  {/* manage user */}
 
 
           <Route path="/booking" element={<BookingBed />} />            {/*   booking bed student     */}

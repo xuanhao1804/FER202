@@ -81,7 +81,7 @@ function SideBarAdmin() {
                                     <h6 className="collapse-header">Manager Components:</h6>
                                     
                                     <Link className="collapse-item" to={`/managernoti`}>ManagerNoti</Link>
-                                    <Link className="collapse-item" to={`/manageruser`}>ManagerUser</Link>
+                                    <Link className="collapse-item" to={`/manager/user`}>ManagerUser</Link>
                                     <Link className="collapse-item" to={`/managerroom`}>ManagerRoom</Link>
                                     <Link className="collapse-item" to={`/account`}>ManagerAccount</Link>
                                     
