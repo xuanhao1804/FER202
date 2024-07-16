@@ -1,0 +1,98 @@
+.btn-download{    
+    color: #F26E21;
+    background-color: white;
+    border: 1px solid #F26E21;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-download:hover {
+    background-color: #F26E21;
+    color: white;
+    
+}
+#pdf{
+    box-shadow: 0px 4px 20px 5px rgba(51, 51, 51, 0.1);
+    margin-left: 25px;
+    height: 570px;
+    overflow: auto;
+}
+
+/* Tùy chỉnh toàn bộ thanh scroll */
+#pdf::-webkit-scrollbar {
+    width: 5px; /* Độ rộng của thanh scroll */    
+}
+
+/* Tùy chỉnh phần track (phần nền của thanh scroll) */
+#pdf::-webkit-scrollbar-track {
+    background: #e1e1e1; /* Màu nền */
+}
+
+/* Tùy chỉnh phần thumb (phần có thể di chuyển của thanh scroll) */
+#pdf::-webkit-scrollbar-thumb {
+    background: #b8b8b8; /* Màu của thumb */
+}
+
+/* Thay đổi màu của thumb khi hover hoặc click */
+#pdf::-webkit-scrollbar-thumb:hover {
+    background: #535353; /* Màu của thumb khi hover */
+}
+
+.pdf-page hr {
+    border-width: 2px;
+    border-color: #000000; /* Màu sắc của đường kẻ */
+    border-style: solid; /* Kiểu dáng của đường kẻ */
+}
+
+.pdf-page canvas{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes slide {
+    from {
+      transform: translateY(20px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  
+.rule-card{   
+    width: 100%;
+    background-size: cover;    
+    border-radius: 10px;    
+    position: absolute;
+    animation: slide 0.5s ease-out;
+    overflow: wrap;
+}
+
+.rule-card-main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.rule-card-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top : 0;
+}
+
+.rule-card-img img{
+    width: 100%;
+    height: 100%;
+    border: #034EA2 3px solid;
+    border-radius: 10px;
+
+}
+
+.rule-card-content{
+    position: absolute;
+    padding: 20%;
+    z-index: 1;
+    
+}
