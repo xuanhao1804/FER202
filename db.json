@@ -1,0 +1,1307 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "Welcome to the new semester!",
+      "description": "We're excited to kick off the new semester and welcome all our new and returning students. This semester promises to be full of exciting opportunities and events. Stay tuned for more information about orientation activities, campus events, and academic resources available to you.",
+      "date": "2023-08-15",
+      "createdAt": "2023-08-01T10:00:00Z",
+      "modifiedAt": "2023-08-01T10:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "2",
+      "title": "Upcoming dorm renovations",
+      "description": "The Oak Hall dorms will be undergoing renovations during the winter break. These renovations will include updates to common areas, improved Wi-Fi infrastructure, and energy-efficient lighting. We appreciate your patience during this time as we work to improve your living space.",
+      "date": "2023-11-01",
+      "createdAt": "2023-10-15T14:30:00Z",
+      "modifiedAt": "2023-10-15T14:30:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "3",
+      "title": "Campus-wide Wi-Fi upgrade",
+      "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage. This upgrade will take place over the next month and will result in improved internet connectivity across all dormitories and academic buildings.",
+      "date": "2023-09-10",
+      "createdAt": "2023-09-01T09:00:00Z",
+      "modifiedAt": "2023-09-01T09:00:00Z",
+      "isDisplay": true
+    },
+    {
+      "id": "4",
+      "title": "New meal plans available",
+      "description": "Check out our new flexible meal plan options for the upcoming semester! We've introduced more variety and customization to cater to different dietary needs and preferences. Visit the dining services office to learn more about these new options.",
+      "date": "2023-07-20",
+      "createdAt": "2023-07-15T11:00:00Z",
+      "modifiedAt": "2023-07-15T11:00:00Z",
+      "isDisplay": true
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@example.com",
+      "password": "hashed_admin123",
+      "role": "admin",
+      "fullName": "John Doe",
+      "gender": "male",
+      "address": "123 Main St, Anytown USA",
+      "phone": "1234567890",
+      "avatar": "https://example.com/admin-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": true,
+      "createdAt": "2023-06-28T15:30:45Z",
+      "lastLogin": "2023-06-28T15:30:45Z",
+      "studentID": "HE170003",
+      "balance": null,
+      "CFDScore": 100,
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "username": "student1",
+      "email": "student1@example.com",
+      "password": "hashed_student123",
+      "role": "student",
+      "fullName": "Jane Smith",
+      "gender": "female",
+      "address": "456 Elm St, Anytown USA",
+      "phone": "9876543210",
+      "avatar": "https://example.com/student1-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": true,
+      "createdAt": "2023-06-28T16:00:00Z",
+      "lastLogin": "2023-06-28T16:00:00Z",
+      "studentID": "HE170001",
+      "balance": 500000,
+      "CFDScore": 100,
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "username": "student2",
+      "email": "student2@example.com",
+      "password": "hashed_pass456",
+      "role": "student",
+      "fullName": "Mike Johnson",
+      "gender": "male",
+      "address": "789 Oak St, Anytown USA",
+      "phone": "5551234567",
+      "avatar": "https://example.com/student2-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": true,
+      "createdAt": "2023-06-28T16:30:00Z",
+      "lastLogin": "2023-06-28T16:30:00Z",
+      "studentID": "HS170002",
+      "balance": 750000,
+      "CFDScore": 100,
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "username": "staff1",
+      "email": "staff1@example.com",
+      "password": "hashed_staffpass",
+      "role": "staff",
+      "fullName": "Emily Brown",
+      "gender": "female",
+      "address": "321 Pine St, Anytown USA",
+      "phone": "1112223333",
+      "avatar": "https://example.com/staff1-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": true,
+      "createdAt": "2023-06-28T17:00:00Z",
+      "lastLogin": "2023-06-28T17:00:00Z",
+      "studentID": "HS170004",
+      "balance": null,
+      "CFDScore": 100,
+      "isActive": true
+    },
+    {
+      "id": "02d7",
+      "username": "haoboy2k2",
+      "email": "haolxhe172802@fpt.edu.vn",
+      "password": "abc@123",
+      "fullName": "Lê philip",
+      "gender": "male",
+      "address": "haolxhe172802",
+      "phone": "0363066815",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-03T14:34:41.123Z",
+      "lastLogin": "2024-07-03T14:34:41.123Z",
+      "studentID": "HE172802",
+      "balance": 6000000,
+      "CFDScore": 100,
+      "isActive": true
+    },
+    {
+      "id": "ad07",
+      "username": "bthteam",
+      "email": "bthteam102@gmail.com",
+      "password": "$2a$10$cwWVoCnG23K0PhpBYY3nNeK.CIm1dpg.5OI7wYLg.pcmDhB6bicQK",
+      "fullName": "Lee Hao",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0363066815",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-10T04:12:32.792Z",
+      "lastLogin": "2024-07-10T04:12:32.793Z",
+      "studentID": "ST000001",
+      "CFDScore": 100,
+      "isActive": true
+    },
+    {
+      "id": "345b",
+      "username": "xuanhao1804",
+      "email": "xuanhao1804@gmail.com",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "fullName": "Lee Hao",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0363066815",
+      "role": "admin",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-10T04:56:36.207Z",
+      "lastLogin": "2024-07-10T04:56:36.207Z",
+      "balance": 6000000,
+      "currentPassword": "123123",
+      "newPassword": "123456",
+      "studentID": "AD000001",
+      "CFDScore": 100,
+      "isActive": true
+    },
+    {
+      "id": "5742",
+      "username": "dang",
+      "email": "dangg@gmail.com",
+      "password": "$2a$10$ILZvLNbin8KjthZK3DBmj.lBkqieoBj1NHjhilS.sZLFcHL5uREPe",
+      "fullName": "dangdang",
+      "gender": "male",
+      "address": "Hanoi",
+      "phone": "0366959900",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-16T17:18:00.455Z",
+      "lastLogin": "2024-07-16T17:18:00.455Z",
+      "balance": 7679599
+    },
+    {
+      "id": "edd3",
+      "username": "đă3232",
+      "email": "dangb@gmail.com",
+      "password": "$2a$10$frnfdx9i1V3y61ntxcFR/ef.QkUD39DH/i/R36j1rOYcIFZ49ncWq",
+      "fullName": "2321",
+      "gender": "male",
+      "address": "2312",
+      "phone": "0329302930",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-16T17:31:27.058Z",
+      "lastLogin": "2024-07-16T17:31:27.058Z"
+    },
+    {
+      "id": "adc3",
+      "username": "daaaaaaaa",
+      "email": "taing280703@gmail.com",
+      "password": "$2a$10$Igd2cufitPJzgsBm8EDmL.aXt8hj.jo9UI1oNPnoLmTW2YOfnKW9q",
+      "fullName": "edawaw",
+      "gender": "male",
+      "address": "1232131",
+      "phone": "36695090033",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-16T17:33:18.809Z",
+      "lastLogin": "2024-07-16T17:33:18.809Z",
+      "balance": 0
+    },
+    {
+      "id": "4ea0",
+      "username": "dang1",
+      "email": "danglq0@gmail.com",
+      "password": "$2a$10$GScIDbVCVoYCh7ZBuWp0QOM8kvxLUzK1/v19pKjWB8IgM7B/8CXWK",
+      "fullName": "dawwwww",
+      "gender": "male",
+      "address": "wwwww",
+      "phone": "22222222222",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-16T19:22:42.669Z",
+      "lastLogin": "2024-07-16T19:22:42.669Z",
+      "balance": 1000000
+    },
+    {
+      "id": "dcff",
+      "username": "dang2",
+      "email": "cholong@gmail.com",
+      "password": "$2a$10$bBXOy8G/8kYp4KRdPLY4E.biVCwYCR.EIfUgh3YEPVKAUe7eFBJ4y",
+      "fullName": "đă",
+      "gender": "male",
+      "address": "13123",
+      "phone": "22222222222",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-16T19:25:54.165Z",
+      "lastLogin": "2024-07-16T19:25:54.165Z",
+      "balance": 1000092
+    }
+  ],
+  "auth_tokens": [
+    {
+      "userId": 1,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "expiresAt": "2023-06-29T15:30:45Z",
+      "id": "34f3"
+    }
+  ],
+  "auth_providers": [
+    {
+      "userId": 2,
+      "provider": "google",
+      "providerId": "118234567890123456789",
+      "accessToken": "ya29.a0AfH6SMCUV...",
+      "refreshToken": "1//0abcdefghijklm...",
+      "expiresAt": "2023-06-29T16:00:00Z",
+      "id": "d362"
+    }
+  ],
+  "dormitories": [
+    {
+      "id": "1",
+      "name": "Dormitory A",
+      "totalBeds": 500,
+      "floors": [
+        {
+          "id": 1,
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "id": 101,
+              "roomNumber": "A101",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "id": "A101-1",
+                  "name": "A",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": "A101-2",
+                  "name": "B",
+                  "status": "available",
+                  "student": "HA180003"
+                },
+                {
+                  "id": "A101-3",
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "A101-4",
+                  "name": "D",
+                  "status": "occupied",
+                  "student": null
+                }
+              ]
+            },
+            {
+              "id": 102,
+              "roomNumber": "A102",
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "id": "A102-1",
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "A102-2",
+                  "name": "B",
+                  "status": "occupied",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "floorNumber": 2,
+          "rooms": [
+            {
+              "id": 201,
+              "roomNumber": "A201",
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "id": "A201-1",
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "A201-2",
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "A201-3",
+                  "name": "C",
+                  "status": "occupied",
+                  "student": null
+                }
+              ]
+            },
+            {
+              "id": 202,
+              "roomNumber": "A202",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "id": "A202-1",
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "A202-2",
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "A202-3",
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "A202-4",
+                  "name": "D",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Dormitory B",
+      "totalBeds": 400,
+      "floors": [
+        {
+          "id": 1,
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "id": 101,
+              "roomNumber": "B101",
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "id": "B101-1",
+                  "name": "A",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": "B101-2",
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            },
+            {
+              "id": 102,
+              "roomNumber": "B102",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "id": "B102-1",
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "B102-2",
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "floorNumber": 2,
+          "rooms": [
+            {
+              "id": 201,
+              "roomNumber": "B201",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "id": "B201-1",
+                  "name": "A",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": "B201-2",
+                  "name": "B",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": "B201-3",
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "B201-4",
+                  "name": "D",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Dormitory C",
+      "totalBeds": 300,
+      "floors": [
+        {
+          "id": 1,
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "id": 101,
+              "roomNumber": "C101",
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "id": "C101-1",
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "C101-2",
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "C101-3",
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            },
+            {
+              "id": 102,
+              "roomNumber": "C102",
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "id": "C102-1",
+                  "name": "A",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": "C102-2",
+                  "name": "B",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": "C102-3",
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "B",
+      "totalBeds": 150,
+      "usedBeds": 120,
+      "freeBeds": 30,
+      "floors": [
+        {
+          "id": 2,
+          "floorNumber": 2,
+          "rooms": [
+            {
+              "id": 201,
+              "roomNumber": "C201",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "id": "C201-1",
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "id": "C201-2",
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            },
+            {
+              "id": 202,
+              "roomNumber": "C202",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "id": "C202-1",
+                  "name": "A",
+                  "status": "occupied",
+                  "student": null
+                },
+                {
+                  "id": "C202-2",
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "bookingRequests": [
+    {
+      "id": "1",
+      "studentid": 2,
+      "dormitory": 1,
+      "floor": 1,
+      "room": 1,
+      "bed": 4,
+      "semester": "Fall 2023",
+      "status": "pending"
+    },
+    {
+      "id": "2",
+      "studentid": 3,
+      "dormitory": 2,
+      "floor": 1,
+      "room": 4,
+      "bed": 11,
+      "semester": "Fall 2023",
+      "status": "approved"
+    },
+    {
+      "id": "21",
+      "dormitory": "1",
+      "floor": "1",
+      "room": "102",
+      "bed": "A102-1",
+      "semester": "Sum 2024",
+      "status": "pending"
+    }
+  ],
+  "payments": [
+    {
+      "id": "1",
+      "student": 2,
+      "amount": 1000,
+      "date": "2023-08-15",
+      "semester": "Fall 2023"
+    },
+    {
+      "id": "2",
+      "student": 3,
+      "amount": 950,
+      "date": "2023-08-20",
+      "semester": "Fall 2023"
+    },
+    {
+      "id": "3",
+      "student": 2,
+      "amount": 1000,
+      "date": "2024-01-10",
+      "semester": "Spring 2024"
+    },
+    {
+      "id": "f41f",
+      "student": "5742",
+      "amount": 525250,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "0dce",
+      "student": "5742",
+      "amount": 5000,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "3f62",
+      "student": "5742",
+      "amount": 500,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "dbe7",
+      "student": "5742",
+      "amount": 100000,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "257f",
+      "student": "5742",
+      "amount": 55,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "b1be",
+      "student": "5742",
+      "amount": 4454445,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "337a",
+      "student": "4ea0",
+      "amount": 1000000,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "0f29",
+      "student": "5742",
+      "amount": 111111,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "7b8d",
+      "student": "5742",
+      "amount": 10999,
+      "date": "2024-07-16",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "00e0",
+      "studentid": "5742",
+      "amount": 100,
+      "date": "2024-07-17",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "4854",
+      "studentid": "dcff",
+      "amount": 1000000,
+      "date": "2024-07-17",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "d06b",
+      "studentid": "dcff",
+      "amount": 42,
+      "date": "2024-07-17",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "1557",
+      "studentid": "dcff",
+      "amount": 50,
+      "date": "2024-07-17",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "c38c",
+      "studentid": "5742",
+      "amount": 1000000,
+      "date": "2024-07-17",
+      "semester": "Fall 2024"
+    },
+    {
+      "id": "f96b",
+      "studentid": "5742",
+      "amount": 555,
+      "date": "2024-07-17",
+      "semester": "Fall 2024"
+    }
+  ],
+  "paymentRequests": [
+    {
+      "id": "50b7",
+      "studentid": "5742",
+      "amount": 223,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "8b1d",
+      "studentid": "5742",
+      "amount": 223,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "7fc7",
+      "studentid": "5742",
+      "amount": 500,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "0": {
+        "id": "50b7",
+        "studentid": "5742",
+        "amount": 223,
+        "date": "2024-07-17",
+        "semester": "Fall 2024",
+        "status": "Approved"
+      },
+      "1": {
+        "id": "8b1d",
+        "studentid": "5742",
+        "amount": 223,
+        "date": "2024-07-17",
+        "semester": "Fall 2024",
+        "status": "pending"
+      },
+      "2": {
+        "id": "7fc7",
+        "studentid": "5742",
+        "amount": 500,
+        "date": "2024-07-17",
+        "semester": "Fall 2024",
+        "status": "pending"
+      },
+      "3": {
+        "id": "dad9",
+        "studentid": "5742",
+        "amount": 500,
+        "date": "2024-07-17",
+        "semester": "Fall 2024",
+        "status": "pending"
+      },
+      "4": {
+        "id": "57bb",
+        "studentid": "5742",
+        "amount": 500,
+        "date": "2024-07-17",
+        "semester": "Fall 2024",
+        "status": "Approved"
+      },
+      "5": {
+        "id": "7ff9",
+        "studentid": "5742",
+        "amount": 1000000,
+        "date": "2024-07-17",
+        "semester": "Fall 2024",
+        "status": "Approved"
+      },
+      "6": {
+        "id": "1208",
+        "studentid": "5742",
+        "amount": 1000000,
+        "date": "2024-07-17",
+        "semester": "Fall 2024",
+        "status": "Approved"
+      },
+      "7": {
+        "id": "0874",
+        "studentid": "5742",
+        "amount": 1111,
+        "date": "2024-07-17",
+        "semester": "Fall 2024",
+        "status": "Approved"
+      },
+      "id": "ce73"
+    },
+    {
+      "id": "57bb",
+      "studentid": "5742",
+      "amount": 500,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "7ff9",
+      "studentid": "5742",
+      "amount": 1000000,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "1208",
+      "studentid": "5742",
+      "amount": 1000000,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "0874",
+      "studentid": "5742",
+      "amount": 1111,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "bfdb",
+      "studentid": "5742",
+      "amount": 111,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Rejected"
+    },
+    {
+      "id": "9de4",
+      "studentid": "5742",
+      "amount": 100,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "f7d4",
+      "studentid": "dcff",
+      "amount": 1000000,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "b4bc",
+      "studentid": "dcff",
+      "amount": 42,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "34a5",
+      "studentid": "dcff",
+      "amount": 50,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "f222",
+      "studentid": "5742",
+      "amount": 1000000,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "1979",
+      "studentid": "5742",
+      "amount": 555,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    }
+  ],
+  "rules": [
+    {
+      "id": "1",
+      "title": "Quiet Hours",
+      "description": "Quiet hours are from 10 PM to 7 AM. Please keep noise to a minimum during these times."
+    },
+    {
+      "id": "2",
+      "title": "No Smoking",
+      "description": "Smoking is strictly prohibited in all dorm rooms and common areas."
+    },
+    {
+      "id": "3",
+      "title": "Guests Policy",
+      "description": "Overnight guests are allowed for a maximum of 3 consecutive nights and must be registered at the front desk."
+    },
+    {
+      "id": "5",
+      "title": "Room Inspections",
+      "description": "Regular room inspections will be conducted to ensure cleanliness and compliance with dorm policies."
+    },
+    {
+      "title": "new rule 1",
+      "description": "new description 1",
+      "id": "6"
+    },
+    {
+      "title": "new rule 2",
+      "description": "new description 2",
+      "id": "7eb7"
+    }
+  ],
+  "guide": [
+    {
+      "id": "1",
+      "name": "Instructions for viewing news",
+      "step": [
+        {
+          "id": 1,
+          "description": "On the homepage, you will find 10 latest news in the dormitory",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide1.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "To see more news, click the \"News\" button on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide1.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "On this page, you can search for news by entering the title of the news",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide1.step3.png"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Instructions for booking a bed",
+      "step": [
+        {
+          "id": 1,
+          "description": "On the homepage, you will find the dormitory information",
+          "link": {
+            "name": "Booking bed",
+            "url": "https://www.youtube.com/watch?v=D-LFCpyIRAk"
+          },
+          "note": "The \"Booking a bed\" button in the video tutorial is replaced by the \"Booking bed\" button on the menu bar.",
+          "recommendation": [],
+          "image": "guide2.step1.png"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Instructions for contacting the security department",
+      "step": [
+        {
+          "id": 1,
+          "description": "If you want to contact the security department, you can find their contact in the landing page (without login) or in the homepage (after logging in).",
+          "link": {},
+          "note": "",
+          "recommendation": [
+            {
+              "id": 1,
+              "text": "It is more convenient to use your phone. On your phone, you",
+              "bold": false
+            },
+            {
+              "id": 2,
+              "text": "just need to click",
+              "bold": true
+            },
+            {
+              "id": 3,
+              "text": "on the phone number of the relevant department,",
+              "bold": false
+            },
+            {
+              "id": 4,
+              "text": "you can make a call to them.",
+              "bold": true
+            }
+          ],
+          "image": "guide3.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "On the landing page, their contact is shown in \"question 5\" of the \"FAQ\" section",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide3.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "On the homepage, their contact is displayed in the \"Contact\" section",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide3.step3.png"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Instructions for contacting the medical department",
+      "step": [
+        {
+          "id": 1,
+          "description": "If you want to contact the medical department, you can find their contact information on the landing page (no login required) or on the homepage (after logging in).",
+          "link": {},
+          "note": "",
+          "recommendation": [
+            {
+              "id": 1,
+              "text": "It is more convenient to use your phone. On your phone, you",
+              "bold": false
+            },
+            {
+              "id": 2,
+              "text": "just need to click",
+              "bold": true
+            },
+            {
+              "id": 3,
+              "text": "on the phone number of the relevant department,",
+              "bold": false
+            },
+            {
+              "id": 4,
+              "text": "you can make a call to them.",
+              "bold": true
+            }
+          ],
+          "image": "guide4.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "On the landing page, their contact is shown in \"question 5\" of the \"FAQ\" section",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide4.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "On the homepage, their contact is displayed in the \"Contact\" section",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide4.step3.png"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Instructions for contacting the dormitory management",
+      "step": [
+        {
+          "id": 1,
+          "description": "If you want to contact the dormitory management, you can find their contact information on the landing page (no login required) or on the homepage (after logging in).",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": ""
+        },
+        {
+          "id": 2,
+          "description": "You can make a call",
+          "link": {},
+          "note": "",
+          "recommendation": [
+            {
+              "id": 1,
+              "text": "It is more convenient to use your phone. On your phone, you",
+              "bold": false
+            },
+            {
+              "id": 2,
+              "text": "just need to click",
+              "bold": true
+            },
+            {
+              "id": 3,
+              "text": "on the phone number of the relevant department,",
+              "bold": false
+            },
+            {
+              "id": 4,
+              "text": "you can make a call to them.",
+              "bold": true
+            }
+          ],
+          "image": "guide5.step2.png"
+        },
+        {
+          "id": 2,
+          "description": "Or you can send an email",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide5.step3.png"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Instructions for creating a request",
+      "step": [
+        {
+          "id": 1,
+          "description": "When you have a problem in the dormitory, you can send a request to the dormitory management.\nStep 1: Click the \"My Request\" button in the menu bar, then the \"Create new request\" button",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide6.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "Step 2: Select the type of request you want to send",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide6.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "Step 3: Enter the request text, then click the \"Create Request\" button",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide6.step3.png"
+        },
+        {
+          "id": 4,
+          "description": "Step 4: You can view your request in the \"My Request\" page",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide6.step4.png"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Instructions for viewing electricity/water usage",
+      "step": [
+        {
+          "id": 1,
+          "description": "Click on the button \"Electricity water usage\" on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide7.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "Select the corresponding semester",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide7.step2.png"
+        },
+        {
+          "id": 3,
+          "description": "You can see your usage or your block usage by selecting the respective tab",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide7.step3.png"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Instructions for viewing payment history",
+      "step": [
+        {
+          "id": 1,
+          "description": "Click on the button \"Payment history\" on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide8.step1.png"
+        },
+        {
+          "id": 2,
+          "description": "Click the \"Details\" button for more information about each payment",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide8.step2.png"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Instructions for viewing resident history",
+      "step": [
+        {
+          "id": 1,
+          "description": "Click the \"Resident History\" button on the menu bar",
+          "link": {},
+          "note": "",
+          "recommendation": [],
+          "image": "guide9.step1.png"
+        }
+      ]
+    }
+  ],
+  "roomTypes": [
+    {
+      "id": "1",
+      "type": "3 bed",
+      "price": 850000
+    },
+    {
+      "id": "2",
+      "type": "4 bed",
+      "price": 1050000
+    }
+  ]
+}
