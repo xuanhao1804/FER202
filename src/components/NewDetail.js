@@ -1,4 +1,3 @@
-// NewsDetail.js
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -15,9 +14,14 @@ const NewsDetail = () => {
     const fetchNewsDetail = async () => {
         try {
             const response = await axios.get(`http://localhost:9999/news/${id}`);
-            setNews(response.data);
+            if (response.data && response.data.isDisplay) {
+                setNews(response.data);
+            } else {
+                navigate('/viewnews'); // Redirect if news is not found or not displayed
+            }
         } catch (error) {
             console.error('Error fetching news detail:', error);
+            navigate('/viewnews'); // Redirect on error
         }
     };
 
@@ -34,7 +38,7 @@ const NewsDetail = () => {
         <div className="news-detail">
             <h2>{news.title}</h2>
             <p>Created at: {formatDate(news.createdAt)}</p>
-            <p>{news.description}</p>
+            <div dangerouslySetInnerHTML={{ __html: news.content }} />
             <button onClick={() => navigate('/viewnews')}>Back to News List</button>
         </div>
     );

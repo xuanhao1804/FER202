@@ -1,4 +1,3 @@
-// News.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -18,8 +17,9 @@ const News = () => {
     const fetchNews = async () => {
         try {
             const response = await axios.get('http://localhost:9999/news');
-            setNewsItems(response.data);
-            setFilteredNews(response.data);
+            const displayedNews = response.data.filter(item => item.isDisplay);
+            setNewsItems(displayedNews);
+            setFilteredNews(displayedNews);
         } catch (error) {
             console.error('Error fetching news:', error);
         }
@@ -65,7 +65,12 @@ const News = () => {
                 {currentItems.map((item) => (
                     <div key={item.id} className="news-item" onClick={() => handleNewsClick(item.id)}>
                         <p>{formatDate(item.createdAt)}</p>
-                        <p>{item.title}</p>
+                        <h3>{item.title}</h3>
+                        <div dangerouslySetInnerHTML={{ 
+                            __html: item.content 
+                                ? item.content.substring(0, 100) + '...' 
+                                : 'No content available'
+                        }} />
                     </div>
                 ))}
             </div>
