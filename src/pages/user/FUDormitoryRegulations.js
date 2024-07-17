@@ -16,7 +16,7 @@ export default function FUDormitoryRegulations() {
     useEffect(() => {
         axios.get('http://localhost:9999/rules')
             .then(response => {
-                setRule(response.data);
+                setRule(response?.data);
             })
             .catch(err => {
                 console.log(err.message);
@@ -56,7 +56,7 @@ export default function FUDormitoryRegulations() {
         keyWord = keyWord.toLowerCase();
         axios.get('http://localhost:9999/rules')
             .then(response => {
-                setRule(response.data?.filter(r => r.title.toLowerCase().includes(keyWord)));
+                setRule(response?.data?.filter(r => r.title.toLowerCase().includes(keyWord)));
             })
             .catch(err => {
                 console.log(err.message);
