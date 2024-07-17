@@ -37,15 +37,13 @@
       "lastLogin": "2024-07-10T04:56:36.207Z",
       "studentID": "HE172888",
       "balance": 4950000,
-      "currentPassword": "123123",
-      "newPassword": "123456",
       "isActive": true
     },
     {
       "id": "d2f6",
       "username": "haolxhe172802",
       "email": "haolxhe172802@fpt.edu.vn",
-      "password": "$2a$10$S2yaqXQpe1KJFAwx0AYt6OScXnvxW8Zcmsos3N4jiQeynIBPZJ9DC",
+      "password": "$2a$10$VrzuFzX7bHfFIgpOYPRTqO6L4BVEOcnR1A0Mx2rcFihweVXVVDHH2",
       "fullName": "Lê Xuân Hào",
       "gender": "male",
       "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
@@ -55,7 +53,8 @@
       "googleId": null,
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
-      "lastLogin": "2024-07-17T04:37:27.557Z"
+      "lastLogin": "2024-07-17T04:37:27.557Z",
+      "balance": 4950000
     }
   ],
   "auth_tokens": [
@@ -102,7 +101,7 @@
     {
       "id": "1",
       "name": "Dormitory A",
-      "totalBeds": 500,
+      "totalBeds": "50",
       "floors": [
         {
           "id": 1,
@@ -227,7 +226,7 @@
     {
       "id": "2",
       "name": "Dormitory B",
-      "totalBeds": 400,
+      "totalBeds": 42,
       "floors": [
         {
           "id": 1,
@@ -314,7 +313,7 @@
     {
       "id": "3",
       "name": "Dormitory C",
-      "totalBeds": 300,
+      "totalBeds": 31,
       "floors": [
         {
           "id": 1,
@@ -456,6 +455,16 @@
       "floor": "1",
       "room": "102",
       "bed": "A102-1",
+      "semester": "Summer 2024",
+      "status": "pending",
+      "isExpired": false
+    },
+    {
+      "id": "211",
+      "dormitory": "3",
+      "floor": "1",
+      "room": "102",
+      "bed": "C102-3",
       "semester": "Summer 2024",
       "status": "pending",
       "isExpired": false
