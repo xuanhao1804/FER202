@@ -38,6 +38,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/changepass" element={<ChangePassword />} />
 
           {/* Student routes */}
           <Route element={<StudentRoute />}>
@@ -50,7 +51,7 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/regulation" element={<FUDormitoryRegulations />} />
             <Route path="/booking-requests" element={<BookingRequests />} />
-            <Route path="/changepass" element={<ChangePassword />} />
+
             <Route path="/viewnews" element={<News />} />
             <Route path="/news/:id" element={<NewsDetail />} />
             <Route path="/resident-history" element={<ResidentHistory />} />
