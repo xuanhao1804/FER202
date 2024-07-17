@@ -104,7 +104,7 @@ export default function AdminRegulations() {
 
     //filter guide theo key word khong phan biet hoa thuong
     function handleSearch(keyWord) {
-        keyWord = keyWord.toLowerCase();
+        keyWord = keyWord.toString().toLowerCase();
         axios.get('http://localhost:9999/rules')
             .then(response => {
                 setRule(response.data?.filter(r => r.title.toLowerCase().includes(keyWord)));
@@ -268,12 +268,11 @@ export default function AdminRegulations() {
                                             <div className='rule-card-content' style={{}}>
                                                 <div style={{
                                                     width: '30vw', // Chiều rộng bằng 80% của viewport
-                                                    height: '20vh', // Chiều cao bằng 50% của viewport
-                                                    color: '#034EA2',
-                                                    fontWeight: '500'
+                                                    height: '22vh',
+                                                    overflow: 'auto'
                                                 }}>
                                                     <h3 style={{ color: '#034EA2', fontWeight: '500' }}>{r.title}</h3>
-                                                    <p style={{ marginLeft: '25px', fontSize: 'clamp(1rem, 1.6vw, 2rem)' }}>{r.description}</p>
+                                                    <p style={{ marginLeft: '25px', fontSize: 'clamp(1rem, 1.4vw, 2rem)' }}>{r.description}</p>
                                                 </div>
                                                 <div className='d-flex justify-content-end' style={{ width: '100%' }}>
                                                     <Button variant="primary"
