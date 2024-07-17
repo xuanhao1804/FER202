@@ -20,7 +20,7 @@ export default function AdminRegulations() {
     const [rule, setRule] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
 
-    useEffect(() => {
+    function getRuleList() {
         axios.get('http://localhost:9999/rules')
             .then(response => {
                 setRule(response.data);
@@ -28,16 +28,18 @@ export default function AdminRegulations() {
             .catch(err => {
                 console.log(err.message);
             });
-    }, []);
+    }
 
+    useEffect(() => {
+        getRuleList();
+    }, []);
 
     //Thêm trạng thái để lưu `id` của button đang được kích hoạt
     const [activeId, setActiveId] = useState(null);
 
     //Cập nhật hàm `handleClick` để nhận `id` của button được nhấn
     const handleClick = (id) => {
-        setActiveId(id); // Cập nhật trạng thái với `id` của button được nhấn
-        $('#pdf').hide();
+        setActiveId(id); // Cập nhật trạng thái với `id` của b        if(window.confirm(message)){pdf').hide();
         $('#add-rule-form').hide();
         $('#edit-rule-form').hide();
     };
@@ -102,7 +104,7 @@ export default function AdminRegulations() {
 
     //filter guide theo key word khong phan biet hoa thuong
     function handleSearch(keyWord) {
-        keyWord = keyWord.toLowerCase();
+        keyWord = keyWord.toString().toLowerCase();
         axios.get('http://localhost:9999/rules')
             .then(response => {
                 setRule(response.data?.filter(r => r.title.toLowerCase().includes(keyWord)));
@@ -124,7 +126,7 @@ export default function AdminRegulations() {
         }
     }, [search]);
 
-    
+
 
     //function to add new rule to database
     const [id, setId] = useState('');
@@ -132,7 +134,7 @@ export default function AdminRegulations() {
     const [description, setDescription] = useState('');
 
     function addRule() {
-        if( title === '' || description === ''){
+        if (title === '' || description === '') {
             toast.error('Please fill in all fields');
             return;
         }
@@ -153,32 +155,49 @@ export default function AdminRegulations() {
             });
     }
 
-//function to edit rule
-function editRule() {
-    if(title === '' || description === ''){
-        toast.error('Please fill in all fields');
-        return;
+    //function to edit rule
+    function editRule() {
+        if (title === '' || description === '') {
+            toast.error('Please fill in all fields');
+            return;
+        }
+
+        // Remove this line as we're already using the state variable 'id'
+        // const id = $('#edit-rule-form #id').val();
+
+        axios.put('http://localhost:9999/rules/' + id, {
+            title: title,
+            description: description
+        })
+            .then(response => {
+                toast.success('Edit rule successfully');
+                $('#edit-rule-form').hide();
+                $('#pdf').show();
+                getRuleList();
+            })
+            .catch(err => {
+                console.log(err.message);
+                toast.error('Edit rule failed');
+            });
     }
 
-    // Remove this line as we're already using the state variable 'id'
-    // const id = $('#edit-rule-form #id').val();
-
-    axios.put('http://localhost:9999/rules/' + id, {
-        title: title,
-        description: description
-    })
-        .then(response => {
-            console.log(response.data);
-            toast.success('Edit rule successfully');
-            $('#edit-rule-form').hide();
-            $('#pdf').show();
-            setRule(rule.map(r => r.id === id ? response.data : r));
-        })
-        .catch(err => {
-            console.log(err.message);
-            toast.error('Edit rule failed');
-        });
-}
+    //function to delete rule
+    function deleteRule(id) {
+        const message = 'Are you sure you want to delete this rule?';
+        if (window.confirm(message)) {
+            axios.delete('http://localhost:9999/rules/' + id)
+                .then(response => {
+                    toast.success('Delete rule successfully');
+                    getRuleList();
+                    setCurrentPage(1);
+                    $('#pdf').show();
+                })
+                .catch(err => {
+                    console.log(err.message);
+                    toast.error('Delete rule failed');
+                });
+        }
+    }
 
 
     return (
@@ -247,11 +266,29 @@ function editRule() {
                                     <div className='rule-card' key={r.id}>
                                         <div className='rule-card-main'>
                                             <div className='rule-card-content' style={{}}>
-                                                <h3 style={{ color: '#034EA2', fontWeight: '500' }}>{r.title}</h3>
-                                                <p style={{ marginLeft: '25px', fontSize: 'clamp(1rem, 1.6vw, 2rem)' }}>{r.description}</p>
+                                                <div style={{
+                                                    width: '30vw', // Chiều rộng bằng 80% của viewport
+                                                    height: '22vh',
+                                                    overflow: 'auto'
+                                                }}>
+                                                    <h3 style={{ color: '#034EA2', fontWeight: '500' }}>{r.title}</h3>
+                                                    <p style={{ marginLeft: '25px', fontSize: 'clamp(1rem, 1.4vw, 2rem)' }}>{r.description}</p>
+                                                </div>
                                                 <div className='d-flex justify-content-end' style={{ width: '100%' }}>
-                                                    <Button variant="primary" className='mr-3' onClick={e => showEditRuleForm(r.id)}>Edit</Button>
-                                                    <Button variant="primary" onClick={e => handleClose()}>Close</Button>
+                                                    <Button variant="primary"
+                                                        className='mr-3'
+                                                        onClick={e => showEditRuleForm(r.id)}>
+                                                        Edit
+                                                    </Button>
+                                                    <Button variant="danger"
+                                                        className='mr-3'
+                                                        onClick={e => deleteRule(r.id)}>
+                                                        Delete
+                                                    </Button>
+                                                    <Button variant="secondary"
+                                                        onClick={e => handleClose()}>
+                                                        Close
+                                                    </Button>
                                                 </div>
                                             </div>
                                             <div className='rule-card-img'>
@@ -325,6 +362,7 @@ function editRule() {
                                 </Form.Group>
                                 <div className='d-md-flex justify-content-end'>
                                     <Button variant="primary"
+
                                         style={{ width: '80px', marginRight: '10px' }}
                                         onClick={e => editRule()}>
                                         Save
