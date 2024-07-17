@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist/webpack';
+import { Col, Row } from 'react-bootstrap';
+import "../style/regulation.css";
 
 const PDFViewer = ({ pdfUrl }) => {
     const [pdf, setPdf] = useState(null);
@@ -44,13 +46,14 @@ const PDFViewer = ({ pdfUrl }) => {
         <div>
             <div id="the-canvas" className="S-policy">
                 {Array.from({ length: pdf ? pdf.numPages : 0 }, (_, i) => (
-                    <canvas
-                        key={i}
-                        ref={(el) => (canvasRefs.current[i] = el)}
-                        id={`canvas${i + 1}`}
-                        height="1263"
-                        width="892"
-                    ></canvas>
+                    <div className='pdf-page'>
+                        <canvas
+                            key={i}
+                            ref={(el) => (canvasRefs.current[i] = el)}
+                            id={`canvas${i + 1}`}
+                        ></canvas>
+                        <hr></hr>
+                    </div>
                 ))}
             </div>
         </div>

@@ -1,112 +1,60 @@
 {
-  "users": [
+  "semesters": [
     {
       "id": "1",
-      "username": "admin",
-      "email": "admin@example.com",
-      "password": "hashed_admin123",
-      "role": "admin",
-      "fullName": "John Doe",
-      "gender": "male",
-      "address": "123 Main St, Anytown USA",
-      "phone": "1234567890",
-      "avatar": "https://example.com/admin-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": true,
-      "createdAt": "2023-06-28T15:30:45Z",
-      "lastLogin": "2023-06-28T15:30:45Z",
-      "studentID": null,
-      "balance": null
+      "name": "Fall 2023",
+      "startDate": "2023-08-15",
+      "endDate": "2023-12-20"
     },
     {
       "id": "2",
-      "username": "student1",
-      "email": "student1@example.com",
-      "password": "hashed_student123",
-      "role": "student",
-      "fullName": "Jane Smith",
-      "gender": "female",
-      "address": "456 Elm St, Anytown USA",
-      "phone": "9876543210",
-      "avatar": "https://example.com/student1-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": true,
-      "createdAt": "2023-06-28T16:00:00Z",
-      "lastLogin": "2023-06-28T16:00:00Z",
-      "studentID": "HE170001",
-      "balance": 500000
+      "name": "Spring 2024",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15"
     },
     {
       "id": "3",
-      "username": "student2",
-      "email": "student2@example.com",
-      "password": "hashed_pass456",
-      "role": "student",
-      "fullName": "Mike Johnson",
-      "gender": "male",
-      "address": "789 Oak St, Anytown USA",
-      "phone": "5551234567",
-      "avatar": "https://example.com/student2-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": true,
-      "createdAt": "2023-06-28T16:30:00Z",
-      "lastLogin": "2023-06-28T16:30:00Z",
-      "studentID": "HS170002",
-      "balance": 750000
-    },
+      "name": "Summer 2024",
+      "startDate": "2024-06-01",
+      "endDate": "2024-07-31"
+    }
+  ],
+  "users": [
     {
-      "id": "4",
-      "username": "staff1",
-      "email": "staff1@example.com",
-      "password": "hashed_staffpass",
-      "role": "staff",
-      "fullName": "Emily Brown",
+      "id": "345b",
+      "username": "xuanhao1804",
+      "email": "xuanhao1804@gmail.com",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "fullName": "Lee Hao",
       "gender": "female",
-      "address": "321 Pine St, Anytown USA",
-      "phone": "1112223333",
-      "avatar": "https://example.com/staff1-avatar.jpg",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0363066815",
+      "role": "admin",
+      "avatar": "https://example.com/default-avatar.jpg",
       "googleId": null,
-      "isEmailVerified": true,
-      "createdAt": "2023-06-28T17:00:00Z",
-      "lastLogin": "2023-06-28T17:00:00Z",
-      "studentID": null,
-      "balance": null
+      "isEmailVerified": false,
+      "createdAt": "2024-07-10T04:56:36.207Z",
+      "lastLogin": "2024-07-10T04:56:36.207Z",
+      "studentID": "HE172888",
+      "balance": 4950000,
+      "isActive": true
     },
     {
-      "id": "02d7",
-      "username": "haoboy2k2",
+      "id": "d2f6",
+      "username": "haolxhe172802",
       "email": "haolxhe172802@fpt.edu.vn",
-      "password": "abc@123",
-      "fullName": "Lê philip",
+      "password": "$2a$10$VrzuFzX7bHfFIgpOYPRTqO6L4BVEOcnR1A0Mx2rcFihweVXVVDHH2",
+      "fullName": "Lê Xuân Hào",
       "gender": "male",
-      "address": "haolxhe172802",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
       "phone": "0363066815",
       "role": "student",
       "avatar": "https://example.com/default-avatar.jpg",
       "googleId": null,
       "isEmailVerified": false,
-      "createdAt": "2024-07-03T14:34:41.123Z",
-      "lastLogin": "2024-07-03T14:34:41.123Z",
-      "studentID": "HE172802",
-      "balance": 600000
-    },
-    {
-      "id": "5012",
-      "username": "xuanhao1804",
-      "email": "xuanhao1804@gmail.com",
-      "password": "123123",
-      "fullName": "Lê Hào",
-      "gender": "male",
-      "address": "adress",
-      "phone": "0123456789",
-      "role": "student",
-      "avatar": "https://example.com/default-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": false,
-      "createdAt": "2024-07-03T15:11:52.711Z",
-      "lastLogin": "2024-07-03T15:11:52.711Z",
-      "studentID": "HA180003",
-      "balance": 55000000
+      "createdAt": "2024-07-17T04:37:27.557Z",
+      "lastLogin": "2024-07-17T04:37:27.557Z",
+      "balance": 4950000
     }
   ],
   "auth_tokens": [
@@ -130,28 +78,23 @@
   ],
   "news": [
     {
-      "id": "1",
-      "title": "Welcome to the new semester!",
-      "description": "We're excited to kick off the new semester and welcome all our new and returning students.",
-      "date": "2023-08-15"
+      "title": "Welcome to the new semester2!",
+      "content": "<h2><a href=\"http://localhost:3000/manage/news\"><i><strong>http://localhost:3000/manage/news</strong></i></a><br>&nbsp;</h2>",
+      "id": "1"
     },
     {
       "id": "2",
       "title": "Upcoming dorm renovations",
       "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
-      "date": "2023-11-01"
+      "date": "2023-11-01",
+      "isDisplay": true
     },
     {
       "id": "3",
       "title": "Campus-wide Wi-Fi upgrade",
       "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage.",
-      "date": "2023-09-10"
-    },
-    {
-      "id": "4",
-      "title": "New meal plans available",
-      "description": "Check out our new flexible meal plan options for the upcoming semester!",
-      "date": "2023-07-20"
+      "date": "2023-09-10",
+      "isDisplay": true
     }
   ],
   "dormitories": [
@@ -303,8 +246,7 @@
                 {
                   "id": "B101-2",
                   "name": "B",
-                  "status": "available",
-                  "student": null
+                  "status": "occupied"
                 }
               ]
             },
@@ -428,7 +370,14 @@
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "B",
+      "totalBeds": 150,
+      "floors": [
         {
           "id": 2,
           "floorNumber": 2,
@@ -479,13 +428,108 @@
   "bookingRequests": [
     {
       "id": "1",
-      "studentid": "HA180003",
+      "studentId": "HE172888",
+      "dormitory": "2",
+      "floor": "1",
+      "room": "102",
+      "bed": "B102-1",
+      "semester": "Fall 2023",
+      "status": "approved",
+      "isExpired": true
+    },
+    {
+      "id": "2",
+      "studentId": "HE172888",
+      "dormitory": "2",
+      "floor": "1",
+      "room": "102",
+      "bed": "B102-1",
+      "semester": "Spring 2024",
+      "status": "approved",
+      "isExpired": true
+    },
+    {
+      "id": "21",
+      "studentId": "HE172888",
       "dormitory": "1",
       "floor": "1",
-      "room": "101",
-      "bed": "A101-2",
-      "semester": "Sum 2024",
-      "status": "approved"
+      "room": "102",
+      "bed": "A102-1",
+      "semester": "Summer 2024",
+      "status": "pending",
+      "isExpired": false
+    },
+    {
+      "id": "211",
+      "dormitory": "3",
+      "floor": "1",
+      "room": "102",
+      "bed": "C102-3",
+      "semester": "Summer 2024",
+      "status": "pending",
+      "isExpired": false
+    }
+  ],
+  "residentHistory": [],
+  "payments": [
+    {
+      "id": "1",
+      "student": 2,
+      "amount": 1000,
+      "date": "2023-08-15",
+      "semester": "Fall 2023"
+    },
+    {
+      "id": "2",
+      "student": 3,
+      "amount": 950,
+      "date": "2023-08-20",
+      "semester": "Fall 2023"
+    },
+    {
+      "id": "3",
+      "student": 2,
+      "amount": 1000,
+      "date": "2024-01-10",
+      "semester": "Spring 2024"
+    },
+    {
+      "id": "71a5",
+      "amount": 1050000,
+      "date": "2024-07-17",
+      "semester": "Summer 2024"
+    }
+  ],
+  "rules": [
+    {
+      "id": "1",
+      "title": "Quiet Hours",
+      "description": "Quiet hours are from 10 PM to 7 AM. Please keep noise to a minimum during these times."
+    },
+    {
+      "id": "2",
+      "title": "No Smoking",
+      "description": "Smoking is strictly prohibited in all dorm rooms and common areas."
+    },
+    {
+      "id": "3",
+      "title": "Guests Policy",
+      "description": "Overnight guests are allowed for a maximum of 3 consecutive nights and must be registered at the front desk."
+    },
+    {
+      "id": "5",
+      "title": "Room Inspections",
+      "description": "Regular room inspections will be conducted to ensure cleanliness and compliance with dorm policies."
+    },
+    {
+      "title": "new rule 1",
+      "description": "new description 1",
+      "id": "6"
+    },
+    {
+      "title": "new rule 2",
+      "description": "new description 2",
+      "id": "7eb7"
     }
   ],
   "guide": [
@@ -792,29 +836,6 @@
           "image": "guide9.step1.png"
         }
       ]
-    }
-  ],
-  "payments": [
-    {
-      "id": "1",
-      "studentID": "HE170001",
-      "amount": 1000,
-      "date": "2023-08-15",
-      "semester": "Fall 2023"
-    },
-    {
-      "id": "2",
-      "studentID": "HS170002",
-      "amount": 950,
-      "date": "2023-08-20",
-      "semester": "Fall 2023"
-    },
-    {
-      "id": "3",
-      "studentID": "HE170001",
-      "amount": 1000,
-      "date": "2024-01-10",
-      "semester": "Spring 2024"
     }
   ],
   "roomTypes": [

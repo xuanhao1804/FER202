@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Pagination } from "antd";
-import LayoutUser from "../layout/LayoutUser";
-import "../style/guide.css";
+import LayoutUser from "../../layout/LayoutUser";
+import "../../style/guide.css";
 import axios from 'axios';
 
 const StudentGuide = () => {
@@ -57,6 +57,19 @@ const StudentGuide = () => {
                 console.log(err.message);
             });
     }
+
+    useEffect(() => {
+        if(search === '') {
+            axios.get('http://localhost:9999/guide')
+            .then(response => {
+                setGuide(response.data);
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
+        }
+    }, [search]);
+
 
     return (
         <LayoutUser>

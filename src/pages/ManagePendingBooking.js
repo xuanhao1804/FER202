@@ -8,6 +8,14 @@ export default function ManagePendingBooking() {
     const [dormitories, setDormitories] = useState([]);
     const [log, setLog] = useState(JSON.parse(localStorage.getItem("user")));
 
+    const getCurrentDate = () => {
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+
+        return `${year}-${month}-${day}`;
+    };
 
     useEffect(() => {
         fetch(`http://localhost:9999/bookingRequests`)
@@ -50,9 +58,9 @@ export default function ManagePendingBooking() {
                 })
                 .catch();
             const dorm = dormitories?.find(dorm => dorm.id == dormitory)
-            const floor = dorm.floors?.find(fl => fl.id.toString() === floors.toString());
-            const room = floor.rooms.find(rm => rm.id.toString() === rooms.toString());
-            const bed = room.beds.find(bd => bd.id.toString() === beds.toString());
+            const floor = dorm?.floors?.find(fl => fl.id.toString() === floors.toString());
+            const room = floor?.rooms?.find(rm => rm.id.toString() === rooms.toString());
+            const bed = room?.beds?.find(bd => bd.id.toString() === beds.toString());
             bed.student = studentid;
             bed.status = "occupied";
             axios.put(`http://localhost:9999/dormitories/${dormitory}`, dorm, {
@@ -68,10 +76,32 @@ export default function ManagePendingBooking() {
                         'Content-Type': 'application/json',
                     },
                 });
+                const payments = {
+                    studentID: log.studentID,
+                    amount: 850000,
+                    date: getCurrentDate,
+                    semester: "Summer 2024"
+                }
+                axios.post(`http://localhost:9999/payments`, payments, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
                 localStorage.setItem("user", JSON.stringify(updatedLog));
             } else {
                 const updatedLog = { ...log, balance: log.balance - 1050000 };
                 axios.put(`http://localhost:9999/users/${log.id}`, updatedLog, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                const payments = {
+                    studentID: log.studentID,
+                    amount: 1050000,
+                    date: getCurrentDate(),
+                    semester: "Summer 2024"
+                }
+                axios.post(`http://localhost:9999/payments`, payments, {
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -85,7 +115,7 @@ export default function ManagePendingBooking() {
     };
 
     const handleOnReject = (orderId) => {
-        const currentReq = bookingRequests.find(t => t.id == orderId);
+        const currentReq = bookingRequests.find(t => t.id === orderId);
 
         fetch(`http://localhost:9999/bookingRequests/${orderId}`, {
             method: 'PUT',
@@ -131,27 +161,27 @@ export default function ManagePendingBooking() {
 
                                             const student = users?.find(user => user.studentID == request.studentid);
                                             const dorm = dormitories?.find(dorm => dorm.id == request.dormitory)
-                                            const floor = dorm.floors.find(fl => fl.id.toString() === request.floor.toString());
-                                            const room = floor.rooms.find(rm => rm.id.toString() === request.room.toString());
-                                            const bed = room.beds.find(bd => bd.id.toString() === request.bed.toString());
+                                            const floor = dorm?.floors.find(fl => fl.id.toString() === request.floor.toString());
+                                            const room = floor?.rooms.find(rm => rm.id.toString() === request.room.toString());
+                                            const bed = room?.beds.find(bd => bd.id.toString() === request.bed.toString());
                                             const statusClass = request.status === 'approved' ? 'success' : request.status === 'pending' ? 'info' : 'danger';
                                             return (
-                                                <tr key={request.id} className="cell-1">
-                                                    <td>{request.id}</td>
+                                                <tr key={request?.id} className="cell-1">
+                                                    <td>{request?.id}</td>
                                                     <td>{student?.fullName}</td>
-                                                    <td>{dormitories?.find(dorm => dorm.id == request.dormitory).name}</td>
-                                                    <td>{floor.floorNumber}</td>
-                                                    <td>{room.roomNumber}</td>
-                                                    <td>{bed.name}</td>
-                                                    <td>{request.semester}</td>
-                                                    <td><span className={`badge badge-${statusClass}`}>{request.status}</span></td>
+                                                    <td>{dormitories?.find(dorm => dorm.id == request.dormitory)?.name}</td>
+                                                    <td>{floor?.floorNumber}</td>
+                                                    <td>{room?.roomNumber}</td>
+                                                    <td>{bed?.name}</td>
+                                                    <td>{request?.semester}</td>
+                                                    <td><span className={`badge badge-${statusClass}`}>{request?.status}</span></td>
                                                     <td>
-                                                        {request.status === 'pending' ? (
+                                                        {request?.status === 'pending' ? (
                                                             <>
-                                                                <Link onClick={() => handleOnAprove(request.id, request.studentid, request.dormitory, request.floor, request.room, request.bed)}>
+                                                                <Link onClick={() => handleOnAprove(request?.id, request?.studentid, request?.dormitory, request.floor, request?.room, request?.bed)}>
                                                                     <i className="confirmed">&#10004;</i>
                                                                 </Link>
-                                                                <Link onClick={() => handleOnReject(request.id)}>
+                                                                <Link onClick={() => handleOnReject(request?.id)}>
                                                                     <i className="cancelled">&#10008;</i>
                                                                 </Link>
                                                             </>
