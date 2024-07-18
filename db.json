@@ -54,6 +54,7 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
+      "studentID": "HE172803",
       "balance": 4950000,
       "isActive": true
     },

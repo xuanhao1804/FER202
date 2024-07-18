@@ -14,6 +14,7 @@ const ManageResident = () => {
   const [showModal, setShowModal] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [selectedHistory, setSelectedHistory] = useState(null);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -28,6 +29,10 @@ const ManageResident = () => {
         console.error('Error fetching resident history:', error);
         toast.error('Error fetching resident history');
       });
+      fetch('http://localhost:9999/users')
+    .then(res => res.json())
+    .then(data => setUsers(data))
+    .catch(err => console.error('Error fetching users:', err));
 
     // Fetch semesters
     fetch(`http://localhost:9999/semesters`)
@@ -103,7 +108,7 @@ const ManageResident = () => {
     const dateB = semesters[b.semester]?.endDate;
     return new Date(dateB) - new Date(dateA);
   });
-console.log('sortedHistory', sortedHistory);
+
   return (
     <LayoutAdmin>
       <Col sm={11}>
@@ -133,7 +138,8 @@ console.log('sortedHistory', sortedHistory);
                   {sortedHistory.map((history) => (
                     <tr key={history.id}>
                       <td>{history.studentId || 'N/A'}</td>
-                      <td>{history.student?.fullName || 'N/A'}</td>
+                      <td>{users.find(u => u.studentID === history.studentId)?.fullName || 'N/A'}</td>
+
                       <td>{dormitories[history.dormitory] || `Dormitory ${history.dormitory}`}</td>
                       <td>{history.floor}</td>
                       <td>{history.room}</td>
