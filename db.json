@@ -24,7 +24,7 @@
       "id": "345b",
       "username": "xuanhao1804",
       "email": "xuanhao1804@gmail.com",
-      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "password": "$2a$10$y3ha9bcMgbjGdgOuR6fhb.XSbH5z6GchZJo5BqTdHaQeDPld5VLHy",
       "fullName": "Lee Hao",
       "gender": "female",
       "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
@@ -55,6 +55,21 @@
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
       "balance": 4950000,
+      "isActive": true
+    },
+    {
+      "id": "f42e",
+      "username": "bthteam102",
+      "email": "bthteam102@gmail.com",
+      "password": "$2a$10$9DZeLBjZptAOj1RNFTVBreZgl3ENjepkjFMkaZ/0EquX3DDXvJ7.G",
+      "fullName": "Lê philip",
+      "gender": "male",
+      "address": "Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội",
+      "phone": "0794126568",
+      "role": "student",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
+      "studentID": "HE172803",
+      "balance": 0,
       "isActive": true
     }
   ],
