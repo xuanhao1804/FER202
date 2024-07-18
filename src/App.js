@@ -13,14 +13,8 @@ import DormitoryDetail from './pages/user/DormitoryDetail.js';
 import ManagerRoom from "./pages/ManagerRoom.js";
 import Register from "./components/Register.js";
 import NotFoundPage from "./pages/error-404/Error.js";
-<<<<<<< HEAD
-import StudentGuide from "./pages/StudentGuide.js";
-import FAQ from "./pages/FAQ.js";
-import FUDormitoryRegulations from "./pages/FUDormitoryRegulations.js";
-import DormitorySelector from "./pages/user/BookingBed2.js";
 import EditRoom from "./pages/EditRoom.js";
 
-=======
 import StudentGuide from "./pages/user/StudentGuide.js";
 import FAQ from "./pages/user/FAQ.js";
 import FUDormitoryRegulations from "./pages/user/FUDormitoryRegulations.js";
@@ -36,7 +30,7 @@ import ResidentHistory from "./pages/user/ResidentHistory.js";
 import ManageResident from "./pages/admin/ManageResident.js";
 import PrivateRoute from './components/PrivateRoute'; // import PrivateRoute component
 import StudentRoute from './components/StudentRoute'; // import StudentRoute component
->>>>>>> dc321d94532de737b5401dd902c00ce93297b248
+import CreateDormitory from "./pages/CreateDomitory.js";
 
 function App() {
   return (
@@ -47,23 +41,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-<<<<<<< HEAD
-          <Route path="/user" element={<UserProfile />} />
-          <Route path="/user/:id" element={<UserProfile />} />            
-          <Route path="/user/:id" element={<Home />} />          
-          <Route path="/manage/room" element={<ManagerRoom />} />   
-          <Route path="/edit/room/:id" element={<EditRoom />} />        
-          <Route path="/listroom" element={<ListRoom />} />
-          <Route path="/dormitory/:dormitoryId" element={<DormitoryDetail />} />                
-          <Route path="/booking" element={<BookingBed />} />            
-          <Route path="/guide" element={<StudentGuide />} />       
-          <Route path="/faq" element={<FAQ />} />         
-          <Route path="/regulation" element={<FUDormitoryRegulations />} />         
-          <Route path="/manage/booking" element={<ManagePendingBooking />} />      
-          <Route path="/*" element={<NotFoundPage />} />      
-          <Route path="/booking2" element={<DormitorySelector />} />      
-          
-=======
 
           {/* Student routes */}
           <Route element={<StudentRoute />}>
@@ -86,6 +63,8 @@ function App() {
           {/* Admin routes */}
           <Route element={<PrivateRoute role="admin" />}>
             <Route path="/manage/room" element={<ManagerRoom />} />
+            <Route path="/edit/room/:id" element={<EditRoom />} /> 
+            <Route path="/create/dormitory" element={<CreateDormitory />} />       
             <Route path="/manage/user" element={<ManagerUser />} />
             <Route path="/manage/news" element={<ManageNewsAdmin />} />
             <Route path="/manage/booking" element={<ManagePendingBooking />} />
@@ -94,7 +73,6 @@ function App() {
           </Route>
 
           <Route path="/*" element={<NotFoundPage />} />
->>>>>>> dc321d94532de737b5401dd902c00ce93297b248
         </Routes>
       </BrowserRouter>
     </div>
