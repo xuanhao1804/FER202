@@ -103,7 +103,7 @@ const ManageResident = () => {
     const dateB = semesters[b.semester]?.endDate;
     return new Date(dateB) - new Date(dateA);
   });
-
+console.log('sortedHistory', sortedHistory);
   return (
     <LayoutAdmin>
       <Col sm={11}>
