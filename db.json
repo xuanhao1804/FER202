@@ -127,7 +127,7 @@
             {
               "id": 101,
               "roomNumber": "A101",
-              "roomType": "4 bed",
+              "roomType": "3 bed",
               "beds": [
                 {
                   "id": "A101-1",
@@ -285,6 +285,16 @@
                   "student": null
                 }
               ]
+            },
+            {
+              "roomNumber": "13",
+              "roomType": "4 bed",
+              "beds": []
+            },
+            {
+              "roomNumber": "14",
+              "roomType": "3 bed",
+              "beds": []
             }
           ]
         },
@@ -432,6 +442,108 @@
                 {
                   "id": "C202-2",
                   "name": "B",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0729",
+      "name": "Alpha",
+      "totalBeds": 20,
+      "floors": [
+        {
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "roomNumber": "11",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "D",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1b9d",
+      "name": "Beta",
+      "totalBeds": 12,
+      "floors": [
+        {
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "roomNumber": "11",
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "floorNumber": 2,
+          "rooms": [
+            {
+              "roomNumber": "21",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "D",
                   "status": "available",
                   "student": null
                 }

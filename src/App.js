@@ -13,6 +13,7 @@ import DormitoryDetail from './pages/user/DormitoryDetail.js';
 import ManagerRoom from "./pages/ManagerRoom.js";
 import Register from "./components/Register.js";
 import NotFoundPage from "./pages/error-404/Error.js";
+import EditRoom from "./pages/EditRoom.js";
 import StudentGuide from "./pages/user/StudentGuide.js";
 import FAQ from "./pages/user/FAQ.js";
 import FUDormitoryRegulations from "./pages/user/FUDormitoryRegulations.js";
@@ -28,6 +29,7 @@ import ResidentHistory from "./pages/user/ResidentHistory.js";
 import ManageResident from "./pages/admin/ManageResident.js";
 import PrivateRoute from './components/PrivateRoute'; // import PrivateRoute component
 import StudentRoute from './components/StudentRoute'; // import StudentRoute component
+import CreateDormitory from "./pages/CreateDomitory.js";
 
 function App() {
   return (
@@ -62,6 +64,8 @@ function App() {
           {/* Admin routes */}
           <Route element={<PrivateRoute role="admin" />}>
             <Route path="/manage/room" element={<ManagerRoom />} />
+            <Route path="/edit/room/:id" element={<EditRoom />} /> 
+            <Route path="/create/dormitory" element={<CreateDormitory />} />       
             <Route path="/manage/user" element={<ManagerUser />} />
             <Route path="/manage/news" element={<ManageNewsAdmin />} />
             <Route path="/manage/booking" element={<ManagePendingBooking />} />
