@@ -564,7 +564,9 @@
       "bed": "B102-1",
       "semester": "Fall 2023",
       "status": "approved",
-      "isExpired": true
+      "isExpired": true,
+      "startSemester": "Fall 2023",
+      "endSemester": "Spring 2024"
     },
     {
       "id": "2",
@@ -573,9 +575,11 @@
       "floor": "1",
       "room": "102",
       "bed": "B102-1",
-      "semester": "Spring 2024",
+      "semester": "Fall 2023",
       "status": "approved",
-      "isExpired": true
+      "isExpired": true,
+      "startSemester": "Fall 2023",
+      "endSemester": "Summer 2024"
     },
     {
       "id": "21",
