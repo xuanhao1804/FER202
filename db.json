@@ -1,4 +1,5 @@
 {
+ 
   "semesters": [
     {
       "id": "1",
@@ -72,6 +73,41 @@
       "studentID": "HE172803",
       "balance": 0,
       "isActive": true
+    },
+    {
+      "id": "6514",
+      "username": "dang",
+      "email": "dangb@gmail.com",
+      "password": "$2a$10$1f/4rNKiEmmNJ7ebVrF6oersemhZ3srsceTPe7F9g8rYTD89n9pLK",
+      "fullName": "dangdang",
+      "gender": "male",
+      "address": "Bát xát",
+      "phone": "36695090022",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-18T20:18:56.732Z",
+      "lastLogin": "2024-07-18T20:18:56.732Z",
+      "isActive": true,
+      "balance": 1999999
+    },
+    {
+      "id": "e927",
+      "username": "dang1",
+      "email": "dangb1@gmail.com",
+      "password": "$2a$10$OHN2SwbK7wjXeexidhFm1O7KicxiPnUBiF4O/jfhJsRvDI1dzGK8O",
+      "fullName": "đaadawdaw",
+      "gender": "male",
+      "address": "đădădawdawdaw",
+      "phone": "36695090022",
+      "role": "admin",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-18T20:28:34.195Z",
+      "lastLogin": "2024-07-18T20:28:34.195Z",
+      "balance": 0
     }
   ],
   "auth_tokens": [
@@ -631,6 +667,31 @@
       "amount": 1050000,
       "date": "2024-07-17",
       "semester": "Summer 2024"
+    },
+    {
+      "id": "b291",
+      "studentid": "6514",
+      "amount": 1999999,
+      "date": "2024-07-18",
+      "semester": "Fall 2024"
+    }
+  ],
+  "paymentRequests": [
+    {
+      "id": "50b7",
+      "studentid": "5742",
+      "amount": 223,
+      "date": "2024-07-17",
+      "semester": "Fall 2024",
+      "status": "Approved"
+    },
+    {
+      "id": "fffb",
+      "studentid": "6514",
+      "amount": 1999999,
+      "date": "2024-07-18",
+      "semester": "Fall 2024",
+      "status": "Approved"
     }
   ],
   "rules": [

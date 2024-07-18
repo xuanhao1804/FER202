@@ -30,6 +30,12 @@ import ManageResident from "./pages/admin/ManageResident.js";
 import PrivateRoute from './components/PrivateRoute'; // import PrivateRoute component
 import StudentRoute from './components/StudentRoute'; // import StudentRoute component
 import CreateDormitory from "./pages/CreateDomitory.js";
+import FeedBackUser from "./pages/user/FeedBackUser.js";
+import FeedBackHistory from "./pages/user/FeedBackHistory.js";
+import ManageFeedBack from "./pages/ManageFeedback.js";
+import Payment from "./pages/user/Payment.js";
+import PaymentHistory from "./pages/user/PaymentHistory.js";
+import PaymentRequests from "./pages/PaymentRequest.js";
 
 function App() {
   return (
@@ -59,6 +65,13 @@ function App() {
             <Route path="/news/:id" element={<NewsDetail />} />
             <Route path="/resident-history" element={<ResidentHistory />} />
             <Route path="/about" element={<AboutUs />} />
+
+
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/payment/history" element={<PaymentHistory/>} />
+
+            <Route path="/feedback" element={<FeedBackUser />} />
+            <Route path="/feedback-history" element={<FeedBackHistory />} />
           </Route>
 
           {/* Admin routes */}
@@ -71,6 +84,8 @@ function App() {
             <Route path="/manage/booking" element={<ManagePendingBooking />} />
             <Route path="/manage/regulation" element={<AdminRegulations />} />
             <Route path="/manage-resident" element={<ManageResident />} />
+            <Route path="/manage/feedback" element={<ManageFeedBack />} />
+            <Route path="/manage/paymentRequests" element={<PaymentRequests/> } />
           </Route>
 
         </Routes>

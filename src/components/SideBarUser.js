@@ -185,7 +185,7 @@ function SideBarUser() {
             >
               <div className="bg-white py-2 collapse-inner rounded">
                 <h6 className="collapse-header">History Options:</h6>
-                <Link className="collapse-item" to={"/paymenthistory"}>
+                <Link className="collapse-item" to={"/payment/history"}>
                   Payment History
                 </Link>
                 <Link className="collapse-item" to={"/booking-requests"}>
@@ -193,6 +193,9 @@ function SideBarUser() {
                 </Link>
                 <Link className="collapse-item" to={"/resident-history"}>
                   Resident History
+                </Link>
+                <Link className="collapse-item" to={"/feedback-history"}>
+                  FeedBack History
                 </Link>
               </div>
             </div>
@@ -210,11 +213,24 @@ function SideBarUser() {
               <span> Dormitory Regulations </span>
             </Link>
           </li>
+          <hr className="sidebar-divider d-none d-md-block" />
+          <li className="nav-item active">
+            <Link className="nav-link" to={"/payment"}>
+              <span> Payment </span>
+            </Link>
+          </li>
+
 
           <hr className="sidebar-divider d-none d-md-block" />
           <li className="nav-item active">
             <Link className="nav-link" to={"/faq"}>
               <span> FAQ </span>
+            </Link>
+          </li>
+          <hr className="sidebar-divider d-none d-md-block" />
+          <li className="nav-item active">
+            <Link className="nav-link" to={"/feedback"}>
+              <span> FeedBack </span>
             </Link>
           </li>
         </ul>

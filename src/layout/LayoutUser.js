@@ -11,7 +11,7 @@ export default function LayoutUser({ title = "", children }) {
             <Row style={{ justifyContent: 'flex-start' }}>
                 <Col md={3} xs={2}>
                     <SideBarUser />
-                    asdasdasdasdadasdas
+                  
                 </Col>
                 <Col md={9} xs={10}>
                     <div style={{ marginTop: "90px" }}>{children}</div>
