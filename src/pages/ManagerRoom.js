@@ -95,7 +95,7 @@ const ManagerRoom = () => {
                                     ))}
                                     <tr>
                                         <td colSpan="2">Total</td>
-                                        <td>{currentBed.reduce((total, b) => total + b.totalBeds, 0)}</td>
+                                        <td>{currentBed.reduce((total, b) => total + Number(b.totalBeds), 0)}</td>
                                         <td>{currentBed.reduce((total, b) => total + b.usedBeds, 0)}</td>
                                         <td>{currentBed.reduce((total, b) => total + b.freeBeds, 0)}</td>
                                     </tr>
