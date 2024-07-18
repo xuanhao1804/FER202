@@ -24,7 +24,7 @@
       "id": "345b",
       "username": "xuanhao1804",
       "email": "xuanhao1804@gmail.com",
-      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "password": "$2a$10$y3ha9bcMgbjGdgOuR6fhb.XSbH5z6GchZJo5BqTdHaQeDPld5VLHy",
       "fullName": "Lee Hao",
       "gender": "female",
       "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
@@ -54,6 +54,7 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
+<<<<<<< HEAD
       "balance": 4950000
     },
     {
@@ -73,6 +74,26 @@
       "studentID": "HE170320",
       "createdAt": "2024-07-18T14:23:44.202Z",
       "lastLogin": "2024-07-18T14:23:44.202Z"
+=======
+      "studentID": "HE172803",
+      "balance": 4950000,
+      "isActive": true
+    },
+    {
+      "id": "f42e",
+      "username": "bthteam102",
+      "email": "bthteam102@gmail.com",
+      "password": "$2a$10$9DZeLBjZptAOj1RNFTVBreZgl3ENjepkjFMkaZ/0EquX3DDXvJ7.G",
+      "fullName": "Lê philip",
+      "gender": "male",
+      "address": "Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội",
+      "phone": "0794126568",
+      "role": "student",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
+      "studentID": "HE172803",
+      "balance": 0,
+      "isActive": true
+>>>>>>> 04ea34867b346fdf59013abd66eac465414e8923
     }
   ],
   "auth_tokens": [
@@ -159,7 +180,7 @@
             {
               "id": 102,
               "roomNumber": "A102",
-              "roomType": "3 bed",
+              "roomType": "4 bed",
               "beds": [
                 {
                   "id": "A102-1",
@@ -184,7 +205,7 @@
             {
               "id": 201,
               "roomNumber": "A201",
-              "roomType": "3 bed",
+              "roomType": "4 bed",
               "beds": [
                 {
                   "id": "A201-1",
@@ -253,7 +274,7 @@
             {
               "id": 101,
               "roomNumber": "B101",
-              "roomType": "3 bed",
+              "roomType": "4 bed",
               "beds": [
                 {
                   "id": "B101-1",
@@ -286,6 +307,16 @@
                   "student": null
                 }
               ]
+            },
+            {
+              "roomNumber": "13",
+              "roomType": "3 bed",
+              "beds": []
+            },
+            {
+              "roomNumber": "14",
+              "roomType": "3 bed",
+              "beds": []
             }
           ]
         },
@@ -441,6 +472,108 @@
           ]
         }
       ]
+    },
+    {
+      "id": "0729",
+      "name": "Alpha",
+      "totalBeds": 20,
+      "floors": [
+        {
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "roomNumber": "11",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "D",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1b9d",
+      "name": "Beta",
+      "totalBeds": 12,
+      "floors": [
+        {
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "roomNumber": "11",
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "floorNumber": 2,
+          "rooms": [
+            {
+              "roomNumber": "21",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "D",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "bookingRequests": [
@@ -453,7 +586,9 @@
       "bed": "B102-1",
       "semester": "Fall 2023",
       "status": "approved",
-      "isExpired": true
+      "isExpired": true,
+      "startSemester": "Fall 2023",
+      "endSemester": "Spring 2024"
     },
     {
       "id": "2",
@@ -462,9 +597,11 @@
       "floor": "1",
       "room": "102",
       "bed": "B102-1",
-      "semester": "Spring 2024",
+      "semester": "Fall 2023",
       "status": "approved",
-      "isExpired": true
+      "isExpired": true,
+      "startSemester": "Fall 2023",
+      "endSemester": "Summer 2024"
     },
     {
       "id": "21",

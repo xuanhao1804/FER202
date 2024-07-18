@@ -15,8 +15,6 @@ import Register from "./components/Register.js";
 import NotFoundPage from "./pages/error-404/Error.js";
 
 
-
-
 import EditRoom from "./pages/EditRoom.js";
 import StudentGuide from "./pages/user/StudentGuide.js";
 import FAQ from "./pages/user/FAQ.js";
@@ -33,6 +31,7 @@ import ResidentHistory from "./pages/user/ResidentHistory.js";
 import ManageResident from "./pages/admin/ManageResident.js";
 import PrivateRoute from './components/PrivateRoute'; // import PrivateRoute component
 import StudentRoute from './components/StudentRoute'; // import StudentRoute component
+import CreateDormitory from "./pages/CreateDomitory.js";
 import ParkingTicket from "./pages/user/ParkingTicket.js";
 import ViewParking from "./pages/user/ViewParking.js";
 import MangeParking from "./pages/ManageParking.js";
@@ -48,23 +47,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
-          <Route path="/user" element={<UserProfile />} />
-          <Route path="/user/:id" element={<UserProfile />} />            
-          <Route path="/user/:id" element={<Home />} />          
-          <Route path="/manage/room" element={<ManagerRoom />} />   
-          <Route path="/edit/room/:id" element={<EditRoom />} />        
-          <Route path="/listroom" element={<ListRoom />} />
-          <Route path="/dormitory/:dormitoryId" element={<DormitoryDetail />} />                
-          <Route path="/booking" element={<BookingBed />} />            
-          <Route path="/guide" element={<StudentGuide />} />       
-          <Route path="/faq" element={<FAQ />} />         
-          <Route path="/regulation" element={<FUDormitoryRegulations />} />         
-          <Route path="/manage/booking" element={<ManagePendingBooking />} />      
-          <Route path="/*" element={<NotFoundPage />} />      
-          
-          
-
+          <Route path="/changepass" element={<ChangePassword />} />       
+          <Route path="/*" element={<NotFoundPage />} />
+       
 
           {/* Student routes */}
           <Route element={<StudentRoute />}>
@@ -77,7 +62,6 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/regulation" element={<FUDormitoryRegulations />} />
             <Route path="/booking-requests" element={<BookingRequests />} />
-            <Route path="/changepass" element={<ChangePassword />} />
             <Route path="/viewnews" element={<News />} />
             <Route path="/news/:id" element={<NewsDetail />} />
             <Route path="/resident-history" element={<ResidentHistory />} />
@@ -90,6 +74,8 @@ function App() {
           {/* Admin routes */}
           <Route element={<PrivateRoute role="admin" />}>
             <Route path="/manage/room" element={<ManagerRoom />} />
+            <Route path="/edit/room/:id" element={<EditRoom />} /> 
+            <Route path="/create/dormitory" element={<CreateDormitory />} />  
             <Route path="/manage/user" element={<ManagerUser />} />
             <Route path="/manage/news" element={<ManageNewsAdmin />} />
             <Route path="/manage/booking" element={<ManagePendingBooking />} />
@@ -99,9 +85,6 @@ function App() {
             <Route path="/manage/parkingCost" element={<MangeParkingCost />} />
            
           </Route>
-
-          <Route path="/*" element={<NotFoundPage />} />
-
         </Routes>
       </BrowserRouter>
     </div>

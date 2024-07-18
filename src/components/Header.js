@@ -17,15 +17,15 @@ function Header() {
       setUserRole(user.role); // Assuming the user object has a role field
     }
   }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    setUserName('');
-    setUserId(null);
-    setUserRole('');
-    toast.success('Logged out successfully');
-    navigate('/');
-  };
+const handleLogout = () => {
+  localStorage.removeItem('user');
+  setUserName('');
+  setUserId(null);
+  setUserRole('');
+  toast.success('Logged out successfully', {
+    onClose: () => navigate('/')
+  });
+};
 
   const handleUserGreetingClick = (e) => {
     e.preventDefault();
