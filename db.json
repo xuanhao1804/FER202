@@ -55,6 +55,24 @@
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
       "balance": 4950000
+    },
+    {
+      "id": "1e0e",
+      "username": "Vũ Hồng Minh",
+      "email": "minhvhhe170320@fpt.edu.vn",
+      "password": "$2a$10$qZZZmDur9ACXMFWmFcm.0.ZrIxJ2uGvtmTBXJ23qOPL4VM8/2f1ym",
+      "fullName": "Vũ Hồng Minh",
+      "gender": "male",
+      "address": "Hà nội",
+      "phone": "0839440702",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "balance": 10000000,
+      "studentID": "HE170320",
+      "createdAt": "2024-07-18T14:23:44.202Z",
+      "lastLogin": "2024-07-18T14:23:44.202Z"
     }
   ],
   "auth_tokens": [
@@ -468,6 +486,17 @@
       "semester": "Summer 2024",
       "status": "pending",
       "isExpired": false
+    },
+    {
+      "id": "2113",
+      "studentId": "HE170320",
+      "dormitory": "3",
+      "floor": "1",
+      "room": "102",
+      "bed": "C102-3",
+      "semester": "Summer 2024",
+      "status": "approved",
+      "isExpired": false
     }
   ],
   "residentHistory": [],
@@ -848,6 +877,42 @@
       "id": "2",
       "type": "4 bed",
       "price": 1050000
+    }
+  ],
+  "TypeVehicle": [
+    {
+      "id": "1",
+      "name": "Bicycle",
+      "price": "50000"
+    },
+    {
+      "id": "2",
+      "name": "Motorbike, Electric bike",
+      "price": 100000
+    },
+    {
+      "id": "3",
+      "name": "Car",
+      "price": 200000
+    },
+    {
+      "id": "3566",
+      "name": "Trực Thăng",
+      "price": "10000000"
+    }
+  ],
+  "ParkingTicket": [
+    {
+      "id": "0327",
+      "studentID": "HE170320",
+      "type": 3,
+      "Manufature": "1",
+      "Name": "1",
+      "Color": "1",
+      "Owner": "1",
+      "NumberPlate": "1",
+      "startDate": "2024-07-19",
+      "EndDate": "2024-08-19"
     }
   ]
 }

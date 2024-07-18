@@ -61,6 +61,7 @@ function SideBarAdmin() {
                                 <Link className="collapse-item" to={'/manage/regulation'}>Manager Regulations</Link>
                                 <Link className="collapse-item" to={'/manage/news'}>Manager News</Link>
                                 <Link className="collapse-item" to={'/manage/booking'}>Manage Pending Bookings</Link>
+                                <Link className="collapse-item" to={'/manage/parking'}>Manage Parking Tickets</Link>
                             </div>
                         </div>
                     </li>

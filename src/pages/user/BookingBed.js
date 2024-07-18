@@ -3,7 +3,7 @@
 import TemplateUser from "../../layout/LayoutUser";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { Toast } from "react-bootstrap";
 
 
 function BookingBed() {
@@ -154,7 +154,7 @@ function BookingBed() {
                 .then(response => response.json()) // Thêm dòng này
                 .then(data => console.log("Response:", data)) // Thêm dòng này
                 .catch(error => console.error('Error posting booking request:', error)); // Thêm dòng này
-                alert("Create success");
+                Toast("Booking Success")
             })
             .catch(error => console.error('Error fetching booking requests:', error));
     }

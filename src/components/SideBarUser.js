@@ -194,6 +194,9 @@ function SideBarUser() {
                 <Link className="collapse-item" to={"/resident-history"}>
                   Resident History
                 </Link>
+                <Link className="collapse-item" to={"/parking-history"}>
+                  Parking Ticket History
+                </Link>
               </div>
             </div>
           </li>

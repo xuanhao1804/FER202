@@ -7,7 +7,7 @@ export default function ManagePendingBooking() {
     const [users, setUser] = useState([]);
     const [dormitories, setDormitories] = useState([]);
     const [log, setLog] = useState(JSON.parse(localStorage.getItem("user")));
-
+    const [typeroom, setTyperoom] = useState([]);
     const getCurrentDate = () => {
         const today = new Date();
         const day = String(today.getDate()).padStart(2, '0');
@@ -34,6 +34,12 @@ export default function ManagePendingBooking() {
             .then(res => res.json())
             .then(result => {
                 setDormitories(result)
+            })
+            .catch();
+        fetch(`http://localhost:9999/roomTypes`)
+            .then(res => res.json())
+            .then(result => {
+                setTyperoom(result)
             })
             .catch();
     }, [])
@@ -68,46 +74,26 @@ export default function ManagePendingBooking() {
                     'Content-Type': 'application/json',
                 },
             });
-
-            if (room.roomType == '4 bed') {
-                const updatedLog = { ...log, balance: log.balance - 850000 };
-                axios.put(`http://localhost:9999/users/${log.id}`, updatedLog, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                const payments = {
-                    studentID: log.studentID,
-                    amount: 850000,
-                    date: getCurrentDate,
-                    semester: "Summer 2024"
-                }
-                axios.post(`http://localhost:9999/payments`, payments, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                localStorage.setItem("user", JSON.stringify(updatedLog));
-            } else {
-                const updatedLog = { ...log, balance: log.balance - 1050000 };
-                axios.put(`http://localhost:9999/users/${log.id}`, updatedLog, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                const payments = {
-                    studentID: log.studentID,
-                    amount: 1050000,
-                    date: getCurrentDate(),
-                    semester: "Summer 2024"
-                }
-                axios.post(`http://localhost:9999/payments`, payments, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                localStorage.setItem("user", JSON.stringify(updatedLog));
+            const price = typeroom.find(p => p.type == room.roomType).price
+            const updatedLog = { ...log, balance: log.balance - price };
+            axios.put(`http://localhost:9999/users/${log.id}`, updatedLog, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const payments = {
+                studentID: log.studentID,
+                amount: price,
+                date: getCurrentDate,
+                semester: "Summer 2024"
             }
+            axios.post(`http://localhost:9999/payments`, payments, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            localStorage.setItem("user", JSON.stringify(updatedLog));
+
 
         } catch (error) {
             console.error('Error updating studentId for room:', error);
