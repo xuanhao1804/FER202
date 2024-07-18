@@ -7,7 +7,6 @@ import bcryptjs from 'bcryptjs';
 
 export default function ManagerUser() {
     const [user, setUser] = useState([]);
-    const [editUserId, setEditUserId] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [usersPerPage] = useState(5);
     const [formErrors, setFormErrors] = useState({});
@@ -26,6 +25,8 @@ export default function ManagerUser() {
         balance: 0,
         isActive: true,
     });
+    const [editingUser, setEditingUser] = useState(null);
+
     // Tính toán số trang
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
@@ -38,6 +39,8 @@ export default function ManagerUser() {
             .then(res => setUser(res))
             .catch(err => console.log(err));
     }, []);
+
+    //Editing status
     const handleStatusChange = (userId, newStatus) => {
         fetch(`http://localhost:9999/users/${userId}`, {
             method: 'PATCH',
@@ -55,30 +58,62 @@ export default function ManagerUser() {
             })
             .catch(err => console.log(err));
     };
-    const toggleEditMode = (userId) => {
-        setEditUserId(userId === editUserId ? null : userId);
+
+    //Editing button
+    const toggleEditMode = (user) => {
+        if (editingUser && editingUser.id === user.id) {
+            setEditingUser(null);
+        } else {
+            setEditingUser({ ...user, newPassword: '' });
+        }
     };
 
-    const handlePasswordChange = async (userId, newPassword) => {
-        const salt = await bcryptjs.genSalt(10);
-        const hashedPassword = await bcryptjs.hash(newPassword, salt);
-        fetch(`http://localhost:9999/users/${userId}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ password: hashedPassword }),
-        })
-            .then(res => res.json())
-            .then(() => {
-                // Update the local state
-                setUser(user.map(user =>
-                    user.id === userId ? { ...user, password: hashedPassword } : user
-                ));
-                toast.success('Update password successfully');
-            })
-            .catch(err => console.log(err));
+    //HandlePassword
+    const handlePasswordChange = (e) => {
+        setEditingUser({ ...editingUser, newPassword: e.target.value });
     };
+
+    //Handle Save Password
+    const savePassword = async (userId) => {
+        if (!editingUser.newPassword) {
+            toast.error('New password cannot be empty');
+            return;
+        }
+        if (editingUser.newPassword < 8) {
+            toast.error('New password characters cannot be less than 8 ');
+            return;
+        }
+
+        try {
+            const salt = await bcryptjs.genSalt(10);
+            const hashedPassword = await bcryptjs.hash(editingUser.newPassword, salt);
+
+            fetch(`http://localhost:9999/users/${userId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ password: hashedPassword }),
+            })
+                .then(res => res.json())
+                .then(() => {
+                    setUser(user.map(u =>
+                        u.id === userId ? { ...u, password: hashedPassword } : u
+                    ));
+                    setEditingUser(null);
+                    toast.success('Password updated successfully');
+                })
+                .catch(err => {
+                    console.log(err);
+                    toast.error('Failed to update password');
+                });
+        } catch (error) {
+            console.error('Password update error:', error);
+            toast.error('Failed to update password');
+        }
+    };
+
+    //Input của model
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setNewUser({ ...newUser, [name]: value });
@@ -89,6 +124,7 @@ export default function ManagerUser() {
         }
     };
 
+    //Validate
     const validateForm = () => {
         let isValid = true;
         const errors = {};
@@ -173,6 +209,7 @@ export default function ManagerUser() {
     };
 
 
+    //Validate Avatar
     const isValidImageURL = (url) => {
         return (url.match(/\.(jpeg|jpg|gif|png)$/) != null);
     };
@@ -277,13 +314,7 @@ export default function ManagerUser() {
                         Add User
                     </Button>
 
-                    {/* Edit button */}
-                    <Button
-                        variant="primary"
-                        onClick={() => toggleEditMode(user.id)}
-                    >
-                        Edit
-                    </Button>
+
 
                 </Col>
             </Row>
@@ -293,11 +324,13 @@ export default function ManagerUser() {
                         <thead>
                             <tr>
                                 <th>FullName</th>
+                                <th>Role</th>
                                 <th>StudentID</th>
                                 <th>Email</th>
                                 <th>User Name</th>
                                 <th>Password</th>
                                 <th>Active</th>
+                                <th colSpan={2}>Function</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -305,15 +338,16 @@ export default function ManagerUser() {
                                 currentUser?.map(u => (
                                     <tr key={u.id}>
                                         <td>{u.fullName}</td>
+                                        <td></td>
                                         <td>{u.studentID || 'NaN'}</td>
                                         <td>{u.email}</td>
                                         <td>{u.username}</td>
                                         <td>
-                                            {editUserId === user.id ? (
+                                            {editingUser && editingUser.id === u.id ? (
                                                 <Form.Control
-                                                    type="password"
-                                                    value={u.password}
-                                                    onChange={(e) => handlePasswordChange(u.id, e.target.value)}
+                                                    type="text"
+                                                    value={editingUser.newPassword}
+                                                    onChange={handlePasswordChange}
 
                                                 />
                                             ) : (
@@ -334,6 +368,23 @@ export default function ManagerUser() {
                                                 <option value="true" style={{ color: "green" }}>Enable</option>
                                                 <option value="false" style={{ color: "red" }}>Disable</option>
                                             </Form.Select>
+                                        </td>
+                                        <td> {/* Edit button */}
+                                            <Button
+                                                variant={editingUser && editingUser.id === u.id ? "secondary" : "primary"}
+                                                onClick={() => toggleEditMode(u)}
+                                            >
+                                                {editingUser && editingUser.id === u.id ? "Cancel" : "Edit"}
+                                            </Button>
+                                        </td>
+                                        <td>{/* Add button */}
+                                            <Button
+                                                variant="primary"
+                                                onClick={() => savePassword(u.id)}
+                                                disabled={!(editingUser && editingUser.id === u.id)}
+                                            >
+                                                Save
+                                            </Button>
                                         </td>
                                     </tr>
                                 ))

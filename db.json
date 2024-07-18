@@ -54,7 +54,8 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
-      "balance": 4950000
+      "balance": 4950000,
+      "isActive": true
     }
   ],
   "auth_tokens": [
