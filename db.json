@@ -37,8 +37,6 @@
       "lastLogin": "2024-07-10T04:56:36.207Z",
       "studentID": "HE172888",
       "balance": 4950000,
-      "currentPassword": "123123",
-      "newPassword": "123456",
       "isActive": true
     },
     {
@@ -55,7 +53,23 @@
       "googleId": null,
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
-      "lastLogin": "2024-07-17T04:37:27.557Z"
+      "lastLogin": "2024-07-17T04:37:27.557Z",
+      "isActive": true
+    },
+    {
+      "id": "6642",
+      "username": "Khanh",
+      "email": "nkhanh27032003boi@gmail.com",
+      "password": "$2a$10$1b.OSeP8lUU9us1RPdPVmOXMIjp6fAjOi0g/FRC5EFMjCBUIS7.4S",
+      "fullName": "Nguyen Nam Khanh",
+      "gender": "male",
+      "address": "Gg. R.M. Said No. 868",
+      "phone": "0915920776",
+      "role": "student",
+      "avatar": "https://meta.vn/Data/image/2020/12/25/dau-nam-7.jpg",
+      "studentID": "he123456",
+      "balance": 0,
+      "isActive": true
     }
   ],
   "auth_tokens": [
