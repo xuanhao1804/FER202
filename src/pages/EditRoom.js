@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
 import LayoutAdmin from "../layout/LayoutAdmin";
+import { toast } from 'react-toastify';
 
 const EditRoom = () => {
     const { id } = useParams();
@@ -52,6 +53,8 @@ const EditRoom = () => {
                 console.log('Success:', { dormData, roomTypesData });
                 if (updateDormitory) {
                     updateDormitory(dormData);
+                    toast.success('Dormitory updated successfully');
+                    console.log("success");
                 }
                 navigate('/manage/room');
             })

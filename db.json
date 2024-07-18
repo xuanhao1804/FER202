@@ -127,7 +127,7 @@
             {
               "id": 101,
               "roomNumber": "A101",
-              "roomType": "3 bed",
+              "roomType": "4 bed",
               "beds": [
                 {
                   "id": "A101-1",
@@ -158,7 +158,7 @@
             {
               "id": 102,
               "roomNumber": "A102",
-              "roomType": "3 bed",
+              "roomType": "4 bed",
               "beds": [
                 {
                   "id": "A102-1",
@@ -183,7 +183,7 @@
             {
               "id": 201,
               "roomNumber": "A201",
-              "roomType": "3 bed",
+              "roomType": "4 bed",
               "beds": [
                 {
                   "id": "A201-1",
@@ -252,7 +252,7 @@
             {
               "id": 101,
               "roomNumber": "B101",
-              "roomType": "3 bed",
+              "roomType": "4 bed",
               "beds": [
                 {
                   "id": "B101-1",
@@ -288,7 +288,7 @@
             },
             {
               "roomNumber": "13",
-              "roomType": "4 bed",
+              "roomType": "3 bed",
               "beds": []
             },
             {

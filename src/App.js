@@ -42,7 +42,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/changepass" element={<ChangePassword />} />       
           <Route path="/*" element={<NotFoundPage />} />
-
+       
 
           {/* Student routes */}
           <Route element={<StudentRoute />}>
@@ -65,7 +65,7 @@ function App() {
           <Route element={<PrivateRoute role="admin" />}>
             <Route path="/manage/room" element={<ManagerRoom />} />
             <Route path="/edit/room/:id" element={<EditRoom />} /> 
-            <Route path="/create/dormitory" element={<CreateDormitory />} />       
+            <Route path="/create/dormitory" element={<CreateDormitory />} />  
             <Route path="/manage/user" element={<ManagerUser />} />
             <Route path="/manage/news" element={<ManageNewsAdmin />} />
             <Route path="/manage/booking" element={<ManagePendingBooking />} />
