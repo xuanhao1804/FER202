@@ -54,27 +54,6 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
-<<<<<<< HEAD
-      "balance": 4950000
-    },
-    {
-      "id": "1e0e",
-      "username": "Vũ Hồng Minh",
-      "email": "minhvhhe170320@fpt.edu.vn",
-      "password": "$2a$10$qZZZmDur9ACXMFWmFcm.0.ZrIxJ2uGvtmTBXJ23qOPL4VM8/2f1ym",
-      "fullName": "Vũ Hồng Minh",
-      "gender": "male",
-      "address": "Hà nội",
-      "phone": "0839440702",
-      "role": "student",
-      "avatar": "https://example.com/default-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": false,
-      "balance": 10000000,
-      "studentID": "HE170320",
-      "createdAt": "2024-07-18T14:23:44.202Z",
-      "lastLogin": "2024-07-18T14:23:44.202Z"
-=======
       "studentID": "HE172803",
       "balance": 4950000,
       "isActive": true
@@ -91,9 +70,44 @@
       "role": "student",
       "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
       "studentID": "HE172803",
-      "balance": 0,
+      "balance": 1000000,
       "isActive": true
->>>>>>> 04ea34867b346fdf59013abd66eac465414e8923
+    },
+    {
+      "id": "61ad",
+      "username": "123",
+      "email": "123456@gmail.com",
+      "password": "$2a$10$zMDA00R8o7Gn8RExk7H0cu184eqU8VteaZoNKeVG/QK6yyWRH1zlq",
+      "fullName": "minh",
+      "gender": "female",
+      "address": "123",
+      "phone": "1234567891",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "balance": 3900000,
+      "studentID": "HE17777",
+      "createdAt": "2024-07-19T06:22:15.219Z",
+      "lastLogin": "2024-07-19T06:22:15.219Z"
+    },
+    {
+      "id": "db8b",
+      "username": "nam",
+      "email": "nam@gmail.com",
+      "password": "$2a$10$JEOssbT0V5PJBBYKDkIgA.PY8hO5OEXwOzfY9VnlPQ35pp00TxtB6",
+      "fullName": "nam",
+      "gender": "male",
+      "address": "123",
+      "phone": "1234567891",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "balance": 3900000,
+      "studentID": "HE172222",
+      "isEmailVerified": false,
+      "createdAt": "2024-07-19T07:01:51.165Z",
+      "lastLogin": "2024-07-19T07:01:51.165Z"
     }
   ],
   "auth_tokens": [
@@ -160,8 +174,8 @@
                 {
                   "id": "A101-2",
                   "name": "B",
-                  "status": "available",
-                  "student": "HA180003"
+                  "status": "occupied",
+                  "student": "HE17777"
                 },
                 {
                   "id": "A101-3",
@@ -175,7 +189,8 @@
                   "status": "occupied",
                   "student": null
                 }
-              ]
+              ],
+              "haveFemale": 1
             },
             {
               "id": 102,
@@ -185,8 +200,8 @@
                 {
                   "id": "A102-1",
                   "name": "A",
-                  "status": "available",
-                  "student": null
+                  "status": "occupied",
+                  "student": "HE17777"
                 },
                 {
                   "id": "A102-2",
@@ -194,7 +209,8 @@
                   "status": "occupied",
                   "student": null
                 }
-              ]
+              ],
+              "haveFemale": 1
             }
           ]
         },
@@ -634,6 +650,17 @@
       "semester": "Summer 2024",
       "status": "approved",
       "isExpired": false
+    },
+    {
+      "id": "21131",
+      "studentId": "HE17777",
+      "dormitory": "1",
+      "floor": "1",
+      "room": "101",
+      "bed": "A101-2",
+      "semester": "Summer 2024",
+      "status": "approved",
+      "isExpired": false
     }
   ],
   "residentHistory": [],
@@ -663,6 +690,55 @@
       "id": "71a5",
       "amount": 1050000,
       "date": "2024-07-17",
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "1c21",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "e59c",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "23e4",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "cd5f",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "3b2e",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "e1b9",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "142c",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "4f87",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "date": "2024-07-19",
       "semester": "Summer 2024"
     }
   ],

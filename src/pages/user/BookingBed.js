@@ -3,7 +3,7 @@
 import TemplateUser from "../../layout/LayoutUser";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Toast } from "react-bootstrap";
+import { toast } from 'react-toastify';
 
 
 function BookingBed() {
@@ -11,7 +11,8 @@ function BookingBed() {
     const [typeRoom, settypeRoom] = useState([])
     const [user, setUser] = useState({
         "studentId": JSON.parse(localStorage.getItem("user")).studentID,
-        cost: JSON.parse(localStorage.getItem("user")).balance
+        cost: JSON.parse(localStorage.getItem("user")).balance,
+        gender: JSON.parse(localStorage.getItem("user")).gender
     })
     console.log("User state:", user); // Thêm dòng này
     const [bookingreq, setBookingreq] = useState([]);
@@ -98,18 +99,34 @@ function BookingBed() {
             dorm.floors.forEach(floor => {
                 if (!selectedFloor || floor.id === parseInt(selectedFloor)) {
                     floor.rooms.forEach(room => {
-                        if ((!selectedRoom || room.id === parseInt(selectedRoom)) && room.roomType == cost.type) {
-                            room.beds.forEach(bed => {
-                                if (bed.status === 'available') {
-                                    beds.push({
-                                        id: bed.id,
-                                        name: bed.name,
-                                        roomNumber: room.roomNumber,
-                                        floorNumber: floor.floorNumber
-                                    });
-                                    count++;
-                                }
-                            });
+                        if (user.gender == "male") {
+                            if ((!selectedRoom || room.id === parseInt(selectedRoom)) && room.roomType == cost.type && room.haveFemail != 1) {
+                                room.beds.forEach(bed => {
+                                    if (bed.status === 'available') {
+                                        beds.push({
+                                            id: bed.id,
+                                            name: bed.name,
+                                            roomNumber: room.roomNumber,
+                                            floorNumber: floor.floorNumber
+                                        });
+                                        count++;
+                                    }
+                                });
+                            }
+                        } else {
+                            if ((!selectedRoom || room.id === parseInt(selectedRoom)) && room.roomType == cost.type) {
+                                room.beds.forEach(bed => {
+                                    if (bed.status === 'available') {
+                                        beds.push({
+                                            id: bed.id,
+                                            name: bed.name,
+                                            roomNumber: room.roomNumber,
+                                            floorNumber: floor.floorNumber
+                                        });
+                                        count++;
+                                    }
+                                });
+                            }
                         }
                     });
                 }
@@ -136,7 +153,7 @@ function BookingBed() {
                     id: (maxId + 1).toString(),
                     studentId: user.studentId,
                     dormitory: selectedDorm,
-                    floor: selectedFloor, 
+                    floor: selectedFloor,
                     room: selectedRoom,
                     bed: freeBeds[0]?.id,
                     semester: "Summer 2024",
@@ -151,21 +168,21 @@ function BookingBed() {
                     },
                     body: JSON.stringify(newRequest),
                 })
-                .then(response => response.json()) // Thêm dòng này
-                .then(data => console.log("Response:", data)) // Thêm dòng này
-                .catch(error => console.error('Error posting booking request:', error)); // Thêm dòng này
-                Toast("Booking Success")
+                    .then(response => response.json()) // Thêm dòng này
+                    .then(data => console.log("Response:", data)) // Thêm dòng này
+                    .catch(error => console.error('Error posting booking request:', error)); // Thêm dòng này
+                toast("Booking Success")
             })
             .catch(error => console.error('Error fetching booking requests:', error));
     }
 
-    const isBooking = !!bookingreq?.find(b => 
+    const isBooking = !!bookingreq?.find(b =>
         b.studentId == user.studentId && // Đổi từ studentid sang studentId
-        (b.status == "approved" || b.status == "pending") && 
+        (b.status == "approved" || b.status == "pending") &&
         !b.isExpired // Kiểm tra isExpired
     );
     const isCostValid = cost.price && cost.price > 0;
-    
+
     return (
         <TemplateUser>
             {page ?
@@ -348,7 +365,7 @@ function BookingBed() {
                                         textDecoration: "none",
                                         fontWeight: "bold"
 
-                                    }} disabled={selectedRoom == ''} onClick={handleBooking}>Booking</button>
+                                    }} disabled={selectedRoom == ''||availableBeds == 0 } onClick={handleBooking}>Booking</button>
                                 </div>
                             </form>
                         </div>
