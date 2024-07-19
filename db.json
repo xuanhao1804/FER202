@@ -35,6 +35,24 @@
       "date": "2024-07-19",
       "status": "Rejected",
       "replyAdmin": ""
+    },
+    {
+      "id": "ab4c",
+      "userId": "ad4a",
+      "type": "Đề nghị chuyển Dom",
+      "reason": "đưaădădawd",
+      "date": "2024-07-19",
+      "status": "pending",
+      "replyAdmin": ""
+    },
+    {
+      "id": "af7c",
+      "userId": "6514",
+      "type": "Báo cáo bạn cùng phòng",
+      "reason": "Ban cung phong hoi chan vl ",
+      "date": "2024-07-19",
+      "status": "Rejected",
+      "replyAdmin": "Cái này thhif tôi ko giải quyết "
     }
   ],
   "semesters": [
@@ -144,6 +162,23 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-18T20:28:34.195Z",
       "lastLogin": "2024-07-18T20:28:34.195Z",
+      "balance": 0
+    },
+    {
+      "id": "ad4a",
+      "username": "dang2",
+      "email": "danglqhe173350@fpt.edu.vn",
+      "password": "$2a$10$sAtcunBXN6ftYnjgldDA/Op2guUE4ELqHuU.Xlza6olUmyxK3MHlO",
+      "fullName": "dangdang",
+      "gender": "male",
+      "address": "1231231",
+      "phone": "3123123123123",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-19T05:30:53.752Z",
+      "lastLogin": "2024-07-19T05:30:53.752Z",
       "balance": 0
     }
   ],
