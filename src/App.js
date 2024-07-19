@@ -83,7 +83,7 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/booking-parking" element={<ParkingTicket />} />
             <Route path="/parking-history" element={<ViewParking />} />
-            <Route path="/notification" element={<UserCDFNotification />} />
+            <Route path="/notification/cdf" element={<UserCDFNotification />} />
             <Route path="/notification/detail/:nid" element={<NotificationDetail />} />
 
 
