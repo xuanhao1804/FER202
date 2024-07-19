@@ -44,61 +44,83 @@ export default function ManagePendingBooking() {
             .catch();
     }, [])
 
-    const handleOnAprove = (id, studentid, dormitory, floors, rooms, beds) => {
-        const currentReq = bookingRequests.find(t => t.id == id);
+    const handleOnApprove = async (id, studentid, dormitory, floors, rooms, beds) => {
         try {
+            const currentReq = bookingRequests.find(t => t.id == id);
 
-            fetch(`http://localhost:9999/bookingRequests/${id}`, {
+            
+            await fetch(`http://localhost:9999/bookingRequests/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ ...currentReq, status: "approved" })
-            })
+            });
 
-                .then(res => {
-                    setBookingRequests(bookingRequests.map(t =>
-                        t.id == id ? { ...t, status: "approved" } : t
-                    ));
-                    alert("Change success")
-                })
-                .catch();
-            const dorm = dormitories?.find(dorm => dorm.id == dormitory)
+            setBookingRequests(bookingRequests.map(t =>
+                t.id == id ? { ...t, status: "approved" } : t
+            ));
+
+            
+            const dorm = dormitories?.find(dorm => dorm.id == dormitory);
             const floor = dorm?.floors?.find(fl => fl.id.toString() === floors.toString());
             const room = floor?.rooms?.find(rm => rm.id.toString() === rooms.toString());
             const bed = room?.beds?.find(bd => bd.id.toString() === beds.toString());
+            if (users.find(u => u.studentID == studentid).gender === 'female') {
+                room.haveFemale = 1;
+            }
+
+            
             bed.student = studentid;
             bed.status = "occupied";
-            axios.put(`http://localhost:9999/dormitories/${dormitory}`, dorm, {
+
+            
+            await axios.put(`http://localhost:9999/dormitories/${dormitory}`, dorm, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
-            const price = typeroom.find(p => p.type == room.roomType).price
-            const updatedLog = { ...log, balance: log.balance - price };
-            axios.put(`http://localhost:9999/users/${log.id}`, updatedLog, {
+
+            
+            const price = typeroom.find(p => p.type === room.roomType).price;
+
+            
+            const userResponse = await axios.get(`http://localhost:9999/users?studentID=${studentid}`, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
+
+            const user = userResponse.data[0];
+            const updatedUser = { ...user, balance: user.balance - price };
+
+            await axios.put(`http://localhost:9999/users/${user.id}`, updatedUser, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            
             const payments = {
-                studentID: log.studentID,
+                studentID: studentid,
                 amount: price,
-                date: getCurrentDate,
+                date: getCurrentDate(), 
                 semester: "Summer 2024"
-            }
-            axios.post(`http://localhost:9999/payments`, payments, {
+            };
+
+            await axios.post(`http://localhost:9999/payments`, payments, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
-            localStorage.setItem("user", JSON.stringify(updatedLog));
 
-
+            alert("Change success");
         } catch (error) {
             console.error('Error updating studentId for room:', error);
+            alert("There was an error processing the request.");
         }
     };
+
 
     const handleOnReject = (orderId) => {
         const currentReq = bookingRequests.find(t => t.id === orderId);
@@ -145,7 +167,7 @@ export default function ManagePendingBooking() {
                                     <tbody className="table-body">
                                         {bookingRequests?.map((request) => {
 
-                                            const student = users?.find(user => user.studentID == request.studentid);
+                                            const student = users?.find(user => user.studentID == request.studentId);
                                             const dorm = dormitories?.find(dorm => dorm.id == request.dormitory)
                                             const floor = dorm?.floors.find(fl => fl.id.toString() === request.floor.toString());
                                             const room = floor?.rooms.find(rm => rm.id.toString() === request.room.toString());
@@ -164,7 +186,7 @@ export default function ManagePendingBooking() {
                                                     <td>
                                                         {request?.status === 'pending' ? (
                                                             <>
-                                                                <Link onClick={() => handleOnAprove(request?.id, request?.studentid, request?.dormitory, request.floor, request?.room, request?.bed)}>
+                                                                <Link onClick={() => handleOnApprove(request?.id, request.studentId, request?.dormitory, request.floor, request?.room, request?.bed)}>
                                                                     <i className="confirmed">&#10004;</i>
                                                                 </Link>
                                                                 <Link onClick={() => handleOnReject(request?.id)}>

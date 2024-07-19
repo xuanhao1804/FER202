@@ -107,7 +107,7 @@
       "role": "student",
       "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
       "studentID": "HE172803",
-      "balance": 0,
+      "balance": 1000000,
       "isActive": true
     },
     {
@@ -202,8 +202,8 @@
                 {
                   "id": "A101-2",
                   "name": "B",
-                  "status": "available",
-                  "student": "HA180003"
+                  "status": "occupied",
+                  "student": "HE17777"
                 },
                 {
                   "id": "A101-3",
@@ -217,7 +217,8 @@
                   "status": "occupied",
                   "student": null
                 }
-              ]
+              ],
+              "haveFemale": 1
             },
             {
               "id": 102,
@@ -227,8 +228,8 @@
                 {
                   "id": "A102-1",
                   "name": "A",
-                  "status": "available",
-                  "student": null
+                  "status": "occupied",
+                  "student": "HE17777"
                 },
                 {
                   "id": "A102-2",
@@ -236,7 +237,8 @@
                   "status": "occupied",
                   "student": null
                 }
-              ]
+              ],
+              "haveFemale": 1
             }
           ]
         },
@@ -744,12 +746,47 @@
       "status": "Approved"
     },
     {
-      "id": "fffb",
-      "studentid": "6514",
-      "amount": 1999999,
-      "date": "2024-07-18",
-      "semester": "Fall 2024",
-      "status": "Approved"
+      "id": "e59c",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "23e4",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "cd5f",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "3b2e",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "e1b9",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "142c",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "semester": "Summer 2024"
+    },
+    {
+      "id": "4f87",
+      "studentID": "HE17777",
+      "amount": 1050000,
+      "date": "2024-07-19",
+      "semester": "Summer 2024"
     }
   ],
   "rules": [
