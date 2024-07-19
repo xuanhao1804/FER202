@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { Col, Row, Table, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from "react-router-dom";
@@ -28,9 +26,9 @@ const DormitoryDetail = () => {
         floor.rooms.forEach(room => {
             room.beds.forEach(bed => {
                 if (bed.status === "occupied") {
-                    usedBeds.push({ roomId: room.roomNumber, bedId: bed.id });
+                    usedBeds.push({ roomId: room.roomNumber, bedName: bed.name });
                 } else {
-                    freeBeds.push({ roomId: room.roomNumber, bedId: bed.id });
+                    freeBeds.push({ roomId: room.roomNumber, bedName: bed.name });
                 }
             });
         });
@@ -56,7 +54,6 @@ const DormitoryDetail = () => {
                         <thead>
                             <tr>
                                 <th>Dom Name</th>
-                                <th>Dom ID</th>
                                 <th>Total Bed</th>
                                 <th>Used Bed</th>
                                 <th>Free Bed</th>
@@ -65,7 +62,6 @@ const DormitoryDetail = () => {
                         <tbody>
                             <tr>
                                 <td>{dormitory.name}</td>
-                                <td>{dormitory.id}</td>
                                 <td>{dormitory.totalBeds}</td>
                                 <td>{usedBeds.length}</td>
                                 <td>{freeBeds.length}</td>
@@ -79,14 +75,14 @@ const DormitoryDetail = () => {
                                 <thead>
                                     <tr>
                                         <th>Room Number</th>
-                                        <th>Bed ID</th>
+                                        <th>Bed Name</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {usedBeds.map((bed, index) => (
                                         <tr key={index}>
                                             <td>{bed.roomId}</td>
-                                            <td>{bed.bedId}</td>
+                                            <td>{bed.bedName}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -98,14 +94,14 @@ const DormitoryDetail = () => {
                                 <thead>
                                     <tr>
                                         <th>Room Number</th>
-                                        <th>Bed ID</th>
+                                        <th>Bed Name</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {freeBeds.map((bed, index) => (
                                         <tr key={index}>
                                             <td>{bed.roomId}</td>
-                                            <td>{bed.bedId}</td>
+                                            <td>{bed.bedName}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -119,4 +115,3 @@ const DormitoryDetail = () => {
 };
 
 export default DormitoryDetail;
-

@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { Col, Row, Table, Button } from 'react-bootstrap';
 import { Pagination } from "antd";
@@ -46,7 +44,9 @@ const ListRoom = () => {
         dormitory.floors.forEach(floor => {
             if (floor.rooms) {
                 floor.rooms.forEach(room => {
-                    usedBeds += room.beds.filter(bed => bed.status === "occupied").length;
+                    if (room.beds) {
+                        usedBeds += room.beds.filter(bed => bed.status === "occupied").length;
+                    }
                 });
             }
         });
@@ -54,22 +54,11 @@ const ListRoom = () => {
     };
 
     const countTotalUsedBeds = () => {
-        if (!dormitories || dormitories.length === 0) return 0;
-        
-        let totalUsedBeds = 0;
-        dormitories.forEach(dorm => {
-            totalUsedBeds += countUsedBeds(dorm);
-        });
-        return totalUsedBeds;
+        return dormitories.reduce((total, dorm) => total + countUsedBeds(dorm), 0);
     };
 
     const countTotalFreeBeds = () => {
-        if (!dormitories || dormitories.length === 0) return 0;
-        
-        let totalBeds = 0;
-        dormitories.forEach(dorm => {
-            totalBeds += dorm.totalBeds;
-        });
+        const totalBeds = dormitories.reduce((total, dorm) => total + dorm.totalBeds, 0);
         return totalBeds - countTotalUsedBeds();
     };
 
@@ -93,21 +82,24 @@ const ListRoom = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {currentDormitories.map(dorm => (
-                                <tr key={dorm.id}>
-                                    <td>{dorm.name}</td>
-                                    <td>{dorm.totalBeds}</td>
-                                    <td>{countUsedBeds(dorm)}</td>
-                                    <td>{dorm.totalBeds - countUsedBeds(dorm)}</td>
-                                    <td>
-                                        <Button variant="info" onClick={() => handleDetailClick(dorm.id)}>
-                                            Details
-                                        </Button>
-                                    </td>
-                                </tr>
-                            ))}
+                            {currentDormitories.map(dorm => {
+                                const usedBeds = countUsedBeds(dorm);
+                                return (
+                                    <tr key={dorm.id}>
+                                        <td>{dorm.name}</td>
+                                        <td>{dorm.totalBeds}</td>
+                                        <td>{usedBeds}</td>
+                                        <td>{dorm.totalBeds - usedBeds}</td>
+                                        <td>
+                                            <Button variant="info" onClick={() => handleDetailClick(dorm.id)}>
+                                                Details
+                                            </Button>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                             <tr>
-                                <td colSpan="2"><strong>Total</strong></td>
+                                <td colSpan="1"><strong>Total</strong></td>
                                 <td>{dormitories.reduce((total, dorm) => total + dorm.totalBeds, 0)}</td>
                                 <td>{countTotalUsedBeds()}</td>
                                 <td>{countTotalFreeBeds()}</td>
