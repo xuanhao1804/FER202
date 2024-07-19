@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Col, Form } from "react-bootstrap";
-import { FaEye } from "react-icons/fa";
 
 const ManageResident = () => {
   const [residentHistory, setResidentHistory] = useState([]);
@@ -19,12 +18,48 @@ const ManageResident = () => {
   const [showExtendModal, setShowExtendModal] = useState(false);
   const [selectedSemester, setSelectedSemester] = useState("");
   const [availableSemesters, setAvailableSemesters] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
+  const [roomTypes, setRoomTypes] = useState([]);
+  const [selectedRoomType, setSelectedRoomType] = useState("");
+  const [availableDormitories, setAvailableDormitories] = useState([]);
+  const [selectedDormitory, setSelectedDormitory] = useState("");
+  const [availableFloors, setAvailableFloors] = useState([]);
+  const [selectedFloor, setSelectedFloor] = useState("");
+  const [availableRooms, setAvailableRooms] = useState([]);
+  const [selectedRoom, setSelectedRoom] = useState("");
+  const [availableBeds, setAvailableBeds] = useState([]);
+  const [selectedBed, setSelectedBed] = useState("");
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = () => {
+
+    fetch(`http://localhost:9999/dormitories`)
+    .then((response) => response.json())
+    .then((data) => {
+      const dormitoryMap = {};
+      data.forEach((dormitory) => {
+        dormitoryMap[dormitory.id] = {
+          id: dormitory.id,
+          name: dormitory.name,
+          floors: dormitory.floors
+        };
+      });
+      setDormitories(dormitoryMap);
+    })
+    .catch((error) => {
+      console.error("Error fetching dormitories:", error);
+      toast.error("Error fetching dormitories");
+    });
+    
+    // Fetch room types
+    fetch("http://localhost:9999/roomTypes")
+      .then((res) => res.json())
+      .then((data) => setRoomTypes(data))
+      .catch((err) => console.error("Error fetching room types:", err));
+
     fetch(`http://localhost:9999/bookingRequests?status=approved&_expand=student`)
       .then((response) => response.json())
       .then((data) => {
@@ -71,6 +106,119 @@ const ManageResident = () => {
       .catch((error) => {
         console.error("Error fetching dormitories:", error);
         toast.error("Error fetching dormitories");
+      });
+  };
+
+  const handleEdit = () => {
+    setIsEditing(true);
+    setSelectedRoomType("");
+    setSelectedDormitory("");
+    setSelectedFloor("");
+    setSelectedRoom("");
+    setSelectedBed("");
+  };
+
+
+  const handleRoomTypeChange = (e) => {
+    const roomType = e.target.value;
+    setSelectedRoomType(roomType);
+    
+    // Filter dormitories with available beds of the selected room type
+    const availableDorms = Object.values(dormitories).filter(dorm => {
+      if (!dorm || !dorm.floors) return false;
+      return dorm.floors.some(floor => {
+        if (!floor || !floor.rooms) return false;
+        return floor.rooms.some(room => {
+          if (!room || !room.beds) return false;
+          return room.roomType === roomType && room.beds.some(bed => bed.status === "available");
+        });
+      });
+    });
+    
+    setAvailableDormitories(availableDorms);
+    setSelectedDormitory("");
+    setSelectedFloor("");
+    setSelectedRoom("");
+    setSelectedBed("");
+  };
+
+  const handleDormitoryChange = (e) => {
+    const dormId = e.target.value;
+    setSelectedDormitory(dormId);
+    
+    const dorm = dormitories[dormId];
+    const availableFloors = dorm.floors.filter(floor => 
+      floor.rooms.some(room => 
+        room.roomType === selectedRoomType && room.beds.some(bed => bed.status === "available")
+      )
+    );
+    setAvailableFloors(availableFloors);
+    setSelectedFloor("");
+    setSelectedRoom("");
+    setSelectedBed("");
+  };
+
+
+  const handleFloorChange = (e) => {
+    const floorId = e.target.value;
+    setSelectedFloor(floorId);
+    
+    const floor = availableFloors.find(f => f.id === parseInt(floorId));
+    const availableRooms = floor.rooms.filter(room => 
+      room.roomType === selectedRoomType && room.beds.some(bed => bed.status === "available")
+    );
+    setAvailableRooms(availableRooms);
+    setSelectedRoom("");
+    setSelectedBed("");
+  };
+
+
+  const handleRoomChange = (e) => {
+    const roomId = e.target.value;
+    setSelectedRoom(roomId);
+    
+    const room = availableRooms.find(r => r.id === parseInt(roomId));
+    const availableBeds = room.beds.filter(bed => bed.status === "available");
+    setAvailableBeds(availableBeds);
+    setSelectedBed("");
+  };
+
+
+  const handleSave = () => {
+    if (!selectedBed) {
+      toast.error("Please select a bed");
+      return;
+    }
+
+    const updatedHistory = {
+      ...selectedHistory,
+      dormitory: selectedDormitory,
+      floor: selectedFloor,
+      room: selectedRoom,
+      bed: selectedBed,
+    };
+
+    fetch(`http://localhost:9999/bookingRequests/${selectedHistory.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedHistory),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setResidentHistory(
+          residentHistory.map((history) =>
+            history.id === selectedHistory.id ? updatedHistory : history
+          )
+        );
+        toast.success("Resident information updated successfully");
+        setIsEditing(false);
+        handleClose();
+      })
+      .catch((error) => {
+        console.error("Error updating resident information:", error);
+        toast.error("An error occurred. Please try again.");
       });
   };
 
@@ -268,130 +416,162 @@ const ManageResident = () => {
             <Modal.Title>Resident Details</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {selectedHistory && (
-              <>
-                <p>
-                  <strong>Student ID:</strong> {selectedHistory.studentId || "N/A"}
-                </p>
-                <p>
-                  <strong>Student Name:</strong>{" "}
-                  {users.find((u) => u.studentID === selectedHistory.studentId)?.fullName || "N/A"}
-                </p>
-                <p>
-                  <strong>Dormitory:</strong>{" "}
-                  {dormitories[selectedHistory.dormitory] ||
-                    `Dormitory ${selectedHistory.dormitory}`}
-                </p>
-                <p>
-                  <strong>Floor:</strong> {selectedHistory.floor}
-                </p>
-                <p>
-                  <strong>Room:</strong> {selectedHistory.room}
-                </p>
-                <p>
-                  <strong>Bed:</strong> {selectedHistory.bed}
-                </p>
-                <p>
-                  <strong>Semester:</strong> {getSemesterDisplay(selectedHistory)}
-                </p>
-                {semesters[selectedHistory.startSemester] &&
-                  semesters[selectedHistory.endSemester] && (
-                    <>
-                      <p>
-                        <strong>Start Date:</strong>{" "}
-                        {format(
-                          new Date(semesters[selectedHistory.startSemester].startDate),
-                          "MMM dd, yyyy"
-                        )}
-                      </p>
-                      <p>
-                        <strong>End Date:</strong>{" "}
-                        {format(
-                          new Date(semesters[selectedHistory.endSemester].endDate),
-                          "MMM dd, yyyy"
-                        )}
-                      </p>
-                    </>
-                  )}
-                <p>
-                  <strong>Status:</strong> {selectedHistory.isExpired ? "Expired" : "Active"}
-                </p>
-              </>
+          {selectedHistory && (
+  <>
+    <p>
+      <strong>Student ID:</strong> {selectedHistory.studentId || "N/A"}
+    </p>
+    <p>
+      <strong>Student Name:</strong>{" "}
+      {users.find((u) => u.studentID === selectedHistory.studentId)?.fullName || "N/A"}
+    </p>
+    <p>
+      <strong>Dormitory:</strong>{" "}
+      {dormitories[selectedHistory.dormitory] ||
+        `Dormitory ${selectedHistory.dormitory}`}
+    </p>
+    <p>
+      <strong>Floor:</strong> {selectedHistory.floor}
+    </p>
+    <p>
+      <strong>Room:</strong> {selectedHistory.room}
+    </p>
+    <p>
+      <strong>Bed:</strong> {selectedHistory.bed}
+    </p>
+    <p>
+      <strong>Semester:</strong> {getSemesterDisplay(selectedHistory)}
+    </p>
+    {semesters[selectedHistory.startSemester] &&
+      semesters[selectedHistory.endSemester] && (
+        <>
+          <p>
+            <strong>Start Date:</strong>{" "}
+            {format(
+              new Date(semesters[selectedHistory.startSemester].startDate),
+              "MMM dd, yyyy"
             )}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-
-        <Modal show={showConfirmModal} onHide={handleConfirmClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Confirm Action</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {selectedHistory && (
-              <p>
-                Are you sure you want to {selectedHistory.isExpired ? "reactivate" : "end"} this
-                residency?
-              </p>
+          </p>
+          <p>
+            <strong>End Date:</strong>{" "}
+            {format(
+              new Date(semesters[selectedHistory.endSemester].endDate),
+              "MMM dd, yyyy"
             )}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleConfirmClose}>
-              Cancel
-            </Button>
-            <Button
-              variant={selectedHistory?.isExpired ? "success" : "warning"}
-              onClick={() => handleToggleResidency(selectedHistory.id, selectedHistory.isExpired)}
+          </p>
+        </>
+      )}
+    <p>
+      <strong>Status:</strong> {selectedHistory.isExpired ? "Expired" : "Active"}
+    </p>
+    {isEditing ? (
+      <Form>
+        <Form.Group>
+          <Form.Label>Room Type</Form.Label>
+          <Form.Control 
+            as="select" 
+            value={selectedRoomType} 
+            onChange={handleRoomTypeChange}
+          >
+            <option value="">Select Room Type</option>
+            {roomTypes.map(type => (
+              <option key={type.id} value={type.type}>{type.type}</option>
+            ))}
+          </Form.Control>
+        </Form.Group>
+        {selectedRoomType && (
+          <Form.Group>
+            <Form.Label>Dormitory</Form.Label>
+            <Form.Control 
+              as="select" 
+              value={selectedDormitory} 
+              onChange={handleDormitoryChange}
             >
-              Confirm
-            </Button>
-          </Modal.Footer>
-        </Modal>
-
-        <Modal show={showExtendModal} onHide={handleExtendClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Extend Residency</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group>
-              <Form.Label>Select new end semester</Form.Label>
-              <Form.Control
-                as="select"
-                value={selectedSemester}
-                onChange={(e) => setSelectedSemester(e.target.value)}
-              >
-                <option value="">Choose a semester</option>
-                {availableSemesters.map((semester) => (
-                  <option key={semester.name} value={semester.name}>
-                    {semester.name} ({format(new Date(semester.startDate), "MMM dd, yyyy")} -{" "}
-                    {format(new Date(semester.endDate), "MMM dd, yyyy")})
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleExtendClose}>
-              Cancel
-            </Button>
-            <Button
-              variant="primary"
-              style={{ marginLeft: "40px" }}
-              onClick={handleExtendResidency}
+              <option value="">Select Dormitory</option>
+              {availableDormitories.map(dorm => (
+                <option key={dorm.id} value={dorm.id}>{dorm.name}</option>
+              ))}
+            </Form.Control>
+          </Form.Group>
+        )}
+        {selectedDormitory && (
+          <Form.Group>
+            <Form.Label>Floor</Form.Label>
+            <Form.Control 
+              as="select" 
+              value={selectedFloor} 
+              onChange={handleFloorChange}
             >
-              Extend
-            </Button>
-          </Modal.Footer>
-        </Modal>
+              <option value="">Select Floor</option>
+              {availableFloors.map(floor => (
+                <option key={floor.id} value={floor.id}>Floor {floor.floorNumber}</option>
+              ))}
+            </Form.Control>
+          </Form.Group>
+        )}
+        {selectedFloor && (
+          <Form.Group>
+            <Form.Label>Room</Form.Label>
+            <Form.Control 
+              as="select" 
+              value={selectedRoom} 
+              onChange={handleRoomChange}
+            >
+              <option value="">Select Room</option>
+              {availableRooms.map(room => (
+                <option key={room.id} value={room.id}>Room {room.roomNumber}</option>
+              ))}
+            </Form.Control>
+          </Form.Group>
+        )}
+        {selectedRoom && (
+          <Form.Group>
+            <Form.Label>Bed</Form.Label>
+            <Form.Control 
+              as="select" 
+              value={selectedBed} 
+              onChange={(e) => setSelectedBed(e.target.value)}
+            >
+              <option value="">Select Bed</option>
+              {availableBeds.map(bed => (
+                <option key={bed.id} value={bed.id}>Bed {bed.name}</option>
+              ))}
+            </Form.Control>
+          </Form.Group>
+        )}
+      </Form>
+    ) : null}
+  </>
+)}
+</Modal.Body>
+<Modal.Footer>
+  {isEditing ? (
+    <>
+      <Button variant="secondary" onClick={() => setIsEditing(false)}>
+        Cancel
+      </Button>
+      <Button variant="primary" onClick={handleSave}>
+        Save Changes
+      </Button>
+    </>
+  ) : (
+    <>
+      <Button variant="secondary" onClick={handleClose}>
+        Close
+      </Button>
+      <Button variant="primary" onClick={handleEdit}>
+        Edit
+      </Button>
+    </>
+  )}
+</Modal.Footer>
+</Modal>
 
-        <ToastContainer />
-      </Col>
-      <Col sm={1}></Col>
-    </LayoutAdmin>
-  );
+<ToastContainer />
+</Col>
+<Col sm={1}></Col>
+</LayoutAdmin>
+);
 };
 
 export default ManageResident;

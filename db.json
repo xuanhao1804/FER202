@@ -54,8 +54,9 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
-<<<<<<< HEAD
-      "balance": 4950000
+      "studentID": "HE172803",
+      "balance": 4950000,
+      "isActive": true
     },
     {
       "id": "1e0e",
@@ -74,10 +75,6 @@
       "studentID": "HE170320",
       "createdAt": "2024-07-18T14:23:44.202Z",
       "lastLogin": "2024-07-18T14:23:44.202Z"
-=======
-      "studentID": "HE172803",
-      "balance": 4950000,
-      "isActive": true
     },
     {
       "id": "f42e",
@@ -93,7 +90,51 @@
       "studentID": "HE172803",
       "balance": 0,
       "isActive": true
->>>>>>> 04ea34867b346fdf59013abd66eac465414e8923
+    },
+    {
+      "id": "540f",
+      "username": "haha1",
+      "email": "haha1@gmail.com",
+      "password": "$2a$10$qtmyI77D6pL38BKimLo3YOOLMyiYMQSEzlEIqHKX6Ey8NAkCjW2GK",
+      "fullName": "Lê philip",
+      "gender": "male",
+      "address": "Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội",
+      "phone": "0794126569",
+      "role": "0",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
+      "studentID": "HE172809",
+      "balance": 0,
+      "isActive": true
+    },
+    {
+      "id": "8de0",
+      "username": "haha2",
+      "email": "haha2@gmail.com",
+      "password": "$2a$10$gRnWGrj4QdwKYRok8LKTcODZYkAyMEbCT1vUjtwJm1EFu1r3WT9GW",
+      "fullName": "Lê philip",
+      "gender": "",
+      "address": "Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội",
+      "phone": "0794126455",
+      "role": "student",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
+      "studentID": "HE172806",
+      "balance": 0,
+      "isActive": true
+    },
+    {
+      "id": "9c88",
+      "username": "haha3",
+      "email": "haha3@gmail.com",
+      "password": "$2a$10$NuA2mG2A9Lc0xCdoQDrcVuraR4UEeA6v2/hnwu3FFVNqUTkOH.f8S",
+      "fullName": "Lê philip",
+      "gender": "male",
+      "address": "Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội",
+      "phone": "07941264134",
+      "role": "admin",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
+      "studentID": "HE172800",
+      "balance": 0,
+      "isActive": true
     }
   ],
   "auth_tokens": [
