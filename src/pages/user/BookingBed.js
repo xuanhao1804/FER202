@@ -10,9 +10,10 @@ function BookingBed() {
     const [page, setPage] = useState(true)
     const [typeRoom, settypeRoom] = useState([])
     const [user, setUser] = useState({
-        "studentID": JSON.parse(localStorage.getItem("user")).studentID,
+        "studentId": JSON.parse(localStorage.getItem("user")).studentID,
         cost: JSON.parse(localStorage.getItem("user")).balance
     })
+    console.log("User state:", user); // Thêm dòng này
     const [bookingreq, setBookingreq] = useState([]);
 
 
@@ -133,30 +134,36 @@ function BookingBed() {
                 }, 0);
                 const newRequest = {
                     id: (maxId + 1).toString(),
-                    studentid: user.studentID,
+                    studentId: user.studentId,
                     dormitory: selectedDorm,
-                    floor: selectedFloor,
+                    floor: selectedFloor, 
                     room: selectedRoom,
                     bed: freeBeds[0]?.id,
-                    semester: "Sum 2024",
-                    status: "pending"
+                    semester: "Summer 2024",
+                    status: "pending",
+                    isExpired: false
                 }
+                console.log("New request:", newRequest); // Thêm dòng này
                 fetch('http://localhost:9999/bookingRequests', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(newRequest),
-                });
+                })
+                .then(response => response.json()) // Thêm dòng này
+                .then(data => console.log("Response:", data)) // Thêm dòng này
+                .catch(error => console.error('Error posting booking request:', error)); // Thêm dòng này
                 alert("Create success");
             })
-            .catch(error => console.error('Error fetching dormitories:', error));
-            
-
-            
+            .catch(error => console.error('Error fetching booking requests:', error));
     }
- 
-    const isBooking = !!bookingreq?.find(b => b.studentid == user.studentID && (b.status == "approved"||b.status == "pending"));
+
+    const isBooking = !!bookingreq?.find(b => 
+        b.studentId == user.studentId && // Đổi từ studentid sang studentId
+        (b.status == "approved" || b.status == "pending") && 
+        !b.isExpired // Kiểm tra isExpired
+    );
     const isCostValid = cost.price && cost.price > 0;
     
     return (

@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
+import Notification from "./Notification";
+
 function Header() {
   const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState(null);
+  const [userRole, setUserRole] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,6 +16,7 @@ function Header() {
     if (user) {
       setUserName(user.fullName || user.email);
       setUserId(user.id); // Assuming the user object has an id field
+      setUserRole(user.role); // Assuming the user object has a role field
     }
   }, []);
 
@@ -20,16 +24,18 @@ function Header() {
     localStorage.removeItem('user');
     setUserName('');
     setUserId(null);
+    setUserRole('');
     toast.success('Logged out successfully');
-    navigate('/login');
+    navigate('/');
   };
 
   const handleUserGreetingClick = (e) => {
     e.preventDefault();
-    if (userId) {
+    if (userRole === 'admin') {
+      navigate('/manage/room');
+    } else if (userRole === 'student') {
       navigate(`/user/${userId}`);
     } else {
-      // If there's no user id, you might want to redirect to login page
       navigate('/login');
     }
   };
@@ -58,9 +64,11 @@ function Header() {
           <Link to="/about" className="font">
             About
           </Link>
+          
+          <Notification user = {{"userId" : userId, "userName" : userName, "role": userRole}} />
         </ul>
       </nav>
-      
+
       <style>
         {`
         .header {

@@ -14,31 +14,25 @@ export default function AboutUs() {
                         <div class="row">
                             <div class="col-md-12 text-center">
                                 <div class="header-text">
-                                    <h2>hi <span>,</span> I'm <br /> Lee Shu <br /> Hao <span>.</span>   </h2>
-                                    <p>ui/ux designer and web developer</p>
+                                    <h2>Welcome to <span>Our Dormitory Management System</span></h2>
+                                    <p>Manage bookings, view regulations, request history, and more</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </section>
 
                 <section id="about" class="about">
                     <div class="section-heading text-center">
-                        <h2>about me</h2>
+                        <h2>About Our Team</h2>
                     </div>
                     <div class="container">
                         <div class="about-content">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single-about-txt">
-
-                                        <h3>
-                                            Lee Shu Hao
-                                        </h3>
-                                        <p>
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        </p>
+                                        <h3>Hào</h3>
+                                        <p>Project Lead and Full Stack Developer. Ensures the smooth operation of the project and oversees the development process.</p>
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
@@ -49,13 +43,13 @@ export default function AboutUs() {
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>email</h3>
-                                                    <p>browny@info.com</p>
+                                                    <p>hao@info.com</p>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>website</h3>
-                                                    <p>www.brownsine.com</p>
+                                                    <p>www.haosite.com</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -64,34 +58,26 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <section id="about" class="about">
-
                     <div class="container">
                         <div class="about-content">
                             <div class="row">
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        
                                     </div>
-
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-about-txt">
-                                        <h3>
-                                            Member 1
-                                        </h3>
-                                        <p>
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        </p>
+                                        <h3>Đăng</h3>
+                                        <p>Backend Developer. Responsible for server-side logic and database management.</p>
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
@@ -102,36 +88,31 @@ export default function AboutUs() {
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>email</h3>
-                                                    <p>browny@info.com</p>
+                                                    <p>dang@info.com</p>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>website</h3>
-                                                    <p>www.brownsine.com</p>
+                                                    <p>www.dangsite.com</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <section id="about" class="about">
                     <div class="container">
                         <div class="about-content">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single-about-txt">
-
-                                        <h3>
-                                            Member 2
-                                        </h3>
-                                        <p>
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        </p>
+                                        <h3>Thái</h3>
+                                        <p>Frontend Developer. Specializes in creating responsive and user-friendly interfaces.</p>
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
@@ -142,13 +123,13 @@ export default function AboutUs() {
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>email</h3>
-                                                    <p>browny@info.com</p>
+                                                    <p>thai@info.com</p>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>website</h3>
-                                                    <p>www.brownsine.com</p>
+                                                    <p>www.thaisite.com</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -157,34 +138,26 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section id="about" class="about">
 
+                <section id="about" class="about">
                     <div class="container">
                         <div class="about-content">
                             <div class="row">
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        
                                     </div>
-
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-about-txt">
-                                        <h3>
-                                            Member 3
-                                        </h3>
-                                        <p>
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        </p>
+                                        <h3>Khánh</h3>
+                                        <p>Quality Assurance. Ensures that the product meets all quality standards and works as expected.</p>
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
@@ -195,36 +168,31 @@ export default function AboutUs() {
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>email</h3>
-                                                    <p>browny@info.com</p>
+                                                    <p>khanh@info.com</p>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>website</h3>
-                                                    <p>www.brownsine.com</p>
+                                                    <p>www.khanhsite.com</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <section id="about" class="about">
                     <div class="container">
                         <div class="about-content">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single-about-txt">
-
-                                        <h3>
-                                            Member 4
-                                        </h3>
-                                        <p>
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        </p>
+                                        <h3>Minh</h3>
+                                        <p>UI/UX Designer. Focuses on crafting intuitive and engaging user experiences.</p>
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
@@ -235,13 +203,13 @@ export default function AboutUs() {
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>email</h3>
-                                                    <p>browny@info.com</p>
+                                                    <p>minh@info.com</p>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>website</h3>
-                                                    <p>www.brownsine.com</p>
+                                                    <p>www.minhsite.com</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,34 +218,26 @@ export default function AboutUs() {
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section id="about" class="about">
 
+                <section id="about" class="about">
                     <div class="container">
                         <div class="about-content">
                             <div class="row">
                                 <div class="col-sm-offset-1 col-md-6">
                                     <div class="single-about-img">
                                         <img src={profile_image} alt="profile_image" />
-                                        
                                     </div>
-
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-about-txt">
-                                        <h3>
-                                            Member 5
-                                        </h3>
-                                        <p>
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspi unde omnis iste natus error sit voluptatem accusantium doloremque lauda ntium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo luptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                        </p>
+                                        <h3>Lương</h3>
+                                        <p>DevOps Engineer. Manages the infrastructure and ensures continuous integration and delivery.</p>
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
@@ -288,26 +248,25 @@ export default function AboutUs() {
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>email</h3>
-                                                    <p>browny@info.com</p>
+                                                    <p>luong@info.com</p>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="single-about-add-info">
                                                     <h3>website</h3>
-                                                    <p>www.brownsine.com</p>
+                                                    <p>www.luongsite.com</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <Footer />
             </div>
-
         </>
     );
 }
