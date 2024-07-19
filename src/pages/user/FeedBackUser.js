@@ -121,7 +121,7 @@ export default function FeedBackUser() {
                                         <option value="">Choose application Type</option>
                                         <option value="Đề nghị chuyển Dom">Đề nghị chuyển Dom</option>
                                         <option value="Đề nghị chuyển phòng">Đề nghị Chuyển Phòng</option>                                     
-                                        <option value="Đề nghị đổi tầng ">Đề nghị đổi tầng</option>
+                                        <option value="Đề nghị đổi tầng">Đề nghị đổi tầng</option>
                                         <option value="Lý do khác">Lý do khác</option>
                                     </Form.Control>
                                 </Form.Group>

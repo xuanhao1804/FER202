@@ -84,6 +84,7 @@ function App() {
             <Route path="/manage/booking" element={<ManagePendingBooking />} />
             <Route path="/manage/regulation" element={<AdminRegulations />} />
             <Route path="/manage-resident" element={<ManageResident />} />
+            
             <Route path="/manage/feedback" element={<ManageFeedBack />} />
             <Route path="/manage/paymentRequests" element={<PaymentRequests/> } />
           </Route>

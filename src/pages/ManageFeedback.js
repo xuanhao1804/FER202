@@ -8,7 +8,8 @@ export default function FeedBackHistory() {
     const [reply, setReply] = useState('');
     const [selectedFeedbackId, setSelectedFeedbackId] = useState(null);
     const [selectedStatus, setSelectedStatus] = useState('');
-    const user = JSON.parse(localStorage.getItem('user'));
+    const [users, setUsers] = useState([]);
+    const [selectedType, setSelectedType] = useState('');
 
     useEffect(() => {
         const fetchRequestHistory = async () => {
@@ -20,6 +21,16 @@ export default function FeedBackHistory() {
             }
         };
 
+        const fetchUsers = async () => {
+            try {
+                const response = await axios.get('http://localhost:9999/users');
+                setUsers(response.data); // Cập nhật state với dữ liệu phản hồi
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        };
+
+        fetchUsers();
         fetchRequestHistory();
     }, []);
 
@@ -121,10 +132,34 @@ export default function FeedBackHistory() {
         backgroundColor: '#f1f1f1',
     };
 
+    const handleTypeChange = (e) => {
+        setSelectedType(e.target.value);
+    };
+
+    const filteredFeedbackHistory = selectedType 
+        ? feedbackHistory.filter(feedback => feedback.type === selectedType)
+        : feedbackHistory;
+
     return (
         <LayoutAdmin>
             <Container style={containerStyle}>
                 <h1 className="mb-4" style={{ fontSize: '30px', color: '#333' }}>Feedback of User</h1>
+                <Form.Group controlId="typeFilter">
+                    <Form.Label>Filter by Type</Form.Label>
+                    <Form.Control 
+                        as="select" 
+                        value={selectedType} 
+                        onChange={handleTypeChange} 
+                        style={{ maxWidth: '200px', marginBottom: '20px' }}
+                    >
+                        <option value="">All Types</option>
+                        {/* Thêm các tùy chọn loại phản hồi tại đây */}
+                        <option value="Đề nghị chuyển Dom">Đề nghị chuyển Dom</option>
+                        <option value="Đề nghị chuyển phòng">Đề nghị chuyển Phòng</option>
+                        <option value="Đề nghị đổi tầng">Đề nghị đổi tầng</option>
+                        <option value="Lý do khác">Lý do khác</option>
+                    </Form.Control>
+                </Form.Group>
                 <Table style={tableStyle}>
                     <thead>
                         <tr>
@@ -139,68 +174,71 @@ export default function FeedBackHistory() {
                         </tr>
                     </thead>
                     <tbody>
-                        {feedbackHistory.map((feedback) => (
-                            <tr key={feedback.id} style={{ ...tdStyle, ...trHoverStyle }}>
-                                <td style={tdStyle}>{user.id}</td>
-                                <td style={tdStyle}>{user.username}</td>
-                                <td style={tdStyle}>{feedback.type}</td>
-                                <td style={tdStyle}>{feedback.reason}</td>
-                                <td style={tdStyle}>{feedback.date}</td>
-                                <td style={tdStyle}>
-                                    {selectedFeedbackId === feedback.id ? (
-                                        <Form.Control
-                                            as="textarea"
-                                            rows={3}
-                                            value={reply}
-                                            onChange={handleReplyChange}
-                                            placeholder="Reply to the feedback"
-                                            style={formControlStyle}
-                                        />
-                                    ) : (
-                                        <div style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>
-                                            {feedback.replyAdmin}
-                                        </div>
-                                    )}
-                                </td>
-                                <td style={tdStyle}>
-                                    {selectedFeedbackId === feedback.id ? (
-                                        <Form.Control
-                                            as="select"
-                                            value={selectedStatus}
-                                            onChange={handleStatusChange}
-                                            style={formControlStyle}
-                                        >
-                                            <option value="">Choose status</option>
-                                            <option value="Approved">Approved</option>
-                                            <option value="Rejected">Rejected</option>
-                                        </Form.Control>
-                                    ) : (
-                                        feedback.status
-                                    )}
-                                </td>
-                                <td style={tdStyle}>
-                                    {selectedFeedbackId === feedback.id ? (
-                                        <Button
-                                            onClick={() => handleUpdate(feedback.id)}
-                                            style={submitButtonStyle}
-                                        >
-                                            Submit
-                                        </Button>
-                                    ) : (
-                                        <Button
-                                            onClick={() => {
-                                                setSelectedFeedbackId(feedback.id);
-                                                setReply(feedback.replyAdmin || '');
-                                                setSelectedStatus(feedback.status);
-                                            }}
-                                            style={editButtonStyle}
-                                        >
-                                            Edit
-                                        </Button>
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
+                        {filteredFeedbackHistory.map((feedback) => {
+                            const user = users.find(u => u.id === feedback.userId);
+                            return (
+                                <tr key={feedback.id} style={trHoverStyle}>
+                                    <td style={tdStyle}>{user ? user.id : 'Unknown'}</td>
+                                    <td style={tdStyle}>{user ? user.username : 'Unknown'}</td>
+                                    <td style={tdStyle}>{feedback.type}</td>
+                                    <td style={tdStyle}>{feedback.reason}</td>
+                                    <td style={tdStyle}>{feedback.date}</td>
+                                    <td style={tdStyle}>
+                                        {selectedFeedbackId === feedback.id ? (
+                                            <Form.Control
+                                                as="textarea"
+                                                rows={3}
+                                                value={reply}
+                                                onChange={handleReplyChange}
+                                                placeholder="Reply to the feedback"
+                                                style={formControlStyle}
+                                            />
+                                        ) : (
+                                            <div style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>
+                                                {feedback.replyAdmin}
+                                            </div>
+                                        )}
+                                    </td>
+                                    <td style={tdStyle}>
+                                        {selectedFeedbackId === feedback.id ? (
+                                            <Form.Control
+                                                as="select"
+                                                value={selectedStatus}
+                                                onChange={handleStatusChange}
+                                                style={formControlStyle}
+                                            >
+                                                <option value="">Choose status</option>
+                                                <option value="Approved">Approved</option>
+                                                <option value="Rejected">Rejected</option>
+                                            </Form.Control>
+                                        ) : (
+                                            feedback.status
+                                        )}
+                                    </td>
+                                    <td style={tdStyle}>
+                                        {selectedFeedbackId === feedback.id ? (
+                                            <Button
+                                                onClick={() => handleUpdate(feedback.id)}
+                                                style={submitButtonStyle}
+                                            >
+                                                Submit
+                                            </Button>
+                                        ) : (
+                                            <Button
+                                                onClick={() => {
+                                                    setSelectedFeedbackId(feedback.id);
+                                                    setReply(feedback.replyAdmin || '');
+                                                    setSelectedStatus(feedback.status);
+                                                }}
+                                                style={editButtonStyle}
+                                            >
+                                                Edit
+                                            </Button>
+                                        )}
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </Table>
             </Container>
