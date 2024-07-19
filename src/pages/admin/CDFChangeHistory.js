@@ -299,7 +299,11 @@ export default function CDFChangeHistory() {
                                 currentChange?.map((cdf) => {
                                     return (
                                         <tr key={cdf.id}> {/* Thêm key để tối ưu hiệu suất */}
-                                            <td>{cdf.student}</td>
+                                            <td>
+                                                {
+                                                    users?.find((user) => user.id == cdf.student)?.studentID
+                                                }
+                                            </td>
                                             <td>
                                                 {
                                                     users?.find((user) => user.id == cdf.student)?.fullName

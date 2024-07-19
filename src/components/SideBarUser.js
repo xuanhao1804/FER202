@@ -202,7 +202,7 @@ function SideBarUser() {
           </li>
           <hr className="sidebar-divider d-none d-md-block" />
           <li className="nav-item active">
-            <Link className="nav-link" to={"/notification"}>
+            <Link className="nav-link" to={"/notification/cdf"}>
               <span> Notifications </span>
             </Link>
           </li>

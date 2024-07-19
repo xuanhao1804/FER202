@@ -109,7 +109,20 @@ export default function CDFMinusPage() {
             toast.success("Minus successfully");
             navigate('/manage/cdf/history');
 
+            const newCDFHistory = [];
+            await axios.get(`http://localhost:9999/cdfHistory`)
+                .then(res => {
+                    newCDFHistory.push(...res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
 
+            
+
+            addCDFNotification(sid, newCDFHistory[newCDFHistory.length - 1].id);
+
+            navigate('/manage/cdf/history');
 
         } catch (error) {
             console.error('There was an error!', error);
@@ -118,7 +131,24 @@ export default function CDFMinusPage() {
     }
 
 
+    //add new notification
+    function addCDFNotification(sid, cdfId) {
+        const data = {
+            title: "You just have been got minus cdf score",
+            isRead: false,
+            student: sid,
+            cdfId: cdfId,
+            url: `/notification/cdf`
+        }
 
+        axios.post("http://localhost:9999/notification", data)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 
     return (
         <LayoutAdmin>

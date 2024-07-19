@@ -19,15 +19,15 @@ function Header() {
       setUserRole(user.role); // Assuming the user object has a role field
     }
   }, []);
-const handleLogout = () => {
-  localStorage.removeItem('user');
-  setUserName('');
-  setUserId(null);
-  setUserRole('');
-  toast.success('Logged out successfully', {
-    onClose: () => navigate('/')
-  });
-};
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUserName('');
+    setUserId(null);
+    setUserRole('');
+    toast.success('Logged out successfully', {
+      onClose: () => navigate('/')
+    });
+  };
 
   const handleUserGreetingClick = (e) => {
     e.preventDefault();
@@ -64,8 +64,10 @@ const handleLogout = () => {
           <Link to="/about" className="font">
             About
           </Link>
-          
-          <Notification user = {{"userId" : userId, "userName" : userName, "role": userRole}} />
+
+          {
+            userRole === 'student'? <Notification user={{ "userId": userId, "userName": userName, "role": userRole }} /> : ''
+          }
         </ul>
       </nav>
 
