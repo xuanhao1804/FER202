@@ -45,7 +45,7 @@
       "id": "345b",
       "username": "xuanhao1804",
       "email": "xuanhao1804@gmail.com",
-      "password": "$2a$10$y3ha9bcMgbjGdgOuR6fhb.XSbH5z6GchZJo5BqTdHaQeDPld5VLHy",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
       "fullName": "Lee Hao",
       "gender": "female",
       "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
@@ -79,7 +79,7 @@
       "studentID": "HE172803",
       "balance": 4950000,
       "isActive": true,
-      "cdf": 85
+      "cdf": 120
     },
     {
       "id": "1e0e",
@@ -1296,31 +1296,38 @@
   ],
   "cdfHistory": [
     {
-      "id": "3711",
+      "id": "27aa",
       "student": "d2f6",
       "bonus": 10,
       "bonusReason": "1",
       "date": "2024-07-19"
     },
     {
-      "id": "71f8",
-      "student": "d2f7",
+      "id": "f1e5",
+      "student": "d2f6",
+      "bonus": 10,
+      "bonusReason": "1",
+      "date": "2024-07-19"
+    },
+    {
+      "id": "c3d6",
+      "student": "d2f6",
       "bonus": 10,
       "bonusReason": "2",
       "date": "2024-07-19"
     },
     {
-      "id": "2c02",
+      "id": "843d",
       "student": "d2f6",
-      "bonus": 5,
-      "bonusReason": "2",
+      "minus": 10,
+      "minusReason": "1",
       "date": "2024-07-19"
     },
     {
-      "id": "eeba",
+      "id": "a0d3",
       "student": "d2f6",
-      "minus": 20,
-      "minusReason": "2",
+      "bonus": 15,
+      "bonusReason": "4",
       "date": "2024-07-19"
     }
   ],
@@ -1405,7 +1412,47 @@
       "id": "1",
       "title": "Get bonus Score",
       "isRead": false,
-      "studentID": "HE172555"
+      "student": "d2f6",
+      "cdfId": "27aa",
+      "url": "/notification/cdf"
+    },
+    {
+      "id": "641c",
+      "title": "CDF Bonus",
+      "isRead": false,
+      "student": "d2f6",
+      "cdfId": "f1e5",
+      "url": "/notification/cdf"
+    },
+    {
+      "id": "2cbc",
+      "title": "You just have been added cdf score",
+      "isRead": false,
+      "student": "d2f6",
+      "cdfId": "c3d6",
+      "url": "/notification/cdf"
+    },
+    {
+      "id": "e2d4",
+      "title": "You just have been got minus cdf score",
+      "isRead": true,
+      "student": "d2f6",
+      "cdfId": "843d",
+      "url": "/notification/cdf"
+    },
+    {
+      "id": "7576",
+      "title": "You just have been got bonus cdf score",
+      "isRead": false,
+      "student": "d2f6",
+      "cdfId": "a0d3",
+      "url": "/notification/cdf"
+    },
+    {
+      "id": "3a71"
+    },
+    {
+      "id": "88c7"
     }
   ]
 }

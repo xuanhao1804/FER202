@@ -13,6 +13,7 @@ $(document).ready(function () {
 
 export default function CDFBonusPage() {
 
+    
     const { sid } = useParams('sid');
 
     //useNavigate to back to CDFChangeHistory
@@ -111,6 +112,20 @@ export default function CDFBonusPage() {
             };
             await axios.post("http://localhost:9999/cdfHistory", data);
             toast.success("Bonus successfully");
+
+            const newCDFHistory = [];
+            await axios.get(`http://localhost:9999/cdfHistory`)
+                .then(res => {
+                    newCDFHistory.push(...res.data);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+            
+
+            addCDFNotification(sid, newCDFHistory[newCDFHistory.length - 1].id);
+
             navigate('/manage/cdf/history');
 
 
@@ -121,7 +136,24 @@ export default function CDFBonusPage() {
         }
     }
 
+    //add new notification
+    function addCDFNotification(sid, cdfId){
+        const data = {
+            title: "You just have been got bonus cdf score",
+            isRead: false,
+            student: sid,
+            cdfId : cdfId,
+            url: `/notification/cdf`
+        }
 
+        axios.post("http://localhost:9999/notification", data)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });            
+    }
 
 
     return (
