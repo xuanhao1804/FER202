@@ -63,6 +63,7 @@ function App() {
             <Route path="/resident-history" element={<ResidentHistory />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/notification" element={<UserNotification />} />
+            
           </Route>
 
           {/* Admin routes */}
