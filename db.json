@@ -72,7 +72,8 @@
       "studentID": "HE172888",
       "balance": 4950000,
       "isActive": true,
-      "cdf": 110
+      "cdf": 110,
+      "role": "student"
     },
     {
       "id": "d2f7",
@@ -90,7 +91,8 @@
       "balance": 10000000,
       "studentID": "HE170320",
       "createdAt": "2024-07-18T14:23:44.202Z",
-      "lastLogin": "2024-07-18T14:23:44.202Z"
+      "lastLogin": "2024-07-18T14:23:44.202Z",
+      "isActive": true
     },
     {
       "id": "f42e",
@@ -136,7 +138,6 @@
       "studentID": "HE172806",
       "balance": 0,
       "isActive": true
-      
     },
     {
       "id": "9c88",
@@ -154,7 +155,6 @@
       "isActive": true,
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z"
-
     },
     {
       "id": "d2f8",
