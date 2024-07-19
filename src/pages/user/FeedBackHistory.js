@@ -1,26 +1,42 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Table } from "react-bootstrap";
+import { Container, Table, Pagination } from "react-bootstrap";
 import axios from 'axios';
 import LayoutUser from "../../layout/LayoutUser";
 
 export default function FeedBackHistory() {
     const [feedbackHistory, setFeedBackHistory] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [feedbacksPerPage] = useState(10); // Số phản hồi mỗi trang
     const user = JSON.parse(localStorage.getItem('user'));
 
     useEffect(() => {
         const fetchRequestHistory = async () => {
             try {
                 const response = await axios.get('http://localhost:9999/feedbackRequest');
-
-                const histouUser = response.data.filter(x => x.userId == user.id )
-                setFeedBackHistory(histouUser); // Cập nhật state với dữ liệu phản hồi
+                const userFeedbacks = response.data.filter(x => x.userId === user.id);
+                setFeedBackHistory(userFeedbacks); // Cập nhật state với dữ liệu phản hồi
             } catch (error) {
                 console.error('Error fetching feedback history:', error);
             }
         };
 
         fetchRequestHistory();
-    }, []);
+    }, [user.id]);
+
+    // Tính toán các chỉ số cho phân trang
+    const indexOfLastFeedback = currentPage * feedbacksPerPage;
+    const indexOfFirstFeedback = indexOfLastFeedback - feedbacksPerPage;
+    const currentFeedbacks = feedbackHistory.slice(indexOfFirstFeedback, indexOfLastFeedback);
+
+    // Tạo các số trang
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(feedbackHistory.length / feedbacksPerPage); i++) {
+        pageNumbers.push(i);
+    }
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
 
     const tableStyles = {
         width: '100%',
@@ -54,7 +70,7 @@ export default function FeedBackHistory() {
                         </tr>
                     </thead>
                     <tbody>
-                        {feedbackHistory.map((feedback) => (
+                        {currentFeedbacks.map((feedback) => (
                             <tr key={feedback.id}>
                                 <td style={tdStyles}>{feedback.type}</td>
                                 <td style={tdStyles}>{feedback.reason}</td>
@@ -65,6 +81,17 @@ export default function FeedBackHistory() {
                         ))}
                     </tbody>
                 </Table>
+                <Pagination className="justify-content-center">
+                    {pageNumbers.map(number => (
+                        <Pagination.Item
+                            key={number}
+                            active={number === currentPage}
+                            onClick={() => handlePageChange(number)}
+                        >
+                            {number}
+                        </Pagination.Item>
+                    ))}
+                </Pagination>
             </Container>
         </LayoutUser>
     );
