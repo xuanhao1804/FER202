@@ -37,7 +37,8 @@
       "lastLogin": "2024-07-10T04:56:36.207Z",
       "studentID": "HE172888",
       "balance": 4950000,
-      "isActive": true
+      "isActive": true,
+      "cdf": 100
     },
     {
       "id": "d2f6",
@@ -54,7 +55,50 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
-      "balance": 4950000
+      "studentID": "HE172888",
+      "balance": 4950000,
+      "isActive": true,
+      "cdf": 110
+    },
+    {
+      "id": "d2f7",
+      "username": "luong1",
+      "email": "luong1@fpt.edu.vn",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "fullName": "Tưởng Xuân Lương",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0866856537",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-17T04:37:27.557Z",
+      "lastLogin": "2024-07-17T04:37:27.557Z",
+      "studentID": "HE172555",
+      "balance": 4950000,
+      "isActive": true,
+      "cdf": 110
+    },
+    {
+      "id": "d2f8",
+      "username": "luong",
+      "email": "luong@fpt.edu.vn",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "fullName": "Luong Xuan Tuong",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0866856538",
+      "role": "admin",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-17T04:37:27.557Z",
+      "lastLogin": "2024-07-17T04:37:27.557Z",
+      "studentID": "HE172888",
+      "balance": 4950000,
+      "isActive": true,
+      "cdf": 100
     }
   ],
   "auth_tokens": [
@@ -848,6 +892,106 @@
       "id": "2",
       "type": "4 bed",
       "price": 1050000
+    }
+  ],
+  "cdfHistory": [
+    {
+      "id": "3711",
+      "student": "d2f6",
+      "bonus": 10,
+      "bonusReason": "1",
+      "date": "2024-07-19"
+    },
+    {
+      "id": "71f8",
+      "student": "d2f7",
+      "bonus": 10,
+      "bonusReason": "2",
+      "date": "2024-07-19"
+    }
+  ],
+  "bonusScoreReasons": [
+    {
+      "id": "1",
+      "reason": "Excellent room cleanliness"
+    },
+    {
+      "id": "2",
+      "reason": "Participation in community events"
+    },
+    {
+      "id": "3",
+      "reason": "Helping with dormitory maintenance"
+    },
+    {
+      "id": "4",
+      "reason": "Outstanding academic achievement"
+    },
+    {
+      "id": "5",
+      "reason": "Volunteering for dormitory committees"
+    },
+    {
+      "id": "6",
+      "reason": "Positive feedback from dorm mates"
+    },
+    {
+      "id": "7",
+      "reason": "Consistent on-time payments"
+    },
+    {
+      "id": "8",
+      "reason": "Promoting sustainability initiatives"
+    },
+    {
+      "id": "9",
+      "reason": "Leadership in organizing dorm events"
+    },
+    {
+      "id": "10",
+      "reason": "Contribution to dorm safety and security"
+    }
+  ],
+  "minusScoreReasons": [
+    {
+      "id": "1",
+      "reason": "Late payment"
+    },
+    {
+      "id": "2",
+      "reason": "Late check-in"
+    },
+    {
+      "id": "3",
+      "reason": "Late check-out"
+    },
+    {
+      "id": "4",
+      "reason": "Violation of dormitory rules"
+    },
+    {
+      "id": "5",
+      "reason": "Violation of Quiet Hours"
+    },
+    {
+      "id": "6",
+      "reason": "Smoking in prohibited areas"
+    },
+    {
+      "id": "7",
+      "reason": "Unauthorized overnight guests"
+    },
+    {
+      "id": "8",
+      "reason": "Failure to pass room inspection"
+    }
+  ],
+  "notification": [
+    {
+      "id": "1",
+      "title": "Get bonus Score",
+      "isRead": false,
+      "studentID": "HE172555"
     }
   ]
 }
