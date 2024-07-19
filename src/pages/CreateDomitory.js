@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import LayoutAdmin from '../layout/LayoutAdmin';
 
 const CreateDormitory = () => {
     const [name, setName] = useState('');
-    const [totalBeds, setTotalBeds] = useState('');
+    const [totalBeds, setTotalBeds] = useState(0);
     const [floors, setFloors] = useState([{ floorNumber: 1, rooms: [] }]);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        calculateTotalBeds();
+    }, [floors]);
+
+    const calculateTotalBeds = () => {
+        const total = floors.reduce((acc, floor) => {
+            return acc + floor.rooms.reduce((roomAcc, room) => {
+                return roomAcc + parseInt(room.roomType.split(' ')[0]);
+            }, 0);
+        }, 0);
+        setTotalBeds(total);
+    };
 
     const addFloor = () => {
         setFloors([...floors, { floorNumber: floors.length + 1, rooms: [] }]);
@@ -29,12 +42,18 @@ const CreateDormitory = () => {
         setFloors(newFloors);
     };
 
+    const updateRoomNumber = (floorIndex, roomIndex, newNumber) => {
+        const newFloors = [...floors];
+        newFloors[floorIndex].rooms[roomIndex].roomNumber = newNumber;
+        setFloors(newFloors);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const dormitoryData = {
                 name,
-                totalBeds: parseInt(totalBeds),
+                totalBeds,
                 floors: floors.map(floor => ({
                     floorNumber: floor.floorNumber,
                     rooms: floor.rooms.map(room => ({
@@ -93,8 +112,7 @@ const CreateDormitory = () => {
                         <Form.Control 
                             type="number" 
                             value={totalBeds} 
-                            onChange={(e) => setTotalBeds(e.target.value)} 
-                            required 
+                            readOnly 
                         />
                     </Form.Group>
                     
@@ -107,7 +125,7 @@ const CreateDormitory = () => {
                                         <Form.Control 
                                             type="text" 
                                             value={room.roomNumber} 
-                                            readOnly 
+                                            onChange={(e) => updateRoomNumber(floorIndex, roomIndex, e.target.value)}
                                         />
                                     </Col>
                                     <Col>
