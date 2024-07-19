@@ -54,6 +54,7 @@ function SideBarAdmin() {
                             <div className="bg-white py-2 collapse-inner rounded">
                                 <h6 className="collapse-header">Manager Components:</h6>
                                 <Link className="collapse-item" to={`/manage/user`}>Manager Users</Link>
+                                <Link className="collapse-item" to={'/manage/cdf/history'}>Manage CDF Score</Link>
                                 <Link className="collapse-item" to={`/manage/room`}>Manager Rooms</Link>
                                 {/* <Link className="collapse-item" to={`/account`}>Manager Accounts</Link> */}
                                 <Link className="collapse-item" to={'/manage-resident'}>Manager Residents</Link>

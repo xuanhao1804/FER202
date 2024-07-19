@@ -56,7 +56,8 @@
       "lastLogin": "2024-07-17T04:37:27.557Z",
       "studentID": "HE172803",
       "balance": 4950000,
-      "isActive": true
+      "isActive": true,
+      "cdf": 85
     },
     {
       "id": "1e0e",
@@ -1091,6 +1092,120 @@
       "NumberPlate": "1",
       "startDate": "2024-07-19",
       "EndDate": "2024-08-19"
+    }
+  ],
+  "cdfHistory": [
+    {
+      "id": "3711",
+      "student": "d2f6",
+      "bonus": 10,
+      "bonusReason": "1",
+      "date": "2024-07-19"
+    },
+    {
+      "id": "71f8",
+      "student": "d2f7",
+      "bonus": 10,
+      "bonusReason": "2",
+      "date": "2024-07-19"
+    },
+    {
+      "id": "2c02",
+      "student": "d2f6",
+      "bonus": 5,
+      "bonusReason": "2",
+      "date": "2024-07-19"
+    },
+    {
+      "id": "eeba",
+      "student": "d2f6",
+      "minus": 20,
+      "minusReason": "2",
+      "date": "2024-07-19"
+    }
+  ],
+  "bonusScoreReasons": [
+    {
+      "id": "1",
+      "reason": "Excellent room cleanliness"
+    },
+    {
+      "id": "2",
+      "reason": "Participation in community events"
+    },
+    {
+      "id": "3",
+      "reason": "Helping with dormitory maintenance"
+    },
+    {
+      "id": "4",
+      "reason": "Outstanding academic achievement"
+    },
+    {
+      "id": "5",
+      "reason": "Volunteering for dormitory committees"
+    },
+    {
+      "id": "6",
+      "reason": "Positive feedback from dorm mates"
+    },
+    {
+      "id": "7",
+      "reason": "Consistent on-time payments"
+    },
+    {
+      "id": "8",
+      "reason": "Promoting sustainability initiatives"
+    },
+    {
+      "id": "9",
+      "reason": "Leadership in organizing dorm events"
+    },
+    {
+      "id": "10",
+      "reason": "Contribution to dorm safety and security"
+    }
+  ],
+  "minusScoreReasons": [
+    {
+      "id": "1",
+      "reason": "Late payment"
+    },
+    {
+      "id": "2",
+      "reason": "Late check-in"
+    },
+    {
+      "id": "3",
+      "reason": "Late check-out"
+    },
+    {
+      "id": "4",
+      "reason": "Violation of dormitory rules"
+    },
+    {
+      "id": "5",
+      "reason": "Violation of Quiet Hours"
+    },
+    {
+      "id": "6",
+      "reason": "Smoking in prohibited areas"
+    },
+    {
+      "id": "7",
+      "reason": "Unauthorized overnight guests"
+    },
+    {
+      "id": "8",
+      "reason": "Failure to pass room inspection"
+    }
+  ],
+  "notification": [
+    {
+      "id": "1",
+      "title": "Get bonus Score",
+      "isRead": false,
+      "studentID": "HE172555"
     }
   ]
 }

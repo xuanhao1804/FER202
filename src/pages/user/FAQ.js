@@ -1,5 +1,5 @@
 import LayoutUser from "../../layout/LayoutUser";
-import "../../style/FAQ.css";
+// import "../../style/FAQ.css";
 
 export default function FAQ() {
     return (

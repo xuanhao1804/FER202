@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import "../style/regulation.css";
+import '../style/regulation.css';
 import { Col, Row, Card, Button, Form } from 'react-bootstrap';
 import PDFViewer from '../components/pdf.js';
 import axios from 'axios';
 import { message, Pagination } from "antd";
 import background_rule_card from '../assert/images/background-rule-card.jpg';
 import $ from 'jquery'; // Import the jQuery library
-import LayoutAdmin from '../layout/LayoutAdmin';
+import LayoutAdmin from '../layout/LayoutAdmin.js';
 import { toast } from 'react-toastify';
 
 
@@ -42,6 +42,7 @@ export default function AdminRegulations() {
         setActiveId(id); // Cập nhật trạng thái với `id` của b        if(window.confirm(message)){pdf').hide();
         $('#add-rule-form').hide();
         $('#edit-rule-form').hide();
+        $('#pdf').hide();
     };
 
 

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 
+import Notification from "./Notification";
+
 function Header() {
   const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState(null);
@@ -62,9 +64,11 @@ const handleLogout = () => {
           <Link to="/about" className="font">
             About
           </Link>
+          
+          <Notification user = {{"userId" : userId, "userName" : userName, "role": userRole}} />
         </ul>
       </nav>
-      
+
       <style>
         {`
         .header {
