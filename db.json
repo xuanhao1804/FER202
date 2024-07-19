@@ -1,5 +1,25 @@
 {
-  "swapRequests": [],
+  "swapRequests": [
+    {
+      "id": "f832",
+      "requestingStudentId": "HE172876",
+      "requestingStudentName": "Lê philip",
+      "requestedStudentId": "HE172803",
+      "requestedStudentName": "Lê Xuân Hào",
+      "currentDormitory": "3",
+      "currentFloor": "1",
+      "currentRoom": "102",
+      "currentBed": "C102-3",
+      "requestedDormitory": "2",
+      "requestedFloor": "1",
+      "requestedRoom": "102",
+      "requestedBed": "2/1/102/B102-1",
+      "requestingBed": "3/1/102/C102-3",
+      "semester": "Summer 2024",
+      "status": "approved",
+      "createdAt": "2024-07-19T08:07:39.279Z"
+    }
+  ],
   "semesters": [
     {
       "id": "1",
@@ -36,7 +56,7 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-10T04:56:36.207Z",
       "lastLogin": "2024-07-10T04:56:36.207Z",
-      "studentID": "HE172888",
+      "studentID": "HE172348",
       "balance": 4950000,
       "isActive": true,
       "cdf": 100
@@ -106,7 +126,7 @@
       "phone": "0794126568",
       "role": "student",
       "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
-      "studentID": "HE172803",
+      "studentID": "HE172876",
       "balance": 1000000,
       "isActive": true
     },
@@ -172,7 +192,7 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-17T04:37:27.557Z",
       "lastLogin": "2024-07-17T04:37:27.557Z",
-      "studentID": "HE172888",
+      "studentID": "HE172889",
       "balance": 4950000,
       "isActive": true,
       "cdf": 100
@@ -523,6 +543,7 @@
       "totalBeds": 20,
       "floors": [
         {
+          "id": 1,
           "floorNumber": 1,
           "rooms": [
             {
@@ -561,6 +582,7 @@
       "totalBeds": 12,
       "floors": [
         {
+          "id": 1,
           "floorNumber": 1,
           "rooms": [
             {
@@ -587,6 +609,7 @@
           ]
         },
         {
+          "id": 2,
           "floorNumber": 2,
           "rooms": [
             {
@@ -623,7 +646,7 @@
   "bookingRequests": [
     {
       "id": "1",
-      "studentId": "HE172888",
+      "studentId": "HE172348",
       "dormitory": "2",
       "floor": "1",
       "room": "102",
@@ -636,7 +659,7 @@
     },
     {
       "id": "2",
-      "studentId": "HE172888",
+      "studentId": "HE172803",
       "dormitory": "2",
       "floor": "1",
       "room": "102",
@@ -660,12 +683,13 @@
     },
     {
       "id": "211",
+      "studentId": "HE172876",
       "dormitory": "3",
       "floor": "1",
       "room": "102",
       "bed": "C102-3",
       "semester": "Summer 2024",
-      "status": "pending",
+      "status": "approved",
       "isExpired": false
     },
     {

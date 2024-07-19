@@ -205,6 +205,12 @@ function SideBarUser() {
           </li>
           <hr className="sidebar-divider d-none d-md-block" />
           <li className="nav-item active">
+            <Link className="nav-link" to={"/swap-bed-history"}>
+              <span> Swaped history </span>
+            </Link>
+          </li>
+          <hr className="sidebar-divider d-none d-md-block" />
+          <li className="nav-item active">
             <Link className="nav-link" to={"/notification"}>
               <span> Notifications </span>
             </Link>

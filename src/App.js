@@ -50,6 +50,8 @@ import ManageFeedBack from "./pages/ManageFeedback.js";
 import Payment from "./pages/user/Payment.js";
 import PaymentHistory from "./pages/user/PaymentHistory.js";
 import PaymentRequests from "./pages/PaymentRequest.js";
+import SwapBedHistory from "./pages/user/SwapBedHistory.js";
+import CreateSwapRequest from "./pages/user/CreateNewSwap.js";
 
 function App() {
   return (
@@ -86,6 +88,8 @@ function App() {
 
 
             <Route path="/payment" element={<Payment />} />
+            <Route path="/create-swap-request" element={<CreateSwapRequest/>} />
+            <Route path="/swap-bed-history" element={<SwapBedHistory/> } />
             <Route path="/payment/history" element={<PaymentHistory/>} />
 
             <Route path="/feedback" element={<FeedBackUser />} />
