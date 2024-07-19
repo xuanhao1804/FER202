@@ -1,69 +1,4 @@
 {
-  "feedbackRequest": [
-    {
-      "id": "f81c",
-      "userid": "6514",
-      "type": "Đề nghị Chuyển Phòng",
-      "reason": "wwwwwww",
-      "date": "2024-07-19",
-      "status": "Rejected",
-      "replyAdmin": "ngửa ái nhé Em\ndădawawdawădawdawdawdawdadwdadădawdawdawdawdawwdawădawdawdawdawdawdawdawdawdawdawd"
-    },
-    {
-      "id": "6370",
-      "userid": "6514",
-      "type": "Đề nghị Chuyển Phòng",
-      "reason": "wwwwwww",
-      "date": "2024-07-19",
-      "status": "Approved",
-      "replyAdmin": "dădawdawdwaqdwqđqưdădawdawdawdawdawdawdawdawdawdawd"
-    },
-    {
-      "id": "5798",
-      "userId": "6514",
-      "type": "Đề nghị chuyển Dom",
-      "reason": "cai phong nguaw dai vl toan bon hoi chan",
-      "date": "2024-07-19",
-      "status": "Rejected",
-      "replyAdmin": "ădawdawdawdaw"
-    },
-    {
-      "id": "e561",
-      "userId": "6514",
-      "type": "Đề nghị chuyển Dom",
-      "reason": "cai phong nguaw dai vl toan bon hoi chan",
-      "date": "2024-07-19",
-      "status": "Approved",
-      "replyAdmin": "tôi sẽ cử người đến chỗ em"
-    },
-    {
-      "id": "ab4c",
-      "userId": "ad4a",
-      "type": "Đề nghị chuyển Dom",
-      "reason": "đưaădădawd",
-      "date": "2024-07-19",
-      "status": "pending",
-      "replyAdmin": ""
-    },
-    {
-      "id": "af7c",
-      "userId": "6514",
-      "type": "Báo cáo bạn cùng phòng",
-      "reason": "Ban cung phong hoi chan vl ",
-      "date": "2024-07-19",
-      "status": "Rejected",
-      "replyAdmin": "Cái này thhif tôi ko giải quyết "
-    },
-    {
-      "id": "6bbc",
-      "userId": "d2f6",
-      "type": "Đề nghị đổi tầng ",
-      "reason": "dsadsadsad",
-      "date": "2024-07-19",
-      "status": "pending",
-      "replyAdmin": ""
-    }
-  ],
   "semesters": [
     {
       "id": "1",
@@ -240,46 +175,6 @@
       "balance": 4950000,
       "isActive": true,
       "cdf": 100
-    }
-  ],
-  "auth_tokens": [
-    {
-      "userId": 1,
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-      "expiresAt": "2023-06-29T15:30:45Z",
-      "id": "34f3"
-    }
-  ],
-  "auth_providers": [
-    {
-      "userId": 2,
-      "provider": "google",
-      "providerId": "118234567890123456789",
-      "accessToken": "ya29.a0AfH6SMCUV...",
-      "refreshToken": "1//0abcdefghijklm...",
-      "expiresAt": "2023-06-29T16:00:00Z",
-      "id": "d362"
-    }
-  ],
-  "news": [
-    {
-      "title": "Welcome to the new semester2!",
-      "content": "<h2><a href=\"http://localhost:3000/manage/news\"><i><strong>http://localhost:3000/manage/news</strong></i></a><br>&nbsp;</h2>",
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "title": "Upcoming dorm renovations",
-      "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
-      "date": "2023-11-01",
-      "isDisplay": true
-    },
-    {
-      "id": "3",
-      "title": "Campus-wide Wi-Fi upgrade",
-      "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage.",
-      "date": "2023-09-10",
-      "isDisplay": true
     }
   ],
   "dormitories": [
@@ -782,6 +677,27 @@
       "isExpired": true
     }
   ],
+  "auth_tokens": [
+    {
+      "userId": 1,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "expiresAt": "2023-06-29T15:30:45Z",
+      "id": "34f3"
+    }
+  ],
+  "auth_providers": [
+    {
+      "userId": 2,
+      "provider": "google",
+      "providerId": "118234567890123456789",
+      "accessToken": "ya29.a0AfH6SMCUV...",
+      "refreshToken": "1//0abcdefghijklm...",
+      "expiresAt": "2023-06-29T16:00:00Z",
+      "id": "d362"
+    }
+  ],
+
+
   "residentHistory": [],
   "payments": [
     {
@@ -867,6 +783,92 @@
       "title": "new rule 2",
       "description": "new description 2",
       "id": "7eb7"
+    }
+  ],
+  "news": [
+    {
+      "title": "Welcome to the new semester2!",
+      "content": "<h2><a href=\"http://localhost:3000/manage/news\"><i><strong>http://localhost:3000/manage/news</strong></i></a><br>&nbsp;</h2>",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "Upcoming dorm renovations",
+      "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
+      "date": "2023-11-01",
+      "isDisplay": true
+    },
+    {
+      "id": "3",
+      "title": "Campus-wide Wi-Fi upgrade",
+      "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage.",
+      "date": "2023-09-10",
+      "isDisplay": true
+    }
+  ],
+  "feedbackRequest": [
+    {
+      "id": "f81c",
+      "userid": "6514",
+      "type": "Đề nghị Chuyển Phòng",
+      "reason": "wwwwwww",
+      "date": "2024-07-19",
+      "status": "Rejected",
+      "replyAdmin": "ngửa ái nhé Em\ndădawawdawădawdawdawdawdadwdadădawdawdawdawdawwdawădawdawdawdawdawdawdawdawdawdawd"
+    },
+    {
+      "id": "6370",
+      "userid": "6514",
+      "type": "Đề nghị Chuyển Phòng",
+      "reason": "wwwwwww",
+      "date": "2024-07-19",
+      "status": "Approved",
+      "replyAdmin": "dădawdawdwaqdwqđqưdădawdawdawdawdawdawdawdawdawdawd"
+    },
+    {
+      "id": "5798",
+      "userId": "6514",
+      "type": "Đề nghị chuyển Dom",
+      "reason": "cai phong nguaw dai vl toan bon hoi chan",
+      "date": "2024-07-19",
+      "status": "Rejected",
+      "replyAdmin": "ădawdawdawdaw"
+    },
+    {
+      "id": "e561",
+      "userId": "6514",
+      "type": "Đề nghị chuyển Dom",
+      "reason": "cai phong nguaw dai vl toan bon hoi chan",
+      "date": "2024-07-19",
+      "status": "Approved",
+      "replyAdmin": "tôi sẽ cử người đến chỗ em"
+    },
+    {
+      "id": "ab4c",
+      "userId": "ad4a",
+      "type": "Đề nghị chuyển Dom",
+      "reason": "đưaădădawd",
+      "date": "2024-07-19",
+      "status": "pending",
+      "replyAdmin": ""
+    },
+    {
+      "id": "af7c",
+      "userId": "6514",
+      "type": "Báo cáo bạn cùng phòng",
+      "reason": "Ban cung phong hoi chan vl ",
+      "date": "2024-07-19",
+      "status": "Rejected",
+      "replyAdmin": "Cái này thhif tôi ko giải quyết "
+    },
+    {
+      "id": "6bbc",
+      "userId": "d2f6",
+      "type": "Đề nghị đổi tầng ",
+      "reason": "dsadsadsad",
+      "date": "2024-07-19",
+      "status": "pending",
+      "replyAdmin": ""
     }
   ],
   "guide": [
