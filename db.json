@@ -1,4 +1,5 @@
 {
+  "swapRequests": [],
   "semesters": [
     {
       "id": "1",
@@ -696,8 +697,6 @@
       "id": "d362"
     }
   ],
-
-
   "residentHistory": [],
   "payments": [
     {
@@ -866,6 +865,15 @@
       "userId": "d2f6",
       "type": "Đề nghị đổi tầng ",
       "reason": "dsadsadsad",
+      "date": "2024-07-19",
+      "status": "pending",
+      "replyAdmin": ""
+    },
+    {
+      "id": "7001",
+      "userId": "d2f6",
+      "type": "Đề nghị chuyển Dom",
+      "reason": "đâsdsa",
       "date": "2024-07-19",
       "status": "pending",
       "replyAdmin": ""
