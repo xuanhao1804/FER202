@@ -714,7 +714,7 @@
       "bed": "C102-3",
       "semester": "Summer 2024",
       "status": "approved",
-      "isExpired": false
+      "isExpired": true
     }
   ],
   "residentHistory": [],
