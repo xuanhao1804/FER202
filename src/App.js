@@ -42,6 +42,7 @@ import CDFChangeHistory from "./pages/admin/CDFChangeHistory.js";
 import CDFBonusPage from "./pages/admin/cdf-change/CDFBonusPage.js";
 import CDFMinusPage from "./pages/admin/cdf-change/CDFMinusPage.js";
 import UserNotification from "./pages/user/UserNotification.js";
+import NotificationDetail from "./components/NotificationDetail.js";
 
 
 function App() {
@@ -75,7 +76,7 @@ function App() {
             <Route path="/booking-parking" element={<ParkingTicket />} />
             <Route path="/parking-history" element={<ViewParking />} />
             <Route path="/notification" element={<UserNotification />} />
-            
+            <Route path="/notification/detail/:nid" element={<NotificationDetail />} />
           </Route>
 
           {/* Admin routes */}

@@ -37,7 +37,8 @@
       "lastLogin": "2024-07-10T04:56:36.207Z",
       "studentID": "HE172888",
       "balance": 4950000,
-      "isActive": true
+      "isActive": true,
+      "cdf": 100
     },
     {
       "id": "d2f6",
@@ -68,6 +69,20 @@
       "gender": "male",
       "address": "Hà nội",
       "phone": "0839440702",
+      "studentID": "HE172888",
+      "balance": 4950000,
+      "isActive": true,
+      "cdf": 110
+    },
+    {
+      "id": "d2f7",
+      "username": "luong1",
+      "email": "luong1@fpt.edu.vn",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "fullName": "Tưởng Xuân Lương",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0866856537",
       "role": "student",
       "avatar": "https://example.com/default-avatar.jpg",
       "googleId": null,
@@ -121,6 +136,7 @@
       "studentID": "HE172806",
       "balance": 0,
       "isActive": true
+      
     },
     {
       "id": "9c88",
@@ -135,7 +151,30 @@
       "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
       "studentID": "HE172800",
       "balance": 0,
-      "isActive": true
+      "isActive": true,
+      "createdAt": "2024-07-17T04:37:27.557Z",
+      "lastLogin": "2024-07-17T04:37:27.557Z"
+
+    },
+    {
+      "id": "d2f8",
+      "username": "luong",
+      "email": "luong@fpt.edu.vn",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "fullName": "Luong Xuan Tuong",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0866856538",
+      "role": "admin",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-17T04:37:27.557Z",
+      "lastLogin": "2024-07-17T04:37:27.557Z",
+      "studentID": "HE172888",
+      "balance": 4950000,
+      "isActive": true,
+      "cdf": 100
     }
   ],
   "auth_tokens": [

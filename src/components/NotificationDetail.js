@@ -3,9 +3,9 @@ import LayoutUser from "../layout/LayoutUser";
 export default function NotificationDetail() {
     return (
         <LayoutUser>
-            <div>
+            <h2>
                 Notification Detail
-            </div>
+            </h2>
         </LayoutUser>
     );
 }
