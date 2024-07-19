@@ -58,11 +58,12 @@ function SideBarAdmin() {
                                 <Link className="collapse-item" to={`/manage/room`}>Manager Rooms</Link>
                                 {/* <Link className="collapse-item" to={`/account`}>Manager Accounts</Link> */}
                                 <Link className="collapse-item" to={'/manage-resident'}>Manager Residents</Link>
-                                <Link className="collapse-item" to={'/managerpayment'}>Manager Payments</Link>
+                                <Link className="collapse-item" to={'/manage/paymentRequests'}>Manager Payments</Link>
                                 <Link className="collapse-item" to={'/manage/regulation'}>Manager Regulations</Link>
                                 <Link className="collapse-item" to={'/manage/news'}>Manager News</Link>
                                 <Link className="collapse-item" to={'/manage/booking'}>Manage Pending Bookings</Link>
                                 <Link className="collapse-item" to={'/manage/parking'}>Manage Parking Tickets</Link>
+                                <Link className="collapse-item" to={'/manage/feedback'}>Manage Pending Feedback</Link>
                             </div>
                         </div>
                     </li>

@@ -44,6 +44,12 @@ import CDFMinusPage from "./pages/admin/cdf-change/CDFMinusPage.js";
 import UserNotification from "./pages/user/UserNotification.js";
 import NotificationDetail from "./components/NotificationDetail.js";
 
+import FeedBackUser from "./pages/user/FeedBackUser.js";
+import FeedBackHistory from "./pages/user/FeedBackHistory.js";
+import ManageFeedBack from "./pages/ManageFeedback.js";
+import Payment from "./pages/user/Payment.js";
+import PaymentHistory from "./pages/user/PaymentHistory.js";
+import PaymentRequests from "./pages/PaymentRequest.js";
 
 function App() {
   return (
@@ -77,6 +83,13 @@ function App() {
             <Route path="/parking-history" element={<ViewParking />} />
             <Route path="/notification" element={<UserNotification />} />
             <Route path="/notification/detail/:nid" element={<NotificationDetail />} />
+
+
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/payment/history" element={<PaymentHistory/>} />
+
+            <Route path="/feedback" element={<FeedBackUser />} />
+            <Route path="/feedback-history" element={<FeedBackHistory />} />
           </Route>
 
           {/* Admin routes */}
@@ -96,6 +109,8 @@ function App() {
             <Route path="/manage/cdf/history" element={<CDFChangeHistory />} />
             <Route path="/manage/cdf/bonus/:sid" element={<CDFBonusPage />} />
             <Route path="/manage/cdf/minus/:sid" element={<CDFMinusPage />} />
+            <Route path="/manage/feedback" element={<ManageFeedBack />} />
+            <Route path="/manage/paymentRequests" element={<PaymentRequests/> } />
           </Route>
 
           <Route path="/*" element={<NotFoundPage />} />
