@@ -37,13 +37,14 @@
       "lastLogin": "2024-07-10T04:56:36.207Z",
       "studentID": "HE172888",
       "balance": 4950000,
-      "isActive": true
+      "isActive": true,
+      "cdf": 100
     },
     {
       "id": "d2f6",
       "username": "haolxhe172802",
       "email": "haolxhe172802@fpt.edu.vn",
-      "password": "$2a$10$VrzuFzX7bHfFIgpOYPRTqO6L4BVEOcnR1A0Mx2rcFihweVXVVDHH2",
+      "password": "$2a$10$24sDMAD8vZX5NATDFteWheShGJ7cIV9UsrB7vYdRL9EwZHsCtMwhu",
       "fullName": "Lê Xuân Hào",
       "gender": "male",
       "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
@@ -56,6 +57,41 @@
       "lastLogin": "2024-07-17T04:37:27.557Z",
       "studentID": "HE172803",
       "balance": 4950000,
+      "isActive": true,
+      "cdf": 85
+    },
+    {
+      "id": "1e0e",
+      "username": "Vũ Hồng Minh",
+      "email": "minhvhhe170320@fpt.edu.vn",
+      "password": "$2a$10$qZZZmDur9ACXMFWmFcm.0.ZrIxJ2uGvtmTBXJ23qOPL4VM8/2f1ym",
+      "fullName": "Vũ Hồng Minh",
+      "gender": "male",
+      "address": "Hà nội",
+      "phone": "0839440702",
+      "studentID": "HE172888",
+      "balance": 4950000,
+      "isActive": true,
+      "cdf": 110,
+      "role": "student"
+    },
+    {
+      "id": "d2f7",
+      "username": "luong1",
+      "email": "luong1@fpt.edu.vn",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "fullName": "Tưởng Xuân Lương",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0866856537",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "balance": 10000000,
+      "studentID": "HE170320",
+      "createdAt": "2024-07-18T14:23:44.202Z",
+      "lastLogin": "2024-07-18T14:23:44.202Z",
       "isActive": true
     },
     {
@@ -74,40 +110,71 @@
       "isActive": true
     },
     {
-      "id": "61ad",
-      "username": "123",
-      "email": "123456@gmail.com",
-      "password": "$2a$10$zMDA00R8o7Gn8RExk7H0cu184eqU8VteaZoNKeVG/QK6yyWRH1zlq",
-      "fullName": "minh",
-      "gender": "female",
-      "address": "123",
-      "phone": "1234567891",
-      "role": "student",
-      "avatar": "https://example.com/default-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": false,
-      "balance": 3900000,
-      "studentID": "HE17777",
-      "createdAt": "2024-07-19T06:22:15.219Z",
-      "lastLogin": "2024-07-19T06:22:15.219Z"
+      "id": "540f",
+      "username": "haha1",
+      "email": "haha1@gmail.com",
+      "password": "$2a$10$qtmyI77D6pL38BKimLo3YOOLMyiYMQSEzlEIqHKX6Ey8NAkCjW2GK",
+      "fullName": "Lê philip",
+      "gender": "male",
+      "address": "Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội",
+      "phone": "0794126569",
+      "role": "0",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
+      "studentID": "HE172809",
+      "balance": 0,
+      "isActive": true
     },
     {
-      "id": "db8b",
-      "username": "nam",
-      "email": "nam@gmail.com",
-      "password": "$2a$10$JEOssbT0V5PJBBYKDkIgA.PY8hO5OEXwOzfY9VnlPQ35pp00TxtB6",
-      "fullName": "nam",
-      "gender": "male",
-      "address": "123",
-      "phone": "1234567891",
+      "id": "8de0",
+      "username": "haha2",
+      "email": "haha2@gmail.com",
+      "password": "$2a$10$gRnWGrj4QdwKYRok8LKTcODZYkAyMEbCT1vUjtwJm1EFu1r3WT9GW",
+      "fullName": "Lê philip",
+      "gender": "",
+      "address": "Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội",
+      "phone": "0794126455",
       "role": "student",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
+      "studentID": "HE172806",
+      "balance": 0,
+      "isActive": true
+    },
+    {
+      "id": "9c88",
+      "username": "haha3",
+      "email": "haha3@gmail.com",
+      "password": "$2a$10$NuA2mG2A9Lc0xCdoQDrcVuraR4UEeA6v2/hnwu3FFVNqUTkOH.f8S",
+      "fullName": "Lê philip",
+      "gender": "male",
+      "address": "Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội",
+      "phone": "07941264134",
+      "role": "admin",
+      "avatar": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/Hinh-anh-chan-dung-nam.jpg",
+      "studentID": "HE172800",
+      "balance": 0,
+      "isActive": true,
+      "createdAt": "2024-07-17T04:37:27.557Z",
+      "lastLogin": "2024-07-17T04:37:27.557Z"
+    },
+    {
+      "id": "d2f8",
+      "username": "luong",
+      "email": "luong@fpt.edu.vn",
+      "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
+      "fullName": "Luong Xuan Tuong",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0866856538",
+      "role": "admin",
       "avatar": "https://example.com/default-avatar.jpg",
       "googleId": null,
-      "balance": 3900000,
-      "studentID": "HE172222",
       "isEmailVerified": false,
-      "createdAt": "2024-07-19T07:01:51.165Z",
-      "lastLogin": "2024-07-19T07:01:51.165Z"
+      "createdAt": "2024-07-17T04:37:27.557Z",
+      "lastLogin": "2024-07-17T04:37:27.557Z",
+      "studentID": "HE172888",
+      "balance": 4950000,
+      "isActive": true,
+      "cdf": 100
     }
   ],
   "auth_tokens": [
@@ -649,18 +716,7 @@
       "bed": "C102-3",
       "semester": "Summer 2024",
       "status": "approved",
-      "isExpired": false
-    },
-    {
-      "id": "21131",
-      "studentId": "HE17777",
-      "dormitory": "1",
-      "floor": "1",
-      "room": "101",
-      "bed": "A101-2",
-      "semester": "Summer 2024",
-      "status": "approved",
-      "isExpired": false
+      "isExpired": true
     }
   ],
   "residentHistory": [],
@@ -1126,6 +1182,120 @@
       "NumberPlate": "1",
       "startDate": "2024-07-19",
       "EndDate": "2024-08-19"
+    }
+  ],
+  "cdfHistory": [
+    {
+      "id": "3711",
+      "student": "d2f6",
+      "bonus": 10,
+      "bonusReason": "1",
+      "date": "2024-07-19"
+    },
+    {
+      "id": "71f8",
+      "student": "d2f7",
+      "bonus": 10,
+      "bonusReason": "2",
+      "date": "2024-07-19"
+    },
+    {
+      "id": "2c02",
+      "student": "d2f6",
+      "bonus": 5,
+      "bonusReason": "2",
+      "date": "2024-07-19"
+    },
+    {
+      "id": "eeba",
+      "student": "d2f6",
+      "minus": 20,
+      "minusReason": "2",
+      "date": "2024-07-19"
+    }
+  ],
+  "bonusScoreReasons": [
+    {
+      "id": "1",
+      "reason": "Excellent room cleanliness"
+    },
+    {
+      "id": "2",
+      "reason": "Participation in community events"
+    },
+    {
+      "id": "3",
+      "reason": "Helping with dormitory maintenance"
+    },
+    {
+      "id": "4",
+      "reason": "Outstanding academic achievement"
+    },
+    {
+      "id": "5",
+      "reason": "Volunteering for dormitory committees"
+    },
+    {
+      "id": "6",
+      "reason": "Positive feedback from dorm mates"
+    },
+    {
+      "id": "7",
+      "reason": "Consistent on-time payments"
+    },
+    {
+      "id": "8",
+      "reason": "Promoting sustainability initiatives"
+    },
+    {
+      "id": "9",
+      "reason": "Leadership in organizing dorm events"
+    },
+    {
+      "id": "10",
+      "reason": "Contribution to dorm safety and security"
+    }
+  ],
+  "minusScoreReasons": [
+    {
+      "id": "1",
+      "reason": "Late payment"
+    },
+    {
+      "id": "2",
+      "reason": "Late check-in"
+    },
+    {
+      "id": "3",
+      "reason": "Late check-out"
+    },
+    {
+      "id": "4",
+      "reason": "Violation of dormitory rules"
+    },
+    {
+      "id": "5",
+      "reason": "Violation of Quiet Hours"
+    },
+    {
+      "id": "6",
+      "reason": "Smoking in prohibited areas"
+    },
+    {
+      "id": "7",
+      "reason": "Unauthorized overnight guests"
+    },
+    {
+      "id": "8",
+      "reason": "Failure to pass room inspection"
+    }
+  ],
+  "notification": [
+    {
+      "id": "1",
+      "title": "Get bonus Score",
+      "isRead": false,
+      "studentID": "HE172555"
     }
   ]
 }

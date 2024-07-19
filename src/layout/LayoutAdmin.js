@@ -7,10 +7,10 @@ export default function LayoutAdmin({ title = "", children }) {
         <Container fluid>
             <Header />
             <Row style={{ justifyContent: 'flex-start' }}>
-                <Col md={3} xs={2}>
+                <Col md={2} xs={2}>
                     <SideBarAdmin />
                 </Col>
-                <Col md={9} xs={10}>
+                <Col md={10} xs={10}>
                     <div style={{ marginTop: "90px" }}>{children}</div>
                 </Col>
             </Row>

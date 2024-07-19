@@ -22,7 +22,7 @@ import FUDormitoryRegulations from "./pages/user/FUDormitoryRegulations.js";
 import BookingRequests from "./pages/user/BookingRequests.js";
 import ChangePassword from "./pages/user/ChangePassword.js";
 import AboutUs from "./pages/AboutUs.js";
-import AdminRegulations from "./pages/AdminRegulations.js";
+
 import ManagerUser from "./pages/ManagerUser.js";
 import News from "./components/News.js";
 import ManageNewsAdmin from "./components/ManageNewsAdmin.js";
@@ -36,6 +36,13 @@ import ParkingTicket from "./pages/user/ParkingTicket.js";
 import ViewParking from "./pages/user/ViewParking.js";
 import MangeParking from "./pages/ManageParking.js";
 import MangeParkingCost from "./pages/MangeParkingCost.js";
+
+import AdminRegulations from "./pages/AdminRegulations.js";
+import CDFChangeHistory from "./pages/admin/CDFChangeHistory.js";
+import CDFBonusPage from "./pages/admin/cdf-change/CDFBonusPage.js";
+import CDFMinusPage from "./pages/admin/cdf-change/CDFMinusPage.js";
+import UserNotification from "./pages/user/UserNotification.js";
+import NotificationDetail from "./components/NotificationDetail.js";
 
 
 function App() {
@@ -68,7 +75,8 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/booking-parking" element={<ParkingTicket />} />
             <Route path="/parking-history" element={<ViewParking />} />
-            
+            <Route path="/notification" element={<UserNotification />} />
+            <Route path="/notification/detail/:nid" element={<NotificationDetail />} />
           </Route>
 
           {/* Admin routes */}
@@ -84,7 +92,13 @@ function App() {
             <Route path="/manage/parking" element={<MangeParking />} />
             <Route path="/manage/parkingCost" element={<MangeParkingCost />} />
            
+
+            <Route path="/manage/cdf/history" element={<CDFChangeHistory />} />
+            <Route path="/manage/cdf/bonus/:sid" element={<CDFBonusPage />} />
+            <Route path="/manage/cdf/minus/:sid" element={<CDFMinusPage />} />
           </Route>
+
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
