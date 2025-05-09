@@ -58,9 +58,9 @@ export default function ManagePendingBooking() {
                 })
                 .catch();
             const dorm = dormitories?.find(dorm => dorm.id == dormitory)
-            const floor = dorm.floors?.find(fl => fl.id.toString() === floors.toString());
-            const room = floor.rooms.find(rm => rm.id.toString() === rooms.toString());
-            const bed = room.beds.find(bd => bd.id.toString() === beds.toString());
+            const floor = dorm?.floors?.find(fl => fl.id.toString() === floors.toString());
+            const room = floor?.rooms?.find(rm => rm.id.toString() === rooms.toString());
+            const bed = room?.beds?.find(bd => bd.id.toString() === beds.toString());
             bed.student = studentid;
             bed.status = "occupied";
             axios.put(`http://localhost:9999/dormitories/${dormitory}`, dorm, {
@@ -161,27 +161,27 @@ export default function ManagePendingBooking() {
 
                                             const student = users?.find(user => user.studentID == request.studentid);
                                             const dorm = dormitories?.find(dorm => dorm.id == request.dormitory)
-                                            const floor = dorm.floors.find(fl => fl.id.toString() === request.floor.toString());
-                                            const room = floor.rooms.find(rm => rm.id.toString() === request.room.toString());
-                                            const bed = room.beds.find(bd => bd.id.toString() === request.bed.toString());
+                                            const floor = dorm?.floors.find(fl => fl.id.toString() === request.floor.toString());
+                                            const room = floor?.rooms.find(rm => rm.id.toString() === request.room.toString());
+                                            const bed = room?.beds.find(bd => bd.id.toString() === request.bed.toString());
                                             const statusClass = request.status === 'approved' ? 'success' : request.status === 'pending' ? 'info' : 'danger';
                                             return (
-                                                <tr key={request.id} className="cell-1">
-                                                    <td>{request.id}</td>
+                                                <tr key={request?.id} className="cell-1">
+                                                    <td>{request?.id}</td>
                                                     <td>{student?.fullName}</td>
-                                                    <td>{dormitories?.find(dorm => dorm.id == request.dormitory).name}</td>
-                                                    <td>{floor.floorNumber}</td>
-                                                    <td>{room.roomNumber}</td>
-                                                    <td>{bed.name}</td>
-                                                    <td>{request.semester}</td>
-                                                    <td><span className={`badge badge-${statusClass}`}>{request.status}</span></td>
+                                                    <td>{dormitories?.find(dorm => dorm.id == request.dormitory)?.name}</td>
+                                                    <td>{floor?.floorNumber}</td>
+                                                    <td>{room?.roomNumber}</td>
+                                                    <td>{bed?.name}</td>
+                                                    <td>{request?.semester}</td>
+                                                    <td><span className={`badge badge-${statusClass}`}>{request?.status}</span></td>
                                                     <td>
-                                                        {request.status === 'pending' ? (
+                                                        {request?.status === 'pending' ? (
                                                             <>
-                                                                <Link onClick={() => handleOnAprove(request.id, request.studentid, request.dormitory, request.floor, request.room, request.bed)}>
+                                                                <Link onClick={() => handleOnAprove(request?.id, request?.studentid, request?.dormitory, request.floor, request?.room, request?.bed)}>
                                                                     <i className="confirmed">&#10004;</i>
                                                                 </Link>
-                                                                <Link onClick={() => handleOnReject(request.id)}>
+                                                                <Link onClick={() => handleOnReject(request?.id)}>
                                                                     <i className="cancelled">&#10008;</i>
                                                                 </Link>
                                                             </>

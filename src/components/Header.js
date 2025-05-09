@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 function Header() {
   const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState(null);
+  const [userRole, setUserRole] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,6 +14,7 @@ function Header() {
     if (user) {
       setUserName(user.fullName || user.email);
       setUserId(user.id); // Assuming the user object has an id field
+      setUserRole(user.role); // Assuming the user object has a role field
     }
   }, []);
 
@@ -20,16 +22,18 @@ function Header() {
     localStorage.removeItem('user');
     setUserName('');
     setUserId(null);
+    setUserRole('');
     toast.success('Logged out successfully');
-    navigate('/login');
+    navigate('/');
   };
 
   const handleUserGreetingClick = (e) => {
     e.preventDefault();
-    if (userId) {
+    if (userRole === 'admin') {
+      navigate('/manage/room');
+    } else if (userRole === 'student') {
       navigate(`/user/${userId}`);
     } else {
-      // If there's no user id, you might want to redirect to login page
       navigate('/login');
     }
   };

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import LayoutUser from "../../layout/LayoutUser";
 import { toast } from 'react-toastify';
 import bcryptjs from 'bcryptjs';
 import axios from 'axios';
+import RoleBasedLayout from "../../layout/BaseLayout"; 
 
 const ChangePassword = () => {
   const [currentPassword, setCurrentPassword] = useState('');
@@ -55,7 +55,7 @@ const ChangePassword = () => {
   };
 
   return (
-    <LayoutUser>
+    <RoleBasedLayout>
       <div className="container">
         <h2>Change Password</h2>
         <form onSubmit={handleSubmit}>
@@ -95,7 +95,7 @@ const ChangePassword = () => {
           <button type="submit" className="btn btn-primary">Change Password</button>
         </form>
       </div>
-    </LayoutUser>
+    </RoleBasedLayout>
   );
 };
 

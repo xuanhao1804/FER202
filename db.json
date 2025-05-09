@@ -1,118 +1,32 @@
 {
-  "users": [
+  "semesters": [
     {
       "id": "1",
-      "username": "admin",
-      "email": "admin@example.com",
-      "password": "hashed_admin123",
-      "role": "admin",
-      "fullName": "John Doe",
-      "gender": "male",
-      "address": "123 Main St, Anytown USA",
-      "phone": "1234567890",
-      "avatar": "https://example.com/admin-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": true,
-      "createdAt": "2023-06-28T15:30:45Z",
-      "lastLogin": "2023-06-28T15:30:45Z",
-      "studentID": null,
-      "balance": null
+      "name": "Fall 2023",
+      "startDate": "2023-08-15",
+      "endDate": "2023-12-20"
     },
     {
       "id": "2",
-      "username": "student1",
-      "email": "student1@example.com",
-      "password": "hashed_student123",
-      "role": "student",
-      "fullName": "Jane Smith",
-      "gender": "female",
-      "address": "456 Elm St, Anytown USA",
-      "phone": "9876543210",
-      "avatar": "https://example.com/student1-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": true,
-      "createdAt": "2023-06-28T16:00:00Z",
-      "lastLogin": "2023-06-28T16:00:00Z",
-      "studentID": "HE170001",
-      "balance": 500000
+      "name": "Spring 2024",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15"
     },
     {
       "id": "3",
-      "username": "student2",
-      "email": "student2@example.com",
-      "password": "hashed_pass456",
-      "role": "student",
-      "fullName": "Mike Johnson",
-      "gender": "male",
-      "address": "789 Oak St, Anytown USA",
-      "phone": "5551234567",
-      "avatar": "https://example.com/student2-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": true,
-      "createdAt": "2023-06-28T16:30:00Z",
-      "lastLogin": "2023-06-28T16:30:00Z",
-      "studentID": "HS170002",
-      "balance": 750000
-    },
-    {
-      "id": "4",
-      "username": "staff1",
-      "email": "staff1@example.com",
-      "password": "hashed_staffpass",
-      "role": "staff",
-      "fullName": "Emily Brown",
-      "gender": "female",
-      "address": "321 Pine St, Anytown USA",
-      "phone": "1112223333",
-      "avatar": "https://example.com/staff1-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": true,
-      "createdAt": "2023-06-28T17:00:00Z",
-      "lastLogin": "2023-06-28T17:00:00Z",
-      "studentID": null,
-      "balance": null
-    },
-    {
-      "id": "02d7",
-      "username": "haoboy2k2",
-      "email": "haolxhe172802@fpt.edu.vn",
-      "password": "abc@123",
-      "fullName": "Lê philip",
-      "gender": "male",
-      "address": "haolxhe172802",
-      "phone": "0363066815",
-      "role": "student",
-      "avatar": "https://example.com/default-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": false,
-      "createdAt": "2024-07-03T14:34:41.123Z",
-      "lastLogin": "2024-07-03T14:34:41.123Z",
-      "studentID": "HE172802",
-      "balance": 6000000
-    },
-    {
-      "id": "ad07",
-      "username": "bthteam",
-      "email": "bthteam102@gmail.com",
-      "password": "$2a$10$cwWVoCnG23K0PhpBYY3nNeK.CIm1dpg.5OI7wYLg.pcmDhB6bicQK",
-      "fullName": "Lee Hao",
-      "gender": "male",
-      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
-      "phone": "0363066815",
-      "role": "student",
-      "avatar": "https://example.com/default-avatar.jpg",
-      "googleId": null,
-      "isEmailVerified": false,
-      "createdAt": "2024-07-10T04:12:32.792Z",
-      "lastLogin": "2024-07-10T04:12:32.793Z"
-    },
+      "name": "Summer 2024",
+      "startDate": "2024-06-01",
+      "endDate": "2024-07-31"
+    }
+  ],
+  "users": [
     {
       "id": "345b",
       "username": "xuanhao1804",
       "email": "xuanhao1804@gmail.com",
       "password": "$2a$10$NV1la6RBu.WoXTWTLz4a5uegAK9j3J14AORGuCtvaNYkVd5No.04m",
       "fullName": "Lee Hao",
-      "gender": "male",
+      "gender": "female",
       "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
       "phone": "0363066815",
       "role": "admin",
@@ -121,9 +35,26 @@
       "isEmailVerified": false,
       "createdAt": "2024-07-10T04:56:36.207Z",
       "lastLogin": "2024-07-10T04:56:36.207Z",
-      "balance": 6000000,
-      "currentPassword": "123123",
-      "newPassword": "123456"
+      "studentID": "HE172888",
+      "balance": 4950000,
+      "isActive": true
+    },
+    {
+      "id": "d2f6",
+      "username": "haolxhe172802",
+      "email": "haolxhe172802@fpt.edu.vn",
+      "password": "$2a$10$VrzuFzX7bHfFIgpOYPRTqO6L4BVEOcnR1A0Mx2rcFihweVXVVDHH2",
+      "fullName": "Lê Xuân Hào",
+      "gender": "male",
+      "address": "Hoa Lac,Thach That,Ha Noi city, Viet Nam",
+      "phone": "0363066815",
+      "role": "student",
+      "avatar": "https://example.com/default-avatar.jpg",
+      "googleId": null,
+      "isEmailVerified": false,
+      "createdAt": "2024-07-17T04:37:27.557Z",
+      "lastLogin": "2024-07-17T04:37:27.557Z",
+      "balance": 4950000
     }
   ],
   "auth_tokens": [
@@ -147,35 +78,30 @@
   ],
   "news": [
     {
-      "id": "1",
-      "title": "Welcome to the new semester!",
-      "description": "We're excited to kick off the new semester and welcome all our new and returning students.",
-      "date": "2023-08-15"
+      "title": "Welcome to the new semester2!",
+      "content": "<h2><a href=\"http://localhost:3000/manage/news\"><i><strong>http://localhost:3000/manage/news</strong></i></a><br>&nbsp;</h2>",
+      "id": "1"
     },
     {
       "id": "2",
       "title": "Upcoming dorm renovations",
       "description": "The Oak Hall dorms will be undergoing renovations during the winter break. More details to come.",
-      "date": "2023-11-01"
+      "date": "2023-11-01",
+      "isDisplay": true
     },
     {
       "id": "3",
       "title": "Campus-wide Wi-Fi upgrade",
       "description": "We're upgrading our campus Wi-Fi network for faster speeds and better coverage.",
-      "date": "2023-09-10"
-    },
-    {
-      "id": "4",
-      "title": "New meal plans available",
-      "description": "Check out our new flexible meal plan options for the upcoming semester!",
-      "date": "2023-07-20"
+      "date": "2023-09-10",
+      "isDisplay": true
     }
   ],
   "dormitories": [
     {
       "id": "1",
       "name": "Dormitory A",
-      "totalBeds": 500,
+      "totalBeds": "50",
       "floors": [
         {
           "id": 1,
@@ -184,7 +110,7 @@
             {
               "id": 101,
               "roomNumber": "A101",
-              "roomType": "4 bed",
+              "roomType": "3 bed",
               "beds": [
                 {
                   "id": "A101-1",
@@ -300,7 +226,7 @@
     {
       "id": "2",
       "name": "Dormitory B",
-      "totalBeds": 400,
+      "totalBeds": 42,
       "floors": [
         {
           "id": 1,
@@ -320,8 +246,7 @@
                 {
                   "id": "B101-2",
                   "name": "B",
-                  "status": "available",
-                  "student": null
+                  "status": "occupied"
                 }
               ]
             },
@@ -343,6 +268,16 @@
                   "student": null
                 }
               ]
+            },
+            {
+              "roomNumber": "13",
+              "roomType": "4 bed",
+              "beds": []
+            },
+            {
+              "roomNumber": "14",
+              "roomType": "3 bed",
+              "beds": []
             }
           ]
         },
@@ -388,7 +323,7 @@
     {
       "id": "3",
       "name": "Dormitory C",
-      "totalBeds": 300,
+      "totalBeds": 31,
       "floors": [
         {
           "id": 1,
@@ -452,8 +387,6 @@
       "id": "2",
       "name": "B",
       "totalBeds": 150,
-      "usedBeds": 120,
-      "freeBeds": 30,
       "floors": [
         {
           "id": 2,
@@ -500,30 +433,156 @@
           ]
         }
       ]
+    },
+    {
+      "id": "0729",
+      "name": "Alpha",
+      "totalBeds": 20,
+      "floors": [
+        {
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "roomNumber": "11",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "D",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1b9d",
+      "name": "Beta",
+      "totalBeds": 12,
+      "floors": [
+        {
+          "floorNumber": 1,
+          "rooms": [
+            {
+              "roomNumber": "11",
+              "roomType": "3 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "floorNumber": 2,
+          "rooms": [
+            {
+              "roomNumber": "21",
+              "roomType": "4 bed",
+              "beds": [
+                {
+                  "name": "A",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "B",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "C",
+                  "status": "available",
+                  "student": null
+                },
+                {
+                  "name": "D",
+                  "status": "available",
+                  "student": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "bookingRequests": [
     {
       "id": "1",
-      "studentid": 2,
-      "dormitory": 1,
-      "floor": 1,
-      "room": 1,
-      "bed": 4,
+      "studentId": "HE172888",
+      "dormitory": "2",
+      "floor": "1",
+      "room": "102",
+      "bed": "B102-1",
       "semester": "Fall 2023",
-      "status": "pending"
+      "status": "approved",
+      "isExpired": true
     },
     {
       "id": "2",
-      "studentid": 3,
-      "dormitory": 2,
-      "floor": 1,
-      "room": 4,
-      "bed": 11,
-      "semester": "Fall 2023",
-      "status": "approved"
+      "studentId": "HE172888",
+      "dormitory": "2",
+      "floor": "1",
+      "room": "102",
+      "bed": "B102-1",
+      "semester": "Spring 2024",
+      "status": "approved",
+      "isExpired": true
+    },
+    {
+      "id": "21",
+      "studentId": "HE172888",
+      "dormitory": "1",
+      "floor": "1",
+      "room": "102",
+      "bed": "A102-1",
+      "semester": "Summer 2024",
+      "status": "pending",
+      "isExpired": false
+    },
+    {
+      "id": "211",
+      "dormitory": "3",
+      "floor": "1",
+      "room": "102",
+      "bed": "C102-3",
+      "semester": "Summer 2024",
+      "status": "pending",
+      "isExpired": false
     }
   ],
+  "residentHistory": [],
   "payments": [
     {
       "id": "1",
@@ -545,6 +604,12 @@
       "amount": 1000,
       "date": "2024-01-10",
       "semester": "Spring 2024"
+    },
+    {
+      "id": "71a5",
+      "amount": 1050000,
+      "date": "2024-07-17",
+      "semester": "Summer 2024"
     }
   ],
   "rules": [
@@ -885,7 +950,6 @@
       ]
     }
   ],
-
   "roomTypes": [
     {
       "id": "1",
